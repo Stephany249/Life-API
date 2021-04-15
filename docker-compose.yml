@@ -5,13 +5,13 @@ services:
     image: postgres:alpine
     ports:
       - '5432:5432'
-    container_name: 'life'
+    container_name: 'pgsql'
     restart: always
     volumes:
       - pg-data:/var/lib/postgresql/data
     environment:
-      POSTGRES_USER: LIFE
-      POSTGRES_PASSWORD: life
+      POSTGRES_USER: pguser
+      POSTGRES_PASSWORD: pgpassword
 
   adminer:
     image: adminer
