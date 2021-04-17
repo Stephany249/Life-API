@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { ConflictException, Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { SpecialistRepository } from './specialist.repository';
 import { CreateSpecialistDto } from './dto/create-specialist.dto';
@@ -12,6 +12,13 @@ export class SpecialistService {
   ) {}
 
   async create(createSpecialistDto: CreateSpecialistDto): Promise<Specialist> {
+    const specialist = this.specialistRepository.findByCRM(
+      createSpecialistDto.crm,
+    );
+
+    if (specialist) {
+      throw new ConflictException('CRM já está em uso');
+    }
     return await this.specialistRepository.save(createSpecialistDto);
   }
 }

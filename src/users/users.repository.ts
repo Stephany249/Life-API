@@ -32,13 +32,10 @@ export class UserRepository extends Repository<User> {
 
       return user;
     } catch (error) {
-      if (error.code.toString() === '23505') {
-        throw new ConflictException('Endereço de email já está em uso');
-      } else {
+      console.log('ai sim', error);
         throw new InternalServerErrorException(
           'Erro ao salvar o usuário no banco de dados',
         );
-      }
     }
   }
 
