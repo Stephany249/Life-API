@@ -8,10 +8,7 @@ export class AuthController {
 
   @Post('login')
   async login(@Body() createAuthDTO: CreateAuthDTO): Promise<any> {
-    const user = await this.authService.createSession(
-      createAuthDTO.email,
-      createAuthDTO.password,
-    );
+    const user = await this.authService.createSession(createAuthDTO);
     return {
       user,
     };

@@ -2,11 +2,12 @@ import { Injectable, UnprocessableEntityException } from '@nestjs/common';
 import { User } from 'src/users/entities/user.entity';
 import { UsersService } from '../users/users.service';
 import { sign } from 'jsonwebtoken';
-//import authConfig from '../configs/auth';
+import authConfig from '../configs/auth';
+import { classToClass } from 'class-transformer';
 
 interface IResponse {
   user: User;
-  //token: string;
+  token: string;
 }
 
 interface IRequest {
@@ -18,16 +19,7 @@ interface IRequest {
 export class AuthService {
   constructor(private userService: UsersService) {}
 
-  async createSession(email: string, password: string): Promise<any> {
-    const { user } = await this.execute({
-      email,
-      password,
-    });
-
-    return { user };
-  }
-
-  private async execute({ email, password }: IRequest): Promise<IResponse> {
+  async createSession({ email, password }: IRequest): Promise<IResponse> {
     const user = await this.userService.findByEmail(email);
 
     if (!user) {
@@ -47,15 +39,16 @@ export class AuthService {
       );
     }
 
-    /*const { secret, expiresIn } = authConfig.jwt;
+    const { secret, expiresIn } = authConfig.jwt;
 
     const token = sign({}, secret, {
       subject: user.email,
       expiresIn,
-    });*/
+    });
 
     return {
-      user,
+      user: classToClass(user),
+      token,
     };
   }
 }

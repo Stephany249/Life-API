@@ -3,7 +3,6 @@ import { User } from './entities/user.entity';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UserRole } from './user-roles.enum';
 import * as bcrypt from 'bcrypt';
-import * as crypto from 'crypto';
 import {
   ConflictException,
   InternalServerErrorException,
@@ -25,13 +24,12 @@ export class UserRepository extends Repository<User> {
     user.role = role;
     user.cpf = cpf;
     user.birthday = birthday;
-    user.confirmationToken = crypto.randomBytes(32).toString('hex');
-    user.salt = await bcrypt.genSalt();
-    user.password = await this.hashPassword(password, user.salt);
+    user.password = await this.hashPassword(password);
     try {
       await user.save();
       delete user.password;
-      delete user.salt;
+      delete user.avatar_url;
+
       return user;
     } catch (error) {
       if (error.code.toString() === '23505') {
@@ -44,8 +42,8 @@ export class UserRepository extends Repository<User> {
     }
   }
 
-  private async hashPassword(password: string, salt: string): Promise<string> {
-    return bcrypt.hash(password, salt);
+  private async hashPassword(password: string): Promise<string> {
+    return bcrypt.hash(password, 8);
   }
 
   async compareHash(password: string, hashed: string): Promise<boolean> {

@@ -6,6 +6,11 @@ import { User } from './entities/user.entity';
 import { UserRole } from './user-roles.enum';
 import { SpecialistService } from '../specialist/specialist.service';
 
+interface ReturnSpecilist {
+  user: User;
+  crm: string;
+}
+
 @Injectable()
 export class UsersService {
   constructor(
@@ -17,7 +22,7 @@ export class UsersService {
   async createUser(
     createUserDto: CreateUserDto,
     role: UserRole,
-  ): Promise<User> {
+  ): Promise<User | ReturnSpecilist> {
     if (createUserDto.password != createUserDto.passwordConfirmation) {
       throw new UnprocessableEntityException('As senhas não conferem');
     } else {
@@ -28,9 +33,11 @@ export class UsersService {
           crm: createUserDto.crm,
         };
 
-        await this.specialistService.create(specialist);
+        const userSpecialist = await this.specialistService.create(specialist);
 
-        return user;
+        const crm = userSpecialist.crm;
+
+        return { user, crm };
       }
 
       return user;

@@ -1,6 +1,11 @@
 import { User } from '../entities/user.entity';
 
-export class ReturnUserDto {
+interface ReturnSpecilist {
   user: User;
+  crm: string;
+}
+
+export class ReturnUserDto {
+  user: User | ReturnSpecilist;
   message: string;
 }

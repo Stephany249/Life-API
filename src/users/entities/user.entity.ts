@@ -24,9 +24,6 @@ export class User extends BaseEntity {
   cpf: string;
 
   @Column({ nullable: false })
-  salt: string;
-
-  @Column({ nullable: false })
   password: string;
 
   @Column({ nullable: false, type: 'timestamp with time zone' })
@@ -34,12 +31,6 @@ export class User extends BaseEntity {
 
   @Column({ nullable: true, type: 'varchar', length: 200 })
   avatar_url: string;
-
-  @Column({ nullable: true, type: 'varchar', length: 64 })
-  confirmationToken: string;
-
-  @Column({ nullable: true, type: 'varchar', length: 64 })
-  recoverToken: string;
 
   @CreateDateColumn()
   createdAt: Date;
