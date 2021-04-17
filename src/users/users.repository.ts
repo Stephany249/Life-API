@@ -32,10 +32,13 @@ export class UserRepository extends Repository<User> {
 
       return user;
     } catch (error) {
-      console.log('ai sim', error);
+      if (this.findByEmail(email)) {
+        throw new ConflictException('E-mail já está em uso');
+      } else {
         throw new InternalServerErrorException(
           'Erro ao salvar o usuário no banco de dados',
         );
+      }
     }
   }
 
@@ -48,8 +51,7 @@ export class UserRepository extends Repository<User> {
   }
 
   async findByEmail(email: string): Promise<User | undefined> {
-    this.ormRepository = getRepository(User);
-    const user = await this.ormRepository.findOne({ where: { email } });
+    const user = await this.findOne({ where: { email } });
 
     return user;
   }

@@ -1,21 +1,34 @@
-import { IsDateString, IsString } from 'class-validator';
+import { IsDateString, IsEmail, IsNotEmpty, IsString } from 'class-validator';
 import { ApiProperty } from '@nestjs/swagger';
 
 export class CreateUserDto {
   @ApiProperty()
-  @IsString()
+  @IsEmail(
+    {},
+    {
+      message: 'Informe um endereço de email válido',
+    },
+  )
   readonly email: string;
   @ApiProperty()
-  @IsString()
+  @IsNotEmpty({
+    message: 'Informe o nome do usuário',
+  })
   readonly name: string;
   @ApiProperty()
-  @IsString()
+  @IsNotEmpty({
+    message: 'Informe uma senha',
+  })
   readonly password: string;
   @ApiProperty()
-  @IsString()
+  @IsNotEmpty({
+    message: 'Informe a confirmação de senha',
+  })
   readonly passwordConfirmation: string;
   @ApiProperty()
-  @IsString()
+  @IsNotEmpty({
+    message: 'Informe o CPF',
+  })
   readonly cpf: string;
   @ApiProperty()
   readonly crm: string;
