@@ -7,14 +7,23 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { UserRepository } from './users.repository';
 import { CreateUserDto } from './dto/create-user.dto';
 import { User } from './entities/user.entity';
-import { UserRole } from './user-roles.enum';
+import { UserRole } from '../roles/roles.enum';
 import { SpecialistService } from '../specialist/specialist.service';
 import { cpf } from 'cpf-cnpj-validator';
 import axios from 'axios';
+import { classToClass } from 'class-transformer';
 
 interface ReturnSpecilist {
   user: User;
   crm: string;
+}
+
+interface IRequest {
+  user_id: string;
+  name: string;
+  email: string;
+  old_password?: string;
+  password?: string;
 }
 
 @Injectable()
@@ -67,5 +76,65 @@ export class UsersService {
 
   async findByEmail(email: string): Promise<User | undefined> {
     return await this.userRepository.findByEmail(email);
+  }
+
+  async findById(user_id: string): Promise<User | ReturnSpecilist> {
+    const user = await this.userRepository.findById(user_id);
+
+    if (!user) {
+      throw new BadRequestException('Usuário não encontrado');
+    }
+
+    if (user.role === UserRole.SPECIALIST) {
+      const specialist = await this.specialistService.findById(user_id);
+
+      return classToClass(specialist);
+    }
+
+    return classToClass(user);
+  }
+
+  async updateProfile({
+    user_id,
+    name,
+    email,
+    password,
+    old_password,
+  }: IRequest): Promise<User> {
+    const user = await this.userRepository.findById(user_id);
+
+    if (!user) {
+      throw new BadRequestException('Usuário não encontrado');
+    }
+
+    const userWithUpdateEmail = await this.userRepository.findByEmail(email);
+
+    if (userWithUpdateEmail && userWithUpdateEmail.id !== user.id) {
+      throw new BadRequestException('E-mail já está em uso');
+    }
+
+    user.name = name;
+    user.email = email;
+
+    if (password && !old_password) {
+      throw new BadRequestException(
+        'Você precisa informar a senha antiga para definir uma nova senha.',
+      );
+    }
+
+    if (password && old_password) {
+      const checkOldPassword = await this.userRepository.compareHash(
+        old_password,
+        user.password,
+      );
+
+      if (!checkOldPassword) {
+        throw new BadRequestException('Senha antiga não confere');
+      }
+
+      user.password = await this.userRepository.hashPassword(password);
+    }
+
+    return this.userRepository.save(user);
   }
 }

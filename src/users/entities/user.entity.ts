@@ -6,12 +6,16 @@ import {
   Column,
   CreateDateColumn,
   UpdateDateColumn,
+  PrimaryGeneratedColumn,
 } from 'typeorm';
 
 @Entity()
 @Unique(['email', 'cpf'])
 export class User extends BaseEntity {
-  @PrimaryColumn({ type: 'varchar', length: 200 })
+  @PrimaryGeneratedColumn('uuid')
+  id: string;
+
+  @Column({ nullable: false, type: 'varchar', length: 200 })
   email: string;
 
   @Column({ nullable: false, type: 'varchar', length: 200 })

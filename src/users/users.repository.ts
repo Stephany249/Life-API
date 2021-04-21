@@ -1,7 +1,7 @@
 import { EntityRepository, Repository, getRepository } from 'typeorm';
 import { User } from './entities/user.entity';
 import { CreateUserDto } from './dto/create-user.dto';
-import { UserRole } from './user-roles.enum';
+import { UserRole } from '../roles/roles.enum';
 import * as bcrypt from 'bcrypt';
 import {
   ConflictException,
@@ -42,7 +42,7 @@ export class UserRepository extends Repository<User> {
     }
   }
 
-  private async hashPassword(password: string): Promise<string> {
+  async hashPassword(password: string): Promise<string> {
     return bcrypt.hash(password, 8);
   }
 
@@ -52,6 +52,12 @@ export class UserRepository extends Repository<User> {
 
   async findByEmail(email: string): Promise<User | undefined> {
     const user = await this.findOne({ where: { email } });
+
+    return user;
+  }
+
+  async findById(id: string): Promise<User | undefined> {
+    const user = await this.findOne(id);
 
     return user;
   }

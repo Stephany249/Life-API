@@ -18,7 +18,7 @@ export class Specialist extends BaseEntity {
   crm: string;
 
   @OneToOne(() => User)
-  @JoinColumn({ name: 'email' })
+  @JoinColumn({ name: 'id' })
   user: User;
 
   @CreateDateColumn()

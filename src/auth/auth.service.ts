@@ -1,25 +1,35 @@
-import { Injectable, UnprocessableEntityException } from '@nestjs/common';
+import {
+  BadRequestException,
+  Injectable,
+  UnprocessableEntityException,
+} from '@nestjs/common';
 import { User } from 'src/users/entities/user.entity';
 import { UsersService } from '../users/users.service';
-import { sign } from 'jsonwebtoken';
+import { sign, verify } from 'jsonwebtoken';
 import authConfig from '../configs/auth';
 import { classToClass } from 'class-transformer';
 
 interface IResponse {
   user: User;
-  token: string;
+  //token: string;
 }
 
-interface IRequest {
-  email: string;
-  password: string;
+interface ITokenPayload {
+  iat: number;
+  exp: number;
+  sub: string;
+}
+
+interface ReturnSpecilist {
+  user: User;
+  crm: string;
 }
 
 @Injectable()
 export class AuthService {
   constructor(private userService: UsersService) {}
 
-  async createSession({ email, password }: IRequest): Promise<IResponse> {
+  async createSession(email: string, password: string): Promise<IResponse> {
     const user = await this.userService.findByEmail(email);
 
     if (!user) {
@@ -39,16 +49,20 @@ export class AuthService {
       );
     }
 
-    const { secret, expiresIn } = authConfig.jwt;
-
-    const token = sign({}, secret, {
-      subject: user.email,
-      expiresIn,
-    });
-
     return {
       user: classToClass(user),
-      token,
     };
+  }
+
+  async validateUser(token: string): Promise<User | ReturnSpecilist> {
+    try {
+      const decoded = verify(token, authConfig.jwt.secret);
+
+      const { sub: id } = decoded as ITokenPayload;
+
+      return await this.userService.findById(id);
+    } catch {
+      throw new BadRequestException('Invalid JWT token');
+    }
   }
 }
