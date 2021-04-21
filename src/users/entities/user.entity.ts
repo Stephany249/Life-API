@@ -24,13 +24,13 @@ export class User extends BaseEntity {
   @Column({ nullable: false, type: 'varchar', length: 20 })
   role: string;
 
-  @Column({ nullable: false, type: 'varchar', length: 11 })
+  @Column({ nullable: true, type: 'varchar', length: 11 })
   cpf: string;
 
-  @Column({ nullable: false })
+  @Column({ nullable: true })
   password: string;
 
-  @Column({ nullable: false, type: 'timestamp with time zone' })
+  @Column({ nullable: true, type: 'timestamp with time zone' })
   birthday: Date;
 
   @Column({ nullable: true, type: 'varchar', length: 200 })

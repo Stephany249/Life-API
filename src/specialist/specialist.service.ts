@@ -12,7 +12,7 @@ export class SpecialistService {
   ) {}
 
   async create(createSpecialistDto: CreateSpecialistDto): Promise<Specialist> {
-    const specialist = this.specialistRepository.findByCRM(
+    const specialist = await this.specialistRepository.findByCRM(
       createSpecialistDto.crm,
     );
 
@@ -23,7 +23,7 @@ export class SpecialistService {
   }
 
   async findById(user_id: string): Promise<Specialist> {
-    const user = this.specialistRepository.findById(user_id);
+    const user = await this.specialistRepository.findById(user_id);
 
     return user;
   }

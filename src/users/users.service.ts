@@ -40,20 +40,25 @@ export class UsersService {
   ): Promise<User | ReturnSpecilist> {
     if (createUserDto.password != createUserDto.passwordConfirmation) {
       throw new UnprocessableEntityException('As senhas não conferem');
-    } else if (!cpf.isValid(createUserDto.cpf)) {
+    } else if (createUserDto.cpf && !cpf.isValid(createUserDto.cpf)) {
       throw new BadRequestException('O CPF informado não é válido');
     } else {
-      const user = await this.userRepository.createUser(createUserDto, role);
-      if (user.role === UserRole.SPECIALIST) {
-        const specialist = {
-          user,
-          crm: createUserDto.crm,
-        };
+      if (role === UserRole.SPECIALIST) {
         const isValidCRM = await axios.get(
-          `https://www.consultacrm.com.br/api/index.php?tipo=crm&q=${createUserDto.crm}&chave=${process.env.CHAVE_CRM}destino=json`,
+          `https://www.consultacrm.com.br/api/index.php?tipo=crm&uf=&q=${createUserDto.crm}&chave=${process.env.CHAVE_CRM}&destino=json`,
         );
 
         if (isValidCRM.data.total == 1) {
+          const user = await this.userRepository.createUser(
+            createUserDto,
+            role,
+          );
+
+          const specialist = {
+            user,
+            crm: createUserDto.crm,
+          };
+
           const userSpecialist = await this.specialistService.create(
             specialist,
           );
@@ -65,8 +70,7 @@ export class UsersService {
           throw new BadRequestException('O CRM informado não é válido');
         }
       }
-
-      return user;
+      return await this.userRepository.createUser(createUserDto, role);
     }
   }
 
@@ -78,17 +82,16 @@ export class UsersService {
     return await this.userRepository.findByEmail(email);
   }
 
-  async findById(user_id: string): Promise<User | ReturnSpecilist> {
+  async findById(user_id: string): Promise<any> {
     const user = await this.userRepository.findById(user_id);
 
     if (!user) {
       throw new BadRequestException('Usuário não encontrado');
     }
-
     if (user.role === UserRole.SPECIALIST) {
       const specialist = await this.specialistService.findById(user_id);
 
-      return classToClass(specialist);
+      return { user, specialist };
     }
 
     return classToClass(user);

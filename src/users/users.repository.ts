@@ -24,7 +24,7 @@ export class UserRepository extends Repository<User> {
     user.role = role;
     user.cpf = cpf;
     user.birthday = birthday;
-    user.password = await this.hashPassword(password);
+    user.password = password && (await this.hashPassword(password));
     try {
       await user.save();
       delete user.password;
@@ -32,7 +32,7 @@ export class UserRepository extends Repository<User> {
 
       return user;
     } catch (error) {
-      if (this.findByEmail(email)) {
+      if (await this.findByEmail(email)) {
         throw new ConflictException('E-mail já está em uso');
       } else {
         throw new InternalServerErrorException(

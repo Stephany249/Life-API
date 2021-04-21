@@ -5,31 +5,25 @@ import {
 } from '@nestjs/common';
 import { User } from 'src/users/entities/user.entity';
 import { UsersService } from '../users/users.service';
-import { sign, verify } from 'jsonwebtoken';
-import authConfig from '../configs/auth';
 import { classToClass } from 'class-transformer';
+import { JwtService } from '@nestjs/jwt';
+import { UserRole } from 'src/roles/roles.enum';
+import { SpecialistService } from 'src/specialist/specialist.service';
 
 interface IResponse {
   user: User;
   //token: string;
 }
 
-interface ITokenPayload {
-  iat: number;
-  exp: number;
-  sub: string;
-}
-
-interface ReturnSpecilist {
-  user: User;
-  crm: string;
-}
-
 @Injectable()
 export class AuthService {
-  constructor(private userService: UsersService) {}
+  constructor(
+    private userService: UsersService,
+    private specialistService: SpecialistService,
+    private jwtService: JwtService,
+  ) {}
 
-  async createSession(email: string, password: string): Promise<IResponse> {
+  async createSession(email: string, password: string): Promise<any> {
     const user = await this.userService.findByEmail(email);
 
     if (!user) {
@@ -49,20 +43,33 @@ export class AuthService {
       );
     }
 
+    if (user.role === UserRole.SPECIALIST) {
+      const specialist = await this.specialistService.findById(user.id);
+
+      return { user, specialist };
+    }
+
     return {
       user: classToClass(user),
     };
   }
 
-  async validateUser(token: string): Promise<User | ReturnSpecilist> {
-    try {
-      const decoded = verify(token, authConfig.jwt.secret);
+  async login(user: any) {
+    const payload = {
+      email: user.email,
+      sub: user.id,
+    };
 
-      const { sub: id } = decoded as ITokenPayload;
+    return this.jwtService.sign(payload);
+  }
 
-      return await this.userService.findById(id);
-    } catch {
-      throw new BadRequestException('Invalid JWT token');
+  async googleSession(profile: any): Promise<any> {
+    const user = await this.userService.findByEmail(profile.email);
+
+    if (!user) {
+      return await this.userService.createUser(profile, UserRole.CLIENT);
     }
+
+    return user;
   }
 }
