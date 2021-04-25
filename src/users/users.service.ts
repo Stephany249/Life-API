@@ -15,10 +15,17 @@ import { classToClass } from 'class-transformer';
 import { UpdateUserDto } from './dto/update-user.dto';
 import * as path from 'path';
 import * as fs from 'fs';
+import { addHours, isAfter } from 'date-fns';
+import { NotificationService } from '../notification/notification.service';
 
 interface ReturnSpecilist {
   user: User;
   crm: string;
+}
+
+interface IResponse {
+  token: string;
+  password: string;
 }
 
 @Injectable()
@@ -27,6 +34,7 @@ export class UsersService {
     @InjectRepository(UserRepository)
     private userRepository: UserRepository,
     private specialistService: SpecialistService,
+    private notificationService: NotificationService,
   ) {}
 
   async createUser(
@@ -169,6 +177,29 @@ export class UsersService {
     await this.userRepository.save(user);
 
     delete user.password;
+
+    return user;
+  }
+
+  async resetPassword(reset: IResponse): Promise<any> {
+    const userToken = await this.notificationService.resetPassword(reset.token);
+
+    const user = await this.userRepository.findById(userToken.user_id);
+
+    if (!user) {
+      throw new BadRequestException('Usuário não existe');
+    }
+
+    const tokenCreatedAt = userToken.createdAt;
+    const compareDate = addHours(tokenCreatedAt, 2);
+
+    if (isAfter(Date.now(), new Date(compareDate))) {
+      throw new BadRequestException('Token expirado.');
+    }
+
+    user.password = await this.userRepository.hashPassword(reset.password);
+
+    await this.userRepository.save(user);
 
     return user;
   }

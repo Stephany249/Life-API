@@ -42,11 +42,4 @@ export class User extends BaseEntity {
 
   @UpdateDateColumn()
   updatedAt: Date;
-
-  @Expose({ name: 'avatar_url' })
-  getAvatar(): string | null {
-    return this.avatar
-      ? `${process.env.APP_API_URL}/files/${this.avatar}`
-      : null;
-  }
 }

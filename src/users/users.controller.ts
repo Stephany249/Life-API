@@ -29,6 +29,10 @@ import { diskStorage } from 'multer';
 import { setFileName, onlyImageEnabled } from '../configs/upload';
 import { NotificationService } from 'notification/notification.service';
 
+interface ReturnReset {
+  token: string;
+  password: string;
+}
 @Controller('users')
 export class UsersController {
   constructor(
@@ -112,10 +116,8 @@ export class UsersController {
   }
 
   @Post('forgot')
-  async forgotPassword(@Body() email: string, @Res() res) {
-    const user = await this.usersService.findByEmail(email);
-
-    console.log('User Controller', user);
+  async forgotPassword(@Body() body: any, @Res() res) {
+    const user = await this.usersService.findByEmail(body.email);
 
     if (!user) {
       throw new BadRequestException('O usuário não existe');
@@ -127,8 +129,8 @@ export class UsersController {
   }
 
   @Post('reset-password')
-  async resetPassword(@Body() password: string, token: string, @Res() res) {
-    await this.notificationService.resetPassword({ token, password });
+  async resetPassword(@Body() reset: ReturnReset, @Res() res) {
+    await this.usersService.resetPassword(reset);
 
     return res.status(204).json();
   }

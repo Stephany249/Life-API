@@ -8,10 +8,13 @@ import { SpecialistModule } from './specialist/specialist.module';
 import { UsersModule } from './users/users.module';
 import { AuthModule } from './auth/auth.module';
 import { NotificationModule } from './notification/notification.module';
+import { MailerModule } from '@nestjs-modules/mailer';
+import { mailerConfig } from './configs/mailer.config';
 
 @Module({
   imports: [
     TypeOrmModule.forRoot(typeOrmConfig),
+    MailerModule.forRoot(mailerConfig),
     UsersModule,
     SpecialistModule,
     AuthModule,

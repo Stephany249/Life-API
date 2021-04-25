@@ -49,13 +49,12 @@ export class UserRepository extends Repository<User> {
   }
 
   async findByEmail(email: string): Promise<User | undefined> {
-    const user = await this.findOne(email);
-
+    const user = await this.findOne({ where: { email: email } });
     return user;
   }
 
   async findById(id: string): Promise<User | undefined> {
-    const user = await this.findOne(id);
+    const user = await this.findOne({ where: { id: id } });
 
     return user;
   }

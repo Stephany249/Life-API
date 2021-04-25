@@ -1,11 +1,12 @@
 import { Module } from '@nestjs/common';
-import { UsersService } from './users.service';
 import { UserRepository } from './users.repository';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { MulterModule } from '@nestjs/platform-express/multer';
+
+import { UsersService } from './users.service';
 import { SpecialistModule } from '../specialist/specialist.module';
 import { UsersController } from './users.controller';
-import { MulterModule } from '@nestjs/platform-express/multer';
-import { NotificationModule } from 'notification/notification.module';
+import { NotificationModule } from '../notification/notification.module';
 
 @Module({
   imports: [
