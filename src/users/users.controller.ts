@@ -8,18 +8,33 @@ import {
   Put,
   Param,
   UseGuards,
+  UseInterceptors,
+  UploadedFile,
+  Res,
+  BadRequestException,
 } from '@nestjs/common';
+import { classToClass } from 'class-transformer';
+import { JwtAuthGuard } from '../auth/guard/jwt-auth.guard';
+
 import { CreateUserDto } from './dto/create-user.dto';
-import { UsersService } from './users.service';
+import { UpdateUserDto } from './dto/update-user.dto';
 import { ReturnUserDto } from './dto/return-user.dto';
+
+import { UsersService } from './users.service';
 import { UserRole } from '../roles/roles.enum';
 import { User } from './entities/user.entity';
-import { classToClass } from 'class-transformer';
-import { JwtAuthGuard } from 'src/auth/guard/jwt-auth.guard';
+
+import { FileInterceptor } from '@nestjs/platform-express/multer/interceptors/file.interceptor';
+import { diskStorage } from 'multer';
+import { setFileName, onlyImageEnabled } from '../configs/upload';
+import { NotificationService } from 'notification/notification.service';
 
 @Controller('users')
 export class UsersController {
-  constructor(private usersService: UsersService) {}
+  constructor(
+    private usersService: UsersService,
+    private notificationService: NotificationService,
+  ) {}
 
   @Post('specialist')
   async createSpecialistUser(
@@ -57,22 +72,64 @@ export class UsersController {
     return { user, message: '' };
   }
 
-  @Put('profile')
+  @UseGuards(JwtAuthGuard)
+  @Put('profile/:id')
   async updateProfile(
-    user_id: string,
-    name: string,
-    email: string,
-    old_password: string,
-    password: string,
+    @Param() params,
+    @Body() updateUserDto: UpdateUserDto,
   ): Promise<User> {
-    const user = await this.usersService.updateProfile({
-      user_id,
-      name,
-      email,
-      old_password,
-      password,
-    });
+    const updateUser = await this.usersService.updateProfile(
+      params.id,
+      updateUserDto,
+    );
 
-    return classToClass(user);
+    return classToClass(updateUser);
+  }
+
+  @UseGuards(JwtAuthGuard)
+  @Patch('avatar/:id')
+  @UseInterceptors(
+    FileInterceptor('file', {
+      storage: diskStorage({
+        destination: './tmp/uploads',
+        filename: setFileName,
+      }),
+      fileFilter: onlyImageEnabled,
+    }),
+  )
+  async updateAvatar(
+    @Param() params,
+    @UploadedFile() file: Express.Multer.File,
+  ) {
+    const user = await this.usersService.updateAvatar(params.id, file.filename);
+    return user;
+  }
+
+  @UseGuards(JwtAuthGuard)
+  @Get('avatar/image/:imgpath')
+  seeUploadedFile(@Param('imgpath') image, @Res() res) {
+    return res.sendFile(image, { root: './tmp/uploads' });
+  }
+
+  @Post('forgot')
+  async forgotPassword(@Body() email: string, @Res() res) {
+    const user = await this.usersService.findByEmail(email);
+
+    console.log('User Controller', user);
+
+    if (!user) {
+      throw new BadRequestException('O usuário não existe');
+    }
+
+    await this.notificationService.sendForgoutPasswordEmail(user);
+
+    return res.status(204).json();
+  }
+
+  @Post('reset-password')
+  async resetPassword(@Body() password: string, token: string, @Res() res) {
+    await this.notificationService.resetPassword({ token, password });
+
+    return res.status(204).json();
   }
 }

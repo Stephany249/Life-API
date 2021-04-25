@@ -1,4 +1,4 @@
-import { EntityRepository, Repository, getRepository } from 'typeorm';
+import { EntityRepository, Repository } from 'typeorm';
 import { User } from './entities/user.entity';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UserRole } from '../roles/roles.enum';
@@ -10,8 +10,6 @@ import {
 
 @EntityRepository(User)
 export class UserRepository extends Repository<User> {
-  private ormRepository: Repository<User>;
-
   async createUser(
     createUserDto: CreateUserDto,
     role: UserRole,
@@ -28,7 +26,7 @@ export class UserRepository extends Repository<User> {
     try {
       await user.save();
       delete user.password;
-      delete user.avatar_url;
+      delete user.avatar;
 
       return user;
     } catch (error) {
@@ -51,7 +49,7 @@ export class UserRepository extends Repository<User> {
   }
 
   async findByEmail(email: string): Promise<User | undefined> {
-    const user = await this.findOne({ where: { email } });
+    const user = await this.findOne(email);
 
     return user;
   }

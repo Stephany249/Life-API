@@ -12,18 +12,13 @@ import { SpecialistService } from '../specialist/specialist.service';
 import { cpf } from 'cpf-cnpj-validator';
 import axios from 'axios';
 import { classToClass } from 'class-transformer';
+import { UpdateUserDto } from './dto/update-user.dto';
+import * as path from 'path';
+import * as fs from 'fs';
 
 interface ReturnSpecilist {
   user: User;
   crm: string;
-}
-
-interface IRequest {
-  user_id: string;
-  name: string;
-  email: string;
-  old_password?: string;
-  password?: string;
 }
 
 @Injectable()
@@ -88,8 +83,11 @@ export class UsersService {
     if (!user) {
       throw new BadRequestException('Usuário não encontrado');
     }
+
+    delete user.password;
+
     if (user.role === UserRole.SPECIALIST) {
-      const specialist = await this.specialistService.findById(user_id);
+      const specialist = await this.specialistService.findById(user.id);
 
       return { user, specialist };
     }
@@ -97,37 +95,34 @@ export class UsersService {
     return classToClass(user);
   }
 
-  async updateProfile({
-    user_id,
-    name,
-    email,
-    password,
-    old_password,
-  }: IRequest): Promise<User> {
-    const user = await this.userRepository.findById(user_id);
+  async updateProfile(id: string, updateUserDto: UpdateUserDto): Promise<any> {
+    const user = await this.userRepository.findById(id);
 
     if (!user) {
       throw new BadRequestException('Usuário não encontrado');
     }
 
-    const userWithUpdateEmail = await this.userRepository.findByEmail(email);
+    const userWithUpdateEmail = await this.userRepository.findByEmail(
+      updateUserDto.email,
+    );
 
     if (userWithUpdateEmail && userWithUpdateEmail.id !== user.id) {
       throw new BadRequestException('E-mail já está em uso');
     }
 
-    user.name = name;
-    user.email = email;
+    user.name = updateUserDto.name;
+    user.email = updateUserDto.email;
+    user.birthday = updateUserDto.birthday;
 
-    if (password && !old_password) {
+    if (updateUserDto.password && !updateUserDto.oldPassword) {
       throw new BadRequestException(
         'Você precisa informar a senha antiga para definir uma nova senha.',
       );
     }
 
-    if (password && old_password) {
+    if (updateUserDto.password && updateUserDto.oldPassword) {
       const checkOldPassword = await this.userRepository.compareHash(
-        old_password,
+        updateUserDto.oldPassword,
         user.password,
       );
 
@@ -135,9 +130,46 @@ export class UsersService {
         throw new BadRequestException('Senha antiga não confere');
       }
 
-      user.password = await this.userRepository.hashPassword(password);
+      user.password = await this.userRepository.hashPassword(
+        updateUserDto.password,
+      );
     }
 
-    return this.userRepository.save(user);
+    const userUpdated = await this.userRepository.save(user);
+
+    if (userUpdated.role === UserRole.SPECIALIST) {
+      const specialist = await this.specialistService.findById(userUpdated.id);
+
+      delete userUpdated.password;
+
+      return { userUpdated, specialist };
+    }
+
+    delete userUpdated.password;
+
+    return userUpdated;
+  }
+
+  async updateAvatar(id: string, avatarFileName: string): Promise<User> {
+    const user = await this.userRepository.findById(id);
+
+    if (!user) {
+      throw new BadRequestException(
+        'Apenas usuários autenticados podem alterar o avatar',
+      );
+    }
+
+    if (user.avatar) {
+      const filePath = path.resolve('./tmp/uploads/' + user.avatar);
+      await fs.promises.unlink(filePath);
+    }
+
+    user.avatar = avatarFileName;
+
+    await this.userRepository.save(user);
+
+    delete user.password;
+
+    return user;
   }
 }

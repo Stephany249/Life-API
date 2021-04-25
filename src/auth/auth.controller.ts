@@ -1,5 +1,4 @@
 import { Controller, Post, UseGuards, Request, Get } from '@nestjs/common';
-import { copyFileSync } from 'fs';
 import { AuthService } from './auth.service';
 import { GoogleAuthGuard } from './guard/google-auth.guard';
 import { LocalAuthGuard } from './guard/local-auth.guard';

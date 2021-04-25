@@ -1,3 +1,4 @@
+import { Expose } from 'class-transformer';
 import {
   BaseEntity,
   Entity,
@@ -34,11 +35,18 @@ export class User extends BaseEntity {
   birthday: Date;
 
   @Column({ nullable: true, type: 'varchar', length: 200 })
-  avatar_url: string;
+  avatar: string;
 
   @CreateDateColumn()
   createdAt: Date;
 
   @UpdateDateColumn()
   updatedAt: Date;
+
+  @Expose({ name: 'avatar_url' })
+  getAvatar(): string | null {
+    return this.avatar
+      ? `${process.env.APP_API_URL}/files/${this.avatar}`
+      : null;
+  }
 }

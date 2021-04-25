@@ -7,6 +7,7 @@ import { typeOrmConfig } from './configs/typeorm.config.ts';
 import { SpecialistModule } from './specialist/specialist.module';
 import { UsersModule } from './users/users.module';
 import { AuthModule } from './auth/auth.module';
+import { NotificationModule } from './notification/notification.module';
 
 @Module({
   imports: [
@@ -14,6 +15,7 @@ import { AuthModule } from './auth/auth.module';
     UsersModule,
     SpecialistModule,
     AuthModule,
+    NotificationModule,
   ],
 })
 export class AppModule {}

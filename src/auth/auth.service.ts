@@ -1,18 +1,13 @@
-import {
-  BadRequestException,
-  Injectable,
-  UnprocessableEntityException,
-} from '@nestjs/common';
-import { User } from 'src/users/entities/user.entity';
+import { Injectable, UnprocessableEntityException } from '@nestjs/common';
+import { User } from '../users/entities/user.entity';
 import { UsersService } from '../users/users.service';
 import { classToClass } from 'class-transformer';
 import { JwtService } from '@nestjs/jwt';
-import { UserRole } from 'src/roles/roles.enum';
-import { SpecialistService } from 'src/specialist/specialist.service';
+import { UserRole } from '../roles/roles.enum';
+import { SpecialistService } from '../specialist/specialist.service';
 
 interface IResponse {
   user: User;
-  //token: string;
 }
 
 @Injectable()
@@ -42,6 +37,8 @@ export class AuthService {
         'Incorrect email/password combination.',
       );
     }
+
+    delete user.password;
 
     if (user.role === UserRole.SPECIALIST) {
       const specialist = await this.specialistService.findById(user.id);
