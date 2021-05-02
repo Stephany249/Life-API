@@ -7,6 +7,7 @@ import {
   UpdateDateColumn,
   OneToOne,
   JoinColumn,
+  Column,
 } from 'typeorm';
 
 import { User } from '../../users/entities/user.entity';
@@ -17,8 +18,11 @@ export class Specialist extends BaseEntity {
   @PrimaryColumn({ type: 'varchar', length: 20 })
   crm: string;
 
+  @Column({ nullable: false })
+  userId: string;
+
   @OneToOne(() => User)
-  @JoinColumn({ name: 'id' })
+  @JoinColumn({ name: 'userId' })
   user: User;
 
   @CreateDateColumn()

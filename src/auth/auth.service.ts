@@ -42,7 +42,7 @@ export class AuthService {
 
     if (user.role === UserRole.SPECIALIST) {
       const specialist = await this.specialistService.findById(user.id);
-
+      console.log(specialist);
       return { user, specialist };
     }
 

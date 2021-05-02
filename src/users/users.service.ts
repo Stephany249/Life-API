@@ -51,7 +51,7 @@ export class UsersService {
           `https://www.consultacrm.com.br/api/index.php?tipo=crm&uf=&q=${createUserDto.crm}&chave=${process.env.CHAVE_CRM}&destino=json`,
         );
 
-        if (isValidCRM.data.total == 1) {
+        if (isValidCRM.data.total >= 1) {
           const user = await this.userRepository.createUser(
             createUserDto,
             role,
@@ -184,7 +184,7 @@ export class UsersService {
   async resetPassword(reset: IResponse): Promise<any> {
     const userToken = await this.notificationService.resetPassword(reset.token);
 
-    const user = await this.userRepository.findById(userToken.user_id);
+    const user = await this.userRepository.findById(userToken.userId);
 
     if (!user) {
       throw new BadRequestException('Usuário não existe');

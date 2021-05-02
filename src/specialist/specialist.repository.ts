@@ -9,8 +9,8 @@ export class SpecialistRepository extends Repository<Specialist> {
     return specialist;
   }
 
-  async findById(user: string): Promise<Specialist | undefined> {
-    const specialist = await this.findOne({ where: { user } });
+  async findById(userId: string): Promise<Specialist | undefined> {
+    const specialist = await this.findOne({ where: { userId } });
 
     return specialist;
   }

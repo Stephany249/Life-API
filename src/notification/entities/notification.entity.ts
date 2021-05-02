@@ -6,19 +6,26 @@ import {
   Column,
   Generated,
   PrimaryGeneratedColumn,
+  JoinColumn,
+  ManyToOne,
 } from 'typeorm';
+import { User } from '../../users/entities/user.entity';
 
 @Entity()
 export class Notification extends BaseEntity {
   @PrimaryGeneratedColumn('uuid')
-  id: string;
+  idNotification: string;
 
   @Column()
   @Generated('uuid')
   token: string;
 
-  @Column()
-  user_id: string;
+  @Column({ nullable: false })
+  userId: string;
+
+  @ManyToOne(() => User)
+  @JoinColumn({ name: 'userId' })
+  user: User;
 
   @CreateDateColumn()
   createdAt: Date;

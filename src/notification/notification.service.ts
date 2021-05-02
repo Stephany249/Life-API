@@ -14,8 +14,8 @@ export class NotificationService {
   ) {}
 
   async sendForgoutPasswordEmail(user: User): Promise<void> {
-    const token = await this.notificationRepository.generate(user.id);
-
+    const token = await this.notificationRepository.generate(user);
+    console.log('token', token);
     const forgotPassowordTemplate = path.resolve(
       __dirname,
       'views',
