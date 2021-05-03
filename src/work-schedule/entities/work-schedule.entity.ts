@@ -8,9 +8,8 @@ import {
   JoinColumn,
   ManyToOne,
   Column,
-  OneToMany,
 } from 'typeorm';
-import { Weekday } from './weekday';
+import { Weekday } from './weekday.entity';
 
 @Entity()
 export class WorkSchedule extends BaseEntity {

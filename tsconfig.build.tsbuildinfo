@@ -3027,12 +3027,12 @@
         "affectsGlobalScope": false
       },
       "./src/work-schedule/entities/work-schedule.entity.ts": {
-        "version": "fee0f2e7bdba4f462e05c00c5b7ae802b4d78bf1271abfc74862063289a4a20b",
+        "version": "72f3fc0004eb6906acc62f2440f02115ee4cf52e8a4dc893706d16ed12a407d8",
         "signature": "ec47a957348a97d67e0bf8c59ebee52b93a203c9e8716c549f43d1dba8103934",
         "affectsGlobalScope": false
       },
-      "./src/configs/typeorm.config.ts.ts": {
-        "version": "a60e758d3f5c8592c2fa0c5174564d13274a8dcb4f8b45aef9818e3ba90cb6e1",
+      "./src/configs/typeorm.config.ts": {
+        "version": "67ace89e4c9866fb761681b0d987113a4a75ba66ab00aef8883fc0590387262d",
         "signature": "e48d1e836452920a823efe3c1f15dbaa531cbb2c536b3d47ad06ed5201a8b847",
         "affectsGlobalScope": false
       },
@@ -4582,7 +4582,7 @@
         "affectsGlobalScope": false
       },
       "./src/work-schedule/work-schedule.controller.ts": {
-        "version": "a9c049268ed0b070c8b1bf23d55592cccd8bb2e83004146e1495fdfe3baaa5a7",
+        "version": "31ac6f0133d82c5aae8f7adf2c370953dd2fb951ebb5721442d5a32726fd9d15",
         "signature": "4c5af3902de3663ea84ed87dcead729c2b2e9d1f9afd5b9f22ca4bf406fd2a99",
         "affectsGlobalScope": false
       },
@@ -4612,7 +4612,7 @@
         "affectsGlobalScope": false
       },
       "./src/app.module.ts": {
-        "version": "07d3331f27ca2016a312eac0c71e27abd64fac7984976852bdcd54ee847411b2",
+        "version": "33d403e7e13385f3e32c8b13f3e202223f9ffa120a0b9bed95d90b63db9f83a5",
         "signature": "b82491e2990291580288c5602d4c017238977749d52b17391f0e45d9a29be644",
         "affectsGlobalScope": false
       },
@@ -4804,6 +4804,11 @@
       "./src/auth/dto/create-auth.dto.ts": {
         "version": "9b50c627aefb4bbf12b59287b4ec45848fc6976e12958fee09c9d2f609d6d660",
         "signature": "cb86a24dae1cea52918733eab745d253c4cae5d561263490727138b331cbfd7e",
+        "affectsGlobalScope": false
+      },
+      "./src/migrations/1620060574971-SeedDays.ts": {
+        "version": "174511bd8f40281a0c5cdcdd3a864f94bbfa8b9f290ae571186883fb80e2f90d",
+        "signature": "3fe3fb6a98df2b1eff5521ba7af1bd90f279c3db92ab55ba014aba0958a9a2c0",
         "affectsGlobalScope": false
       },
       "./src/notification/dto/send-notification.dto.ts": {
@@ -10093,7 +10098,7 @@
         "./node_modules/date-fns/typings.d.ts",
         "./src/auth/auth.module.ts",
         "./src/configs/mailer.config.ts",
-        "./src/configs/typeorm.config.ts.ts",
+        "./src/configs/typeorm.config.ts",
         "./src/notification/notification.module.ts",
         "./src/specialist/specialist.module.ts",
         "./src/users/users.module.ts",
@@ -10174,7 +10179,7 @@
         "./node_modules/@types/node/path.d.ts",
         "./node_modules/date-fns/typings.d.ts"
       ],
-      "./src/configs/typeorm.config.ts.ts": [
+      "./src/configs/typeorm.config.ts": [
         "./node_modules/@nestjs/typeorm/index.d.ts",
         "./node_modules/date-fns/typings.d.ts",
         "./src/notification/entities/notification.entity.ts",
@@ -10194,6 +10199,10 @@
         "./node_modules/date-fns/typings.d.ts",
         "./node_modules/reflect-metadata/index.d.ts",
         "./src/app.module.ts"
+      ],
+      "./src/migrations/1620060574971-SeedDays.ts": [
+        "./node_modules/date-fns/typings.d.ts",
+        "./node_modules/typeorm/index.d.ts"
       ],
       "./src/notification/dto/send-notification.dto.ts": [
         "./node_modules/date-fns/typings.d.ts"
@@ -15479,11 +15488,14 @@
       "./src/configs/mailer.config.ts": [
         "./node_modules/@nestjs-modules/mailer/index.d.ts"
       ],
-      "./src/configs/typeorm.config.ts.ts": [
+      "./src/configs/typeorm.config.ts": [
         "./node_modules/@nestjs/typeorm/index.d.ts"
       ],
       "./src/main.ts": [
         "./node_modules/reflect-metadata/index.d.ts"
+      ],
+      "./src/migrations/1620060574971-SeedDays.ts": [
+        "./node_modules/typeorm/index.d.ts"
       ],
       "./src/notification/entities/notification.entity.ts": [
         "./node_modules/typeorm/index.d.ts",
@@ -16544,9 +16556,10 @@
       "./src/auth/jwt.strategy.ts",
       "./src/auth/local.strategy.ts",
       "./src/configs/mailer.config.ts",
-      "./src/configs/typeorm.config.ts.ts",
+      "./src/configs/typeorm.config.ts",
       "./src/configs/upload.ts",
       "./src/main.ts",
+      "./src/migrations/1620060574971-SeedDays.ts",
       "./src/notification/dto/send-notification.dto.ts",
       "./src/notification/entities/notification.entity.ts",
       "./src/notification/notification.module.ts",

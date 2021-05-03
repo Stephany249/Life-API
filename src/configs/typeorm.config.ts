@@ -4,7 +4,7 @@ import { User } from '../users/entities/user.entity';
 import { Specialist } from '../specialist/entities/specialist.entity';
 import { Notification } from '../notification/entities/notification.entity';
 import { WorkSchedule } from '../work-schedule/entities/work-schedule.entity';
-import { Weekday } from '../work-schedule/entities/weekday';
+import { Weekday } from '../work-schedule/entities/weekday.entity';
 
 export const typeOrmConfig: TypeOrmModuleOptions = {
   type: 'postgres',

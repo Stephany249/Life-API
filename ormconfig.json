@@ -1,0 +1,14 @@
+{
+  "type": "postgres",
+  "host": "localhost",
+  "port": 5432,
+  "username": "pguser",
+  "password": "pgpassword",
+  "database": "Life",
+  "entities": ["./src/**/entities/*.entity.ts"],
+  "migrations": ["./src/migrations/*.ts"],
+  "cli": {
+    "migrationsDir": "./src/migrations/"
+  }
+}
+
