@@ -9,7 +9,7 @@ import { SpecialistModule } from './specialist/specialist.module';
 import { UsersModule } from './users/users.module';
 import { AuthModule } from './auth/auth.module';
 import { NotificationModule } from './notification/notification.module';
-import { WorkingModule } from './working/working.module';
+import { WorkScheduleModule } from './work-schedule/work-schedule.module';
 
 //  Configs
 import { mailerConfig } from './configs/mailer.config';
@@ -22,7 +22,7 @@ import { mailerConfig } from './configs/mailer.config';
     SpecialistModule,
     AuthModule,
     NotificationModule,
-    WorkingModule,
+    WorkScheduleModule,
   ],
 })
 export class AppModule {}

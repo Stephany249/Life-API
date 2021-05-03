@@ -3021,13 +3021,18 @@
         "signature": "201ffb9f7bacee91150c59793ef14c7f6060281cc6a34a170d828218098805a8",
         "affectsGlobalScope": false
       },
-      "./src/working/entities/working.entity.ts": {
-        "version": "b26248651a0a8c7ba860f0851cdec8156f627750ce0fc3b0eebdfd1972e56a5b",
-        "signature": "be980457a8906019c8b5315f6d650a09ad3d05532f462dec1323c5cb68df4f6a",
+      "./src/work-schedule/entities/weekday.ts": {
+        "version": "881fdbac59117e40ad8489b43bbf610d07859d79211539d0a43a19b139295102",
+        "signature": "0c73fd9dd6f7f57443190d71a263ae13d32dd77cbd443fb2c9a170d4f0502b66",
+        "affectsGlobalScope": false
+      },
+      "./src/work-schedule/entities/work-schedule.entity.ts": {
+        "version": "fee0f2e7bdba4f462e05c00c5b7ae802b4d78bf1271abfc74862063289a4a20b",
+        "signature": "ec47a957348a97d67e0bf8c59ebee52b93a203c9e8716c549f43d1dba8103934",
         "affectsGlobalScope": false
       },
       "./src/configs/typeorm.config.ts.ts": {
-        "version": "b466d8137141ebecfdae5a95d6072cd269b4d4b295e3c165f5730287d7905435",
+        "version": "a60e758d3f5c8592c2fa0c5174564d13274a8dcb4f8b45aef9818e3ba90cb6e1",
         "signature": "e48d1e836452920a823efe3c1f15dbaa531cbb2c536b3d47ad06ed5201a8b847",
         "affectsGlobalScope": false
       },
@@ -4556,29 +4561,34 @@
         "signature": "a28b5c0c372fb375910b3fe3c3ce4331509bc18ccef7cc39c9ee9d8daf8225d1",
         "affectsGlobalScope": false
       },
-      "./src/working/dto/create-working.dto.ts": {
-        "version": "3ebb53e120e081d2d1e1190b75333fdc247f92e68dc673274c33bf37eca84507",
-        "signature": "d5701334c5a0ed4ea84b8c28a44d5e20173e11783d8ed0cc687b289e314abba3",
+      "./src/work-schedule/dto/create-working.dto.ts": {
+        "version": "0917335008a04819f762d7fe1bb25eee5a9019f70ecd3c3f018d612efe1a763e",
+        "signature": "00f9f513bc223bd73da4871dbd51ea28a88efd7af52c64a2f00b8b090f3bb147",
         "affectsGlobalScope": false
       },
-      "./src/working/working.repository.ts": {
-        "version": "71a39f8accce4168ec16ad0c6d17357e13dcec12fd17303ed59ff2c857a1a165",
-        "signature": "4ab352c886d0b10f00d7deef0e1eecc92e7ca0359f88cc9adcfea6c95b047dea",
+      "./src/work-schedule/dto/create-list-working.dto.ts": {
+        "version": "ecb46ea93d6c56299498eabcda3a868be6351f694f393c044bdc5eacbfaf1644",
+        "signature": "af16521a3ab642c4db2a1581d76e614678514473ea38b26c3558db85c83615d6",
         "affectsGlobalScope": false
       },
-      "./src/working/working.service.ts": {
-        "version": "c7b777ea2af8628fe156c74da1ceea062e86216ecd46b856ae5cd98d9c152cd4",
-        "signature": "4c82024c678276572002f1d2bbf9a8230476d90f6f1f63632725ca7b074beaab",
+      "./src/work-schedule/work-schedule.repository.ts": {
+        "version": "a7350eb6aa30e882c48e0d364d16de515c580126af0b9f5845018c409643faf2",
+        "signature": "4934aea269a7bd6e3ea06a34fb4812b047fd28ae3228487d90c2f0fd5aff07f9",
         "affectsGlobalScope": false
       },
-      "./src/working/working.controller.ts": {
-        "version": "523b5d043f0e6d27b86c1ed23f06812a02e96af6e572a372b1a2ce9f9c7c60dd",
-        "signature": "1a72a6c88095dc8169c3f27eb479ff1f6c77aea64061e22d7438f1ff8d787c65",
+      "./src/work-schedule/work-schedule.service.ts": {
+        "version": "4d5846e613096849c275af5d16680d0e4cafb2378ccdbd3702b875a3f0c09ca5",
+        "signature": "26fa696b290002cc88ad02ce72d03505bf7c9d250623210f53a46392291a7b8d",
         "affectsGlobalScope": false
       },
-      "./src/working/working.module.ts": {
-        "version": "9344bf3ed576a272a053fec09cb20f02b6e8872698cc26dc6532dec8e22efd68",
-        "signature": "71ffb4408bb41707cd0dd1cd845ed6f6ee9820dfaa28648c931d1792daa100a3",
+      "./src/work-schedule/work-schedule.controller.ts": {
+        "version": "a9c049268ed0b070c8b1bf23d55592cccd8bb2e83004146e1495fdfe3baaa5a7",
+        "signature": "4c5af3902de3663ea84ed87dcead729c2b2e9d1f9afd5b9f22ca4bf406fd2a99",
+        "affectsGlobalScope": false
+      },
+      "./src/work-schedule/work-schedule.module.ts": {
+        "version": "6525a8da5afcecc934d9ff9581561c31ef8d875426dc6f6ae3dd1fd838ba9750",
+        "signature": "90e9c2984d28e8b81964eb43c2107b92f0fd05350afeb28c70ba34c6bf359403",
         "affectsGlobalScope": false
       },
       "./node_modules/handlebars/types/index.d.ts": {
@@ -4602,7 +4612,7 @@
         "affectsGlobalScope": false
       },
       "./src/app.module.ts": {
-        "version": "3849979a106859d1d5a809f61640f8c38612d86bb136c7b334f670c58a23658f",
+        "version": "07d3331f27ca2016a312eac0c71e27abd64fac7984976852bdcd54ee847411b2",
         "signature": "b82491e2990291580288c5602d4c017238977749d52b17391f0e45d9a29be644",
         "affectsGlobalScope": false
       },
@@ -10087,7 +10097,7 @@
         "./src/notification/notification.module.ts",
         "./src/specialist/specialist.module.ts",
         "./src/users/users.module.ts",
-        "./src/working/working.module.ts"
+        "./src/work-schedule/work-schedule.module.ts"
       ],
       "./src/auth/auth.controller.ts": [
         "./node_modules/@nestjs/common/index.d.ts",
@@ -10170,7 +10180,8 @@
         "./src/notification/entities/notification.entity.ts",
         "./src/specialist/entities/specialist.entity.ts",
         "./src/users/entities/user.entity.ts",
-        "./src/working/entities/working.entity.ts"
+        "./src/work-schedule/entities/weekday.ts",
+        "./src/work-schedule/entities/work-schedule.entity.ts"
       ],
       "./src/configs/upload.ts": [
         "./node_modules/@types/node/crypto.d.ts",
@@ -10324,44 +10335,54 @@
         "./src/users/entities/user.entity.ts",
         "./src/users/users.repository.ts"
       ],
-      "./src/working/dto/create-working.dto.ts": [
+      "./src/work-schedule/dto/create-list-working.dto.ts": [
+        "./node_modules/@nestjs/swagger/index.d.ts",
+        "./node_modules/date-fns/typings.d.ts"
+      ],
+      "./src/work-schedule/dto/create-working.dto.ts": [
         "./node_modules/@nestjs/swagger/index.d.ts",
         "./node_modules/class-validator/types/index.d.ts",
         "./node_modules/date-fns/typings.d.ts"
       ],
-      "./src/working/entities/working.entity.ts": [
-        "./node_modules/class-transformer/types/index.d.ts",
+      "./src/work-schedule/entities/weekday.ts": [
+        "./node_modules/date-fns/typings.d.ts",
+        "./node_modules/typeorm/index.d.ts"
+      ],
+      "./src/work-schedule/entities/work-schedule.entity.ts": [
         "./node_modules/date-fns/typings.d.ts",
         "./node_modules/typeorm/index.d.ts",
-        "./src/specialist/entities/specialist.entity.ts"
+        "./src/specialist/entities/specialist.entity.ts",
+        "./src/work-schedule/entities/weekday.ts"
       ],
-      "./src/working/working.controller.ts": [
+      "./src/work-schedule/work-schedule.controller.ts": [
         "./node_modules/@nestjs/common/index.d.ts",
         "./node_modules/date-fns/typings.d.ts",
         "./src/auth/guard/jwt-auth.guard.ts",
-        "./src/working/dto/create-working.dto.ts",
-        "./src/working/working.service.ts"
+        "./src/work-schedule/dto/create-list-working.dto.ts",
+        "./src/work-schedule/dto/create-working.dto.ts",
+        "./src/work-schedule/work-schedule.service.ts"
       ],
-      "./src/working/working.module.ts": [
+      "./src/work-schedule/work-schedule.module.ts": [
         "./node_modules/@nestjs/common/index.d.ts",
         "./node_modules/@nestjs/typeorm/index.d.ts",
         "./node_modules/date-fns/typings.d.ts",
-        "./src/working/working.controller.ts",
-        "./src/working/working.repository.ts",
-        "./src/working/working.service.ts"
+        "./src/work-schedule/work-schedule.controller.ts",
+        "./src/work-schedule/work-schedule.repository.ts",
+        "./src/work-schedule/work-schedule.service.ts"
       ],
-      "./src/working/working.repository.ts": [
+      "./src/work-schedule/work-schedule.repository.ts": [
         "./node_modules/@nestjs/common/index.d.ts",
         "./node_modules/date-fns/typings.d.ts",
         "./node_modules/typeorm/index.d.ts",
-        "./src/working/dto/create-working.dto.ts",
-        "./src/working/entities/working.entity.ts"
+        "./src/work-schedule/dto/create-working.dto.ts",
+        "./src/work-schedule/entities/work-schedule.entity.ts"
       ],
-      "./src/working/working.service.ts": [
+      "./src/work-schedule/work-schedule.service.ts": [
         "./node_modules/@nestjs/common/index.d.ts",
         "./node_modules/date-fns/typings.d.ts",
-        "./src/working/dto/create-working.dto.ts",
-        "./src/working/working.repository.ts"
+        "./src/work-schedule/dto/create-list-working.dto.ts",
+        "./src/work-schedule/dto/create-working.dto.ts",
+        "./src/work-schedule/work-schedule.repository.ts"
       ]
     },
     "exportedModulesMap": {
@@ -15526,22 +15547,30 @@
         "./src/users/entities/user.entity.ts",
         "./src/users/users.repository.ts"
       ],
-      "./src/working/entities/working.entity.ts": [
+      "./src/work-schedule/entities/weekday.ts": [
+        "./node_modules/typeorm/index.d.ts"
+      ],
+      "./src/work-schedule/entities/work-schedule.entity.ts": [
         "./node_modules/typeorm/index.d.ts",
-        "./src/specialist/entities/specialist.entity.ts"
+        "./src/specialist/entities/specialist.entity.ts",
+        "./src/work-schedule/entities/weekday.ts"
       ],
-      "./src/working/working.controller.ts": [
-        "./src/working/dto/create-working.dto.ts",
-        "./src/working/working.service.ts"
+      "./src/work-schedule/work-schedule.controller.ts": [
+        "./src/work-schedule/dto/create-list-working.dto.ts",
+        "./src/work-schedule/dto/create-working.dto.ts",
+        "./src/work-schedule/entities/work-schedule.entity.ts",
+        "./src/work-schedule/work-schedule.service.ts"
       ],
-      "./src/working/working.repository.ts": [
+      "./src/work-schedule/work-schedule.repository.ts": [
         "./node_modules/typeorm/index.d.ts",
-        "./src/working/dto/create-working.dto.ts",
-        "./src/working/entities/working.entity.ts"
+        "./src/work-schedule/dto/create-working.dto.ts",
+        "./src/work-schedule/entities/work-schedule.entity.ts"
       ],
-      "./src/working/working.service.ts": [
-        "./src/working/dto/create-working.dto.ts",
-        "./src/working/working.repository.ts"
+      "./src/work-schedule/work-schedule.service.ts": [
+        "./src/work-schedule/dto/create-list-working.dto.ts",
+        "./src/work-schedule/dto/create-working.dto.ts",
+        "./src/work-schedule/entities/work-schedule.entity.ts",
+        "./src/work-schedule/work-schedule.repository.ts"
       ]
     },
     "semanticDiagnosticsPerFile": [
@@ -16538,12 +16567,14 @@
       "./src/users/users.module.ts",
       "./src/users/users.repository.ts",
       "./src/users/users.service.ts",
-      "./src/working/dto/create-working.dto.ts",
-      "./src/working/entities/working.entity.ts",
-      "./src/working/working.controller.ts",
-      "./src/working/working.module.ts",
-      "./src/working/working.repository.ts",
-      "./src/working/working.service.ts"
+      "./src/work-schedule/dto/create-list-working.dto.ts",
+      "./src/work-schedule/dto/create-working.dto.ts",
+      "./src/work-schedule/entities/weekday.ts",
+      "./src/work-schedule/entities/work-schedule.entity.ts",
+      "./src/work-schedule/work-schedule.controller.ts",
+      "./src/work-schedule/work-schedule.module.ts",
+      "./src/work-schedule/work-schedule.repository.ts",
+      "./src/work-schedule/work-schedule.service.ts"
     ]
   },
   "version": "4.2.4"

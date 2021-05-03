@@ -1,4 +1,3 @@
-import { Expose } from 'class-transformer';
 import { Specialist } from '../../specialist/entities/specialist.entity';
 import {
   BaseEntity,
@@ -9,15 +8,21 @@ import {
   JoinColumn,
   ManyToOne,
   Column,
+  OneToMany,
 } from 'typeorm';
+import { Weekday } from './weekday';
 
 @Entity()
-export class Working extends BaseEntity {
+export class WorkSchedule extends BaseEntity {
   @PrimaryGeneratedColumn('increment')
   id: string;
 
-  @Column({ nullable: false, type: 'varchar', length: 200 })
-  day: string;
+  @Column({ nullable: false, type: 'int2' })
+  weekdayId: number;
+
+  @ManyToOne(() => Weekday)
+  @JoinColumn({ name: 'weekdayId' })
+  Weekday: Weekday;
 
   @Column({ nullable: false, type: 'varchar', length: 200 })
   from: string;
