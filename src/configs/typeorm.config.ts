@@ -5,6 +5,8 @@ import { Specialist } from '../specialist/entities/specialist.entity';
 import { Notification } from '../notification/entities/notification.entity';
 import { WorkSchedule } from '../work-schedule/entities/work-schedule.entity';
 import { Weekday } from '../work-schedule/entities/weekday.entity';
+import { Questions } from '../questionsAndAnswers/entities/questions.entity';
+import { Answers } from '../questionsAndAnswers/entities/answers.entity';
 
 export const typeOrmConfig: TypeOrmModuleOptions = {
   type: 'postgres',
@@ -13,6 +15,14 @@ export const typeOrmConfig: TypeOrmModuleOptions = {
   username: 'pguser',
   password: 'pgpassword',
   database: 'Life',
-  entities: [User, Specialist, Notification, Weekday, WorkSchedule],
+  entities: [
+    User,
+    Specialist,
+    Notification,
+    Weekday,
+    WorkSchedule,
+    Questions,
+    Answers,
+  ],
   synchronize: true,
 };

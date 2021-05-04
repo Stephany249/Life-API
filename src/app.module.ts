@@ -1,3 +1,4 @@
+import { QuestionsAndAnswersModule } from './questionsAndAnswers/questionsandanswers.module';
 import { Module } from '@nestjs/common';
 
 import { TypeOrmModule } from '@nestjs/typeorm';
@@ -16,6 +17,7 @@ import { mailerConfig } from './configs/mailer.config';
 
 @Module({
   imports: [
+    QuestionsAndAnswersModule,
     TypeOrmModule.forRoot(typeOrmConfig),
     MailerModule.forRoot(mailerConfig),
     UsersModule,

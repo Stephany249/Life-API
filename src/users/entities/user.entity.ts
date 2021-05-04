@@ -1,9 +1,7 @@
-import { Expose } from 'class-transformer';
 import {
   BaseEntity,
   Entity,
   Unique,
-  PrimaryColumn,
   Column,
   CreateDateColumn,
   UpdateDateColumn,

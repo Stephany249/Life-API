@@ -2871,169 +2871,59 @@
         "signature": "8f1241f5d9f0d3d72117768b3c974e462840fbd85026fb66685078945404cf2f",
         "affectsGlobalScope": false
       },
-      "./node_modules/class-transformer/types/interfaces/decorator-options/expose-options.interface.d.ts": {
-        "version": "f11f9ebb146ec035ab0e81a0ccb25264a5ca094dfeb0e69cb319d340a16966f6",
-        "signature": "f11f9ebb146ec035ab0e81a0ccb25264a5ca094dfeb0e69cb319d340a16966f6",
+      "./src/roles/rolesQuestions.enum.ts": {
+        "version": "2ab6d97e45cc7727d406c798ba5ab31ed5c9d6a947157c1ee170c7bdf39ce89a",
+        "signature": "ff02c52a0c4c44eefb88eb94f4cb7f5c4bbccdc9e6731f42c2e7bb9686d1c456",
         "affectsGlobalScope": false
       },
-      "./node_modules/class-transformer/types/interfaces/decorator-options/exclude-options.interface.d.ts": {
-        "version": "5d470930bf6142d7cbda81c157869024527dc7911ba55d90b8387ef6e1585aa1",
-        "signature": "5d470930bf6142d7cbda81c157869024527dc7911ba55d90b8387ef6e1585aa1",
+      "./src/questionsAndAnswers/entities/questions.entity.ts": {
+        "version": "66e98597e5bd7d64e046f4ae94ec81ea4533d4eb1358a8f0ce3edf378b1a7cd4",
+        "signature": "5513839f003efc6deeca585d28b168b9b35765057c3c8455455dd80bf29cc83f",
         "affectsGlobalScope": false
       },
-      "./node_modules/class-transformer/types/interfaces/decorator-options/transform-options.interface.d.ts": {
-        "version": "01897098acd104c4af64e96f92a826a5875a85ecc72d91dc634bf0d69289ebc1",
-        "signature": "01897098acd104c4af64e96f92a826a5875a85ecc72d91dc634bf0d69289ebc1",
+      "./src/questionsAndAnswers/entities/answers.entity.ts": {
+        "version": "c5b64bf465bd8fe8ce3c9c102ef7f85bc42a3450bab332fc55eee69efaba74e7",
+        "signature": "82c16075db9b96659242ab3a872bf7c2377505b41f763d67b55321f517bffe21",
         "affectsGlobalScope": false
       },
-      "./node_modules/class-transformer/types/interfaces/decorator-options/type-discriminator-descriptor.interface.d.ts": {
-        "version": "b7e6a6a3495301360edb9e1474702db73d18be7803b3f5c6c05571212acccd16",
-        "signature": "b7e6a6a3495301360edb9e1474702db73d18be7803b3f5c6c05571212acccd16",
+      "./src/questionsAndAnswers/answers.repository.ts": {
+        "version": "332a69858868dc09e9219f9f3685ebcb3ff5c629ab48ae941bc9fca0a7fd7650",
+        "signature": "7d8697611638a3a3ac26b49100741be8ef0c011f057d65239ab8fdcd154b2731",
         "affectsGlobalScope": false
       },
-      "./node_modules/class-transformer/types/interfaces/decorator-options/type-options.interface.d.ts": {
-        "version": "aa7527285c94043f21baf6e337bc60a92c20b6efaa90859473f6476954ac5f79",
-        "signature": "aa7527285c94043f21baf6e337bc60a92c20b6efaa90859473f6476954ac5f79",
+      "./src/questionsAndAnswers/question.repository.ts": {
+        "version": "55120e8a32a055215e41b3007eabe960fcc40622b4a2f2c2005b3d0d8812d358",
+        "signature": "91bc53dfedb81e45c8165d5d06c25beed40e741588c17b0e24b3af255688bed2",
         "affectsGlobalScope": false
       },
-      "./node_modules/class-transformer/types/interfaces/metadata/exclude-metadata.interface.d.ts": {
-        "version": "dd3be6d9dcd79e46d192175a756546630f2dc89dab28073823c936557b977f26",
-        "signature": "dd3be6d9dcd79e46d192175a756546630f2dc89dab28073823c936557b977f26",
+      "./node_modules/@nestjs/passport/dist/abstract.strategy.d.ts": {
+        "version": "ba63131c5e91f797736444933af16ffa42f9f8c150d859ec65f568f037a416ea",
+        "signature": "ba63131c5e91f797736444933af16ffa42f9f8c150d859ec65f568f037a416ea",
         "affectsGlobalScope": false
       },
-      "./node_modules/class-transformer/types/interfaces/metadata/expose-metadata.interface.d.ts": {
-        "version": "8d0566152618a1da6536c75a5659c139522d67c63a9ae27e8228d76ab0420584",
-        "signature": "8d0566152618a1da6536c75a5659c139522d67c63a9ae27e8228d76ab0420584",
+      "./node_modules/@nestjs/passport/dist/interfaces/auth-module.options.d.ts": {
+        "version": "142e2e1abd8603dfdeaa1c88d73003a7912aa949b3a19234fa91f729ebfa2fcc",
+        "signature": "142e2e1abd8603dfdeaa1c88d73003a7912aa949b3a19234fa91f729ebfa2fcc",
         "affectsGlobalScope": false
       },
-      "./node_modules/class-transformer/types/enums/transformation-type.enum.d.ts": {
-        "version": "ba06bf784edafe0db0e2bd1f6ecf3465b81f6b1819871bf190a0e0137b5b7f18",
-        "signature": "ba06bf784edafe0db0e2bd1f6ecf3465b81f6b1819871bf190a0e0137b5b7f18",
+      "./node_modules/@nestjs/passport/dist/interfaces/type.interface.d.ts": {
+        "version": "340a45cd77b41d8a6deda248167fa23d3dc67ec798d411bd282f7b3d555b1695",
+        "signature": "340a45cd77b41d8a6deda248167fa23d3dc67ec798d411bd282f7b3d555b1695",
         "affectsGlobalScope": false
       },
-      "./node_modules/class-transformer/types/enums/index.d.ts": {
-        "version": "a0500233cb989bcb78f5f1a81f51eabc06b5c39e3042c560a7489f022f1f55a3",
-        "signature": "a0500233cb989bcb78f5f1a81f51eabc06b5c39e3042c560a7489f022f1f55a3",
+      "./node_modules/@nestjs/passport/dist/interfaces/index.d.ts": {
+        "version": "0e9aa853b5eb2ca09e0e3e3eb94cbd1d5fb3d682ab69817d4d11fe225953fc57",
+        "signature": "0e9aa853b5eb2ca09e0e3e3eb94cbd1d5fb3d682ab69817d4d11fe225953fc57",
         "affectsGlobalScope": false
       },
-      "./node_modules/class-transformer/types/interfaces/target-map.interface.d.ts": {
-        "version": "220508b3fb6b773f49d8fb0765b04f90ef15caacf0f3d260e3412ed38f71ef09",
-        "signature": "220508b3fb6b773f49d8fb0765b04f90ef15caacf0f3d260e3412ed38f71ef09",
+      "./node_modules/@nestjs/passport/dist/auth.guard.d.ts": {
+        "version": "ffa1885ad546522fa1046644db93b17de7a29191a547edeeac57391909a73846",
+        "signature": "ffa1885ad546522fa1046644db93b17de7a29191a547edeeac57391909a73846",
         "affectsGlobalScope": false
       },
-      "./node_modules/class-transformer/types/interfaces/class-transformer-options.interface.d.ts": {
-        "version": "cdc28bdf0971731024c1ae0fd739e2e3411d460d9c9ae055ac28777f248dfba6",
-        "signature": "cdc28bdf0971731024c1ae0fd739e2e3411d460d9c9ae055ac28777f248dfba6",
-        "affectsGlobalScope": false
-      },
-      "./node_modules/class-transformer/types/interfaces/metadata/transform-fn-params.interface.d.ts": {
-        "version": "e56427c055602078cbf0e58e815960541136388f4fc62554813575508def98b6",
-        "signature": "e56427c055602078cbf0e58e815960541136388f4fc62554813575508def98b6",
-        "affectsGlobalScope": false
-      },
-      "./node_modules/class-transformer/types/interfaces/metadata/transform-metadata.interface.d.ts": {
-        "version": "1f58b0676a80db38df1ce19d15360c20ce9e983b35298a5d0b4aa4eb4fb67e0f",
-        "signature": "1f58b0676a80db38df1ce19d15360c20ce9e983b35298a5d0b4aa4eb4fb67e0f",
-        "affectsGlobalScope": false
-      },
-      "./node_modules/class-transformer/types/interfaces/metadata/type-metadata.interface.d.ts": {
-        "version": "3d67e7eb73c6955ee27f1d845cae88923f75c8b0830d4b5440eea2339958e8ec",
-        "signature": "3d67e7eb73c6955ee27f1d845cae88923f75c8b0830d4b5440eea2339958e8ec",
-        "affectsGlobalScope": false
-      },
-      "./node_modules/class-transformer/types/interfaces/class-constructor.type.d.ts": {
-        "version": "11fec302d58b56033ab07290a3abc29e9908e29d504db9468544b15c4cd7670d",
-        "signature": "11fec302d58b56033ab07290a3abc29e9908e29d504db9468544b15c4cd7670d",
-        "affectsGlobalScope": false
-      },
-      "./node_modules/class-transformer/types/interfaces/type-help-options.interface.d.ts": {
-        "version": "c66d6817c931633650edf19a8644eea61aeeb84190c7219911cefa8ddea8bd9a",
-        "signature": "c66d6817c931633650edf19a8644eea61aeeb84190c7219911cefa8ddea8bd9a",
-        "affectsGlobalScope": false
-      },
-      "./node_modules/class-transformer/types/interfaces/index.d.ts": {
-        "version": "ab1359707e4fc610c5f37f1488063af65cda3badca6b692d44b95e8380e0f6c2",
-        "signature": "ab1359707e4fc610c5f37f1488063af65cda3badca6b692d44b95e8380e0f6c2",
-        "affectsGlobalScope": false
-      },
-      "./node_modules/class-transformer/types/ClassTransformer.d.ts": {
-        "version": "11f8380b827bc4bd2665651f1f6874ba4e6e5b498873ab9f376da576ff58aa7d",
-        "signature": "11f8380b827bc4bd2665651f1f6874ba4e6e5b498873ab9f376da576ff58aa7d",
-        "affectsGlobalScope": false
-      },
-      "./node_modules/class-transformer/types/decorators/exclude.decorator.d.ts": {
-        "version": "d80ffdd55e7f4bc69cde66933582b8592d3736d3b0d1d8cc63995a7b2bcca579",
-        "signature": "d80ffdd55e7f4bc69cde66933582b8592d3736d3b0d1d8cc63995a7b2bcca579",
-        "affectsGlobalScope": false
-      },
-      "./node_modules/class-transformer/types/decorators/expose.decorator.d.ts": {
-        "version": "c9b71952b2178e8737b63079dba30e1b29872240b122905cbaba756cb60b32f5",
-        "signature": "c9b71952b2178e8737b63079dba30e1b29872240b122905cbaba756cb60b32f5",
-        "affectsGlobalScope": false
-      },
-      "./node_modules/class-transformer/types/decorators/transform-class-to-class.decorator.d.ts": {
-        "version": "d214bc31793fb7ff77032308ac53f5e73260a77aecc1ac9fd276dff030c9281f",
-        "signature": "d214bc31793fb7ff77032308ac53f5e73260a77aecc1ac9fd276dff030c9281f",
-        "affectsGlobalScope": false
-      },
-      "./node_modules/class-transformer/types/decorators/transform-class-to-plain.decorator.d.ts": {
-        "version": "da1fbedeb2962d086e3398b1ac87976d6f1282cb3e5e87c1336aa46d69c2c1cc",
-        "signature": "da1fbedeb2962d086e3398b1ac87976d6f1282cb3e5e87c1336aa46d69c2c1cc",
-        "affectsGlobalScope": false
-      },
-      "./node_modules/class-transformer/types/decorators/transform-plain-to-class.decorator.d.ts": {
-        "version": "20515f70e7fd3cdd6cf05ac0a72588b61183a909b611d3bdbe57743bcd65445e",
-        "signature": "20515f70e7fd3cdd6cf05ac0a72588b61183a909b611d3bdbe57743bcd65445e",
-        "affectsGlobalScope": false
-      },
-      "./node_modules/class-transformer/types/decorators/transform.decorator.d.ts": {
-        "version": "026726932a4964341ab8544f12b912c8dfaa388d2936b71cc3eca0cffb49cc1d",
-        "signature": "026726932a4964341ab8544f12b912c8dfaa388d2936b71cc3eca0cffb49cc1d",
-        "affectsGlobalScope": false
-      },
-      "./node_modules/class-transformer/types/decorators/type.decorator.d.ts": {
-        "version": "83188d037c81bd27076218934ba9e1742ddb69cd8cc64cdb8a554078de38eb12",
-        "signature": "83188d037c81bd27076218934ba9e1742ddb69cd8cc64cdb8a554078de38eb12",
-        "affectsGlobalScope": false
-      },
-      "./node_modules/class-transformer/types/decorators/index.d.ts": {
-        "version": "c490298b35e03ecac14e83a3e701e9284fa87ee285c362475b063e437385d362",
-        "signature": "c490298b35e03ecac14e83a3e701e9284fa87ee285c362475b063e437385d362",
-        "affectsGlobalScope": false
-      },
-      "./node_modules/class-transformer/types/index.d.ts": {
-        "version": "d90445b6258429107e0ebd116bc5476ebe155df2206f70aadf058ba28f092db8",
-        "signature": "d90445b6258429107e0ebd116bc5476ebe155df2206f70aadf058ba28f092db8",
-        "affectsGlobalScope": false
-      },
-      "./src/users/entities/user.entity.ts": {
-        "version": "13f5f38b9cac5c6b1b1f02533bc467fed11c393f22ceaac6665545cbe63cff2e",
-        "signature": "f4e941e2c88c797eb78c6d2d0bad58b6362a52a20e0d7edc01ef498117af046d",
-        "affectsGlobalScope": false
-      },
-      "./src/specialist/entities/specialist.entity.ts": {
-        "version": "a26c93204f191f6eef156aab3d2d29a80eb440a9b6f3f18decd697d5d54f146e",
-        "signature": "e64ca9de9b6560c4d461ee8f26ce9814058093b3cecc992b50a088b2b5b82f85",
-        "affectsGlobalScope": false
-      },
-      "./src/notification/entities/notification.entity.ts": {
-        "version": "f8750e7f61573d034be3049d3f08beb426af798894eea3962dda110dbd337612",
-        "signature": "201ffb9f7bacee91150c59793ef14c7f6060281cc6a34a170d828218098805a8",
-        "affectsGlobalScope": false
-      },
-      "./src/work-schedule/entities/weekday.ts": {
-        "version": "881fdbac59117e40ad8489b43bbf610d07859d79211539d0a43a19b139295102",
-        "signature": "0c73fd9dd6f7f57443190d71a263ae13d32dd77cbd443fb2c9a170d4f0502b66",
-        "affectsGlobalScope": false
-      },
-      "./src/work-schedule/entities/work-schedule.entity.ts": {
-        "version": "72f3fc0004eb6906acc62f2440f02115ee4cf52e8a4dc893706d16ed12a407d8",
-        "signature": "ec47a957348a97d67e0bf8c59ebee52b93a203c9e8716c549f43d1dba8103934",
-        "affectsGlobalScope": false
-      },
-      "./src/configs/typeorm.config.ts": {
-        "version": "67ace89e4c9866fb761681b0d987113a4a75ba66ab00aef8883fc0590387262d",
-        "signature": "e48d1e836452920a823efe3c1f15dbaa531cbb2c536b3d47ad06ed5201a8b847",
+      "./node_modules/@nestjs/passport/dist/passport.module.d.ts": {
+        "version": "793c353144f16601da994fa4e62c09b7525836ce999c44f69c28929072ca206a",
+        "signature": "793c353144f16601da994fa4e62c09b7525836ce999c44f69c28929072ca206a",
         "affectsGlobalScope": false
       },
       "./node_modules/@types/node/globals.d.ts": {
@@ -3264,6 +3154,121 @@
       "./node_modules/@types/node/index.d.ts": {
         "version": "9c4c395e927045b324877acdc4bfb95f128f36bc9f073266a2f0342495075a4f",
         "signature": "9c4c395e927045b324877acdc4bfb95f128f36bc9f073266a2f0342495075a4f",
+        "affectsGlobalScope": false
+      },
+      "./node_modules/@types/range-parser/index.d.ts": {
+        "version": "4e88b833be14c7f384e0dcd57bb30acd799e8e34d212635d693e41a75a71164b",
+        "signature": "4e88b833be14c7f384e0dcd57bb30acd799e8e34d212635d693e41a75a71164b",
+        "affectsGlobalScope": false
+      },
+      "./node_modules/@types/qs/index.d.ts": {
+        "version": "98437d5a640b67c41534f0de2dcb64c75433dcdff54ff8f8432e613663619a2e",
+        "signature": "98437d5a640b67c41534f0de2dcb64c75433dcdff54ff8f8432e613663619a2e",
+        "affectsGlobalScope": false
+      },
+      "./node_modules/@types/express-serve-static-core/index.d.ts": {
+        "version": "e41a1ce538d71d5a3389b7fc2e39c15a4972f0d4cb14bf2fe8cda8c361150028",
+        "signature": "e41a1ce538d71d5a3389b7fc2e39c15a4972f0d4cb14bf2fe8cda8c361150028",
+        "affectsGlobalScope": true
+      },
+      "./node_modules/@types/mime/index.d.ts": {
+        "version": "84e3bbd6f80983d468260fdbfeeb431cc81f7ea98d284d836e4d168e36875e86",
+        "signature": "84e3bbd6f80983d468260fdbfeeb431cc81f7ea98d284d836e4d168e36875e86",
+        "affectsGlobalScope": false
+      },
+      "./node_modules/@types/serve-static/index.d.ts": {
+        "version": "3b02517f9be71f255eadab9892406055d069167891f1e1ea16c96c4ff1ddda01",
+        "signature": "3b02517f9be71f255eadab9892406055d069167891f1e1ea16c96c4ff1ddda01",
+        "affectsGlobalScope": false
+      },
+      "./node_modules/@types/connect/index.d.ts": {
+        "version": "81c14b89fa607b86dd726e2e3e91360cf8155ce97468404324d404a5bd65b2eb",
+        "signature": "81c14b89fa607b86dd726e2e3e91360cf8155ce97468404324d404a5bd65b2eb",
+        "affectsGlobalScope": false
+      },
+      "./node_modules/@types/body-parser/index.d.ts": {
+        "version": "ebddbd167c2fabd0151f50e5df94ca6d845149c47521280d8867afe3429dd078",
+        "signature": "ebddbd167c2fabd0151f50e5df94ca6d845149c47521280d8867afe3429dd078",
+        "affectsGlobalScope": false
+      },
+      "./node_modules/@types/express/index.d.ts": {
+        "version": "3b05c396564e51753e921e1cc4aae1cf7cd9be53c891cf2e81fa29f11c0bd373",
+        "signature": "3b05c396564e51753e921e1cc4aae1cf7cd9be53c891cf2e81fa29f11c0bd373",
+        "affectsGlobalScope": false
+      },
+      "./node_modules/@types/passport/index.d.ts": {
+        "version": "d504adcb8e0c47a5e8863da80db139e680b349842bd7c9d4518d2a1019c140a7",
+        "signature": "d504adcb8e0c47a5e8863da80db139e680b349842bd7c9d4518d2a1019c140a7",
+        "affectsGlobalScope": true
+      },
+      "./node_modules/@nestjs/passport/dist/passport/passport.serializer.d.ts": {
+        "version": "599ac4a84b7aa6a298731179ec1663a623ff8ac324cdc1dabb9c73c1259dc854",
+        "signature": "599ac4a84b7aa6a298731179ec1663a623ff8ac324cdc1dabb9c73c1259dc854",
+        "affectsGlobalScope": false
+      },
+      "./node_modules/@nestjs/passport/dist/passport/passport.strategy.d.ts": {
+        "version": "100509817f7a12b93f2ca4e07c1e3fe7f73ce2cbe2d69b609df2bf35fbbe7cf8",
+        "signature": "100509817f7a12b93f2ca4e07c1e3fe7f73ce2cbe2d69b609df2bf35fbbe7cf8",
+        "affectsGlobalScope": false
+      },
+      "./node_modules/@nestjs/passport/dist/index.d.ts": {
+        "version": "585bc61f439c027640754dd26e480afa202f33e51db41ee283311a59c12c62e7",
+        "signature": "585bc61f439c027640754dd26e480afa202f33e51db41ee283311a59c12c62e7",
+        "affectsGlobalScope": false
+      },
+      "./node_modules/@nestjs/passport/index.d.ts": {
+        "version": "8f1241f5d9f0d3d72117768b3c974e462840fbd85026fb66685078945404cf2f",
+        "signature": "8f1241f5d9f0d3d72117768b3c974e462840fbd85026fb66685078945404cf2f",
+        "affectsGlobalScope": false
+      },
+      "./src/auth/guard/jwt-auth.guard.ts": {
+        "version": "7bf1086cad4c48a340698638de596b44536330aabcd2889119053c6588f025ad",
+        "signature": "e9629b89f6cd33a040577695d89edf882e66287d30c87121f5fc07f404decd25",
+        "affectsGlobalScope": false
+      },
+      "./src/questionsAndAnswers/questionsandanswers.service.ts": {
+        "version": "97bf7d6eb59574e2396f4a270167416cbebc3e7966c4a156135e45caa56a4a31",
+        "signature": "08fc55a008aa3d259d2c0c9b8f1a69f8204583d1f81a1c3c162b2935fda83130",
+        "affectsGlobalScope": false
+      },
+      "./src/questionsAndAnswers/questionsandanswers.controller.ts": {
+        "version": "28e2b1ad0cb3f257674b976f134f91853b51e07ca9daca0ab5eefaab5811a895",
+        "signature": "774b9355f1f4dade7dbb08b131228a1cf0801ac697f554c7d62254a7633c802d",
+        "affectsGlobalScope": false
+      },
+      "./src/questionsAndAnswers/questionsandanswers.module.ts": {
+        "version": "daf8ae6865afd7e363ff7290831cb39b0ee35bf2cdcb017aa0a347c0f23614e0",
+        "signature": "ce1d1205177948576f53e99775cda9acded9d6e55fdd93450c7d2b1a7c7edc6f",
+        "affectsGlobalScope": false
+      },
+      "./src/users/entities/user.entity.ts": {
+        "version": "5e45f73fe1e61c411fddfab6142b0a83137f4bca1c9b2a9b0e3186584dafccea",
+        "signature": "f4e941e2c88c797eb78c6d2d0bad58b6362a52a20e0d7edc01ef498117af046d",
+        "affectsGlobalScope": false
+      },
+      "./src/specialist/entities/specialist.entity.ts": {
+        "version": "a26c93204f191f6eef156aab3d2d29a80eb440a9b6f3f18decd697d5d54f146e",
+        "signature": "e64ca9de9b6560c4d461ee8f26ce9814058093b3cecc992b50a088b2b5b82f85",
+        "affectsGlobalScope": false
+      },
+      "./src/notification/entities/notification.entity.ts": {
+        "version": "f8750e7f61573d034be3049d3f08beb426af798894eea3962dda110dbd337612",
+        "signature": "201ffb9f7bacee91150c59793ef14c7f6060281cc6a34a170d828218098805a8",
+        "affectsGlobalScope": false
+      },
+      "./src/work-schedule/entities/weekday.entity.ts": {
+        "version": "881fdbac59117e40ad8489b43bbf610d07859d79211539d0a43a19b139295102",
+        "signature": "0c73fd9dd6f7f57443190d71a263ae13d32dd77cbd443fb2c9a170d4f0502b66",
+        "affectsGlobalScope": false
+      },
+      "./src/work-schedule/entities/work-schedule.entity.ts": {
+        "version": "6b0202fabda3ca30be73105c51b363e10f3c2128c0039d6be183859a604df65b",
+        "signature": "b79fcedcea20dbfdfb35d3d81670eaa278f07c081c57c2961900bb760058d099",
+        "affectsGlobalScope": false
+      },
+      "./src/configs/typeorm.config.ts": {
+        "version": "cf8223f02b5db67da88c76b8acc13a03a8c1300a0ba3769e3db7b0096d4bb5be",
+        "signature": "e48d1e836452920a823efe3c1f15dbaa531cbb2c536b3d47ad06ed5201a8b847",
         "affectsGlobalScope": false
       },
       "./node_modules/@types/nodemailer/lib/dkim/index.d.ts": {
@@ -4306,6 +4311,141 @@
         "signature": "b8e0083eb2afa9592dba33d450524d8a66f256a7a111cd7dfd54320af6975d0f",
         "affectsGlobalScope": false
       },
+      "./node_modules/class-transformer/types/interfaces/decorator-options/expose-options.interface.d.ts": {
+        "version": "f11f9ebb146ec035ab0e81a0ccb25264a5ca094dfeb0e69cb319d340a16966f6",
+        "signature": "f11f9ebb146ec035ab0e81a0ccb25264a5ca094dfeb0e69cb319d340a16966f6",
+        "affectsGlobalScope": false
+      },
+      "./node_modules/class-transformer/types/interfaces/decorator-options/exclude-options.interface.d.ts": {
+        "version": "5d470930bf6142d7cbda81c157869024527dc7911ba55d90b8387ef6e1585aa1",
+        "signature": "5d470930bf6142d7cbda81c157869024527dc7911ba55d90b8387ef6e1585aa1",
+        "affectsGlobalScope": false
+      },
+      "./node_modules/class-transformer/types/interfaces/decorator-options/transform-options.interface.d.ts": {
+        "version": "01897098acd104c4af64e96f92a826a5875a85ecc72d91dc634bf0d69289ebc1",
+        "signature": "01897098acd104c4af64e96f92a826a5875a85ecc72d91dc634bf0d69289ebc1",
+        "affectsGlobalScope": false
+      },
+      "./node_modules/class-transformer/types/interfaces/decorator-options/type-discriminator-descriptor.interface.d.ts": {
+        "version": "b7e6a6a3495301360edb9e1474702db73d18be7803b3f5c6c05571212acccd16",
+        "signature": "b7e6a6a3495301360edb9e1474702db73d18be7803b3f5c6c05571212acccd16",
+        "affectsGlobalScope": false
+      },
+      "./node_modules/class-transformer/types/interfaces/decorator-options/type-options.interface.d.ts": {
+        "version": "aa7527285c94043f21baf6e337bc60a92c20b6efaa90859473f6476954ac5f79",
+        "signature": "aa7527285c94043f21baf6e337bc60a92c20b6efaa90859473f6476954ac5f79",
+        "affectsGlobalScope": false
+      },
+      "./node_modules/class-transformer/types/interfaces/metadata/exclude-metadata.interface.d.ts": {
+        "version": "dd3be6d9dcd79e46d192175a756546630f2dc89dab28073823c936557b977f26",
+        "signature": "dd3be6d9dcd79e46d192175a756546630f2dc89dab28073823c936557b977f26",
+        "affectsGlobalScope": false
+      },
+      "./node_modules/class-transformer/types/interfaces/metadata/expose-metadata.interface.d.ts": {
+        "version": "8d0566152618a1da6536c75a5659c139522d67c63a9ae27e8228d76ab0420584",
+        "signature": "8d0566152618a1da6536c75a5659c139522d67c63a9ae27e8228d76ab0420584",
+        "affectsGlobalScope": false
+      },
+      "./node_modules/class-transformer/types/enums/transformation-type.enum.d.ts": {
+        "version": "ba06bf784edafe0db0e2bd1f6ecf3465b81f6b1819871bf190a0e0137b5b7f18",
+        "signature": "ba06bf784edafe0db0e2bd1f6ecf3465b81f6b1819871bf190a0e0137b5b7f18",
+        "affectsGlobalScope": false
+      },
+      "./node_modules/class-transformer/types/enums/index.d.ts": {
+        "version": "a0500233cb989bcb78f5f1a81f51eabc06b5c39e3042c560a7489f022f1f55a3",
+        "signature": "a0500233cb989bcb78f5f1a81f51eabc06b5c39e3042c560a7489f022f1f55a3",
+        "affectsGlobalScope": false
+      },
+      "./node_modules/class-transformer/types/interfaces/target-map.interface.d.ts": {
+        "version": "220508b3fb6b773f49d8fb0765b04f90ef15caacf0f3d260e3412ed38f71ef09",
+        "signature": "220508b3fb6b773f49d8fb0765b04f90ef15caacf0f3d260e3412ed38f71ef09",
+        "affectsGlobalScope": false
+      },
+      "./node_modules/class-transformer/types/interfaces/class-transformer-options.interface.d.ts": {
+        "version": "cdc28bdf0971731024c1ae0fd739e2e3411d460d9c9ae055ac28777f248dfba6",
+        "signature": "cdc28bdf0971731024c1ae0fd739e2e3411d460d9c9ae055ac28777f248dfba6",
+        "affectsGlobalScope": false
+      },
+      "./node_modules/class-transformer/types/interfaces/metadata/transform-fn-params.interface.d.ts": {
+        "version": "e56427c055602078cbf0e58e815960541136388f4fc62554813575508def98b6",
+        "signature": "e56427c055602078cbf0e58e815960541136388f4fc62554813575508def98b6",
+        "affectsGlobalScope": false
+      },
+      "./node_modules/class-transformer/types/interfaces/metadata/transform-metadata.interface.d.ts": {
+        "version": "1f58b0676a80db38df1ce19d15360c20ce9e983b35298a5d0b4aa4eb4fb67e0f",
+        "signature": "1f58b0676a80db38df1ce19d15360c20ce9e983b35298a5d0b4aa4eb4fb67e0f",
+        "affectsGlobalScope": false
+      },
+      "./node_modules/class-transformer/types/interfaces/metadata/type-metadata.interface.d.ts": {
+        "version": "3d67e7eb73c6955ee27f1d845cae88923f75c8b0830d4b5440eea2339958e8ec",
+        "signature": "3d67e7eb73c6955ee27f1d845cae88923f75c8b0830d4b5440eea2339958e8ec",
+        "affectsGlobalScope": false
+      },
+      "./node_modules/class-transformer/types/interfaces/class-constructor.type.d.ts": {
+        "version": "11fec302d58b56033ab07290a3abc29e9908e29d504db9468544b15c4cd7670d",
+        "signature": "11fec302d58b56033ab07290a3abc29e9908e29d504db9468544b15c4cd7670d",
+        "affectsGlobalScope": false
+      },
+      "./node_modules/class-transformer/types/interfaces/type-help-options.interface.d.ts": {
+        "version": "c66d6817c931633650edf19a8644eea61aeeb84190c7219911cefa8ddea8bd9a",
+        "signature": "c66d6817c931633650edf19a8644eea61aeeb84190c7219911cefa8ddea8bd9a",
+        "affectsGlobalScope": false
+      },
+      "./node_modules/class-transformer/types/interfaces/index.d.ts": {
+        "version": "ab1359707e4fc610c5f37f1488063af65cda3badca6b692d44b95e8380e0f6c2",
+        "signature": "ab1359707e4fc610c5f37f1488063af65cda3badca6b692d44b95e8380e0f6c2",
+        "affectsGlobalScope": false
+      },
+      "./node_modules/class-transformer/types/ClassTransformer.d.ts": {
+        "version": "11f8380b827bc4bd2665651f1f6874ba4e6e5b498873ab9f376da576ff58aa7d",
+        "signature": "11f8380b827bc4bd2665651f1f6874ba4e6e5b498873ab9f376da576ff58aa7d",
+        "affectsGlobalScope": false
+      },
+      "./node_modules/class-transformer/types/decorators/exclude.decorator.d.ts": {
+        "version": "d80ffdd55e7f4bc69cde66933582b8592d3736d3b0d1d8cc63995a7b2bcca579",
+        "signature": "d80ffdd55e7f4bc69cde66933582b8592d3736d3b0d1d8cc63995a7b2bcca579",
+        "affectsGlobalScope": false
+      },
+      "./node_modules/class-transformer/types/decorators/expose.decorator.d.ts": {
+        "version": "c9b71952b2178e8737b63079dba30e1b29872240b122905cbaba756cb60b32f5",
+        "signature": "c9b71952b2178e8737b63079dba30e1b29872240b122905cbaba756cb60b32f5",
+        "affectsGlobalScope": false
+      },
+      "./node_modules/class-transformer/types/decorators/transform-class-to-class.decorator.d.ts": {
+        "version": "d214bc31793fb7ff77032308ac53f5e73260a77aecc1ac9fd276dff030c9281f",
+        "signature": "d214bc31793fb7ff77032308ac53f5e73260a77aecc1ac9fd276dff030c9281f",
+        "affectsGlobalScope": false
+      },
+      "./node_modules/class-transformer/types/decorators/transform-class-to-plain.decorator.d.ts": {
+        "version": "da1fbedeb2962d086e3398b1ac87976d6f1282cb3e5e87c1336aa46d69c2c1cc",
+        "signature": "da1fbedeb2962d086e3398b1ac87976d6f1282cb3e5e87c1336aa46d69c2c1cc",
+        "affectsGlobalScope": false
+      },
+      "./node_modules/class-transformer/types/decorators/transform-plain-to-class.decorator.d.ts": {
+        "version": "20515f70e7fd3cdd6cf05ac0a72588b61183a909b611d3bdbe57743bcd65445e",
+        "signature": "20515f70e7fd3cdd6cf05ac0a72588b61183a909b611d3bdbe57743bcd65445e",
+        "affectsGlobalScope": false
+      },
+      "./node_modules/class-transformer/types/decorators/transform.decorator.d.ts": {
+        "version": "026726932a4964341ab8544f12b912c8dfaa388d2936b71cc3eca0cffb49cc1d",
+        "signature": "026726932a4964341ab8544f12b912c8dfaa388d2936b71cc3eca0cffb49cc1d",
+        "affectsGlobalScope": false
+      },
+      "./node_modules/class-transformer/types/decorators/type.decorator.d.ts": {
+        "version": "83188d037c81bd27076218934ba9e1742ddb69cd8cc64cdb8a554078de38eb12",
+        "signature": "83188d037c81bd27076218934ba9e1742ddb69cd8cc64cdb8a554078de38eb12",
+        "affectsGlobalScope": false
+      },
+      "./node_modules/class-transformer/types/decorators/index.d.ts": {
+        "version": "c490298b35e03ecac14e83a3e701e9284fa87ee285c362475b063e437385d362",
+        "signature": "c490298b35e03ecac14e83a3e701e9284fa87ee285c362475b063e437385d362",
+        "affectsGlobalScope": false
+      },
+      "./node_modules/class-transformer/types/index.d.ts": {
+        "version": "d90445b6258429107e0ebd116bc5476ebe155df2206f70aadf058ba28f092db8",
+        "signature": "d90445b6258429107e0ebd116bc5476ebe155df2206f70aadf058ba28f092db8",
+        "affectsGlobalScope": false
+      },
       "./src/users/dto/update-user.dto.ts": {
         "version": "5da9602432b3af2946f0754d98e7cfb33fb91d8fda694ba7613f6b1fd57eb9a5",
         "signature": "e349736c2c1e786119584ea0acd738263eb1932a947c45d105d62e3b958d115f",
@@ -4329,106 +4469,6 @@
       "./src/users/users.service.ts": {
         "version": "f6685521df8226eb7a6793060b55bc91dbd76f0d57869a8d6772aae783633f62",
         "signature": "95661c11f55c5485d60f26d45e9affee962b9f828cc249ecadd9f0af40a182eb",
-        "affectsGlobalScope": false
-      },
-      "./node_modules/@nestjs/passport/dist/abstract.strategy.d.ts": {
-        "version": "ba63131c5e91f797736444933af16ffa42f9f8c150d859ec65f568f037a416ea",
-        "signature": "ba63131c5e91f797736444933af16ffa42f9f8c150d859ec65f568f037a416ea",
-        "affectsGlobalScope": false
-      },
-      "./node_modules/@nestjs/passport/dist/interfaces/auth-module.options.d.ts": {
-        "version": "142e2e1abd8603dfdeaa1c88d73003a7912aa949b3a19234fa91f729ebfa2fcc",
-        "signature": "142e2e1abd8603dfdeaa1c88d73003a7912aa949b3a19234fa91f729ebfa2fcc",
-        "affectsGlobalScope": false
-      },
-      "./node_modules/@nestjs/passport/dist/interfaces/type.interface.d.ts": {
-        "version": "340a45cd77b41d8a6deda248167fa23d3dc67ec798d411bd282f7b3d555b1695",
-        "signature": "340a45cd77b41d8a6deda248167fa23d3dc67ec798d411bd282f7b3d555b1695",
-        "affectsGlobalScope": false
-      },
-      "./node_modules/@nestjs/passport/dist/interfaces/index.d.ts": {
-        "version": "0e9aa853b5eb2ca09e0e3e3eb94cbd1d5fb3d682ab69817d4d11fe225953fc57",
-        "signature": "0e9aa853b5eb2ca09e0e3e3eb94cbd1d5fb3d682ab69817d4d11fe225953fc57",
-        "affectsGlobalScope": false
-      },
-      "./node_modules/@nestjs/passport/dist/auth.guard.d.ts": {
-        "version": "ffa1885ad546522fa1046644db93b17de7a29191a547edeeac57391909a73846",
-        "signature": "ffa1885ad546522fa1046644db93b17de7a29191a547edeeac57391909a73846",
-        "affectsGlobalScope": false
-      },
-      "./node_modules/@nestjs/passport/dist/passport.module.d.ts": {
-        "version": "793c353144f16601da994fa4e62c09b7525836ce999c44f69c28929072ca206a",
-        "signature": "793c353144f16601da994fa4e62c09b7525836ce999c44f69c28929072ca206a",
-        "affectsGlobalScope": false
-      },
-      "./node_modules/@types/range-parser/index.d.ts": {
-        "version": "4e88b833be14c7f384e0dcd57bb30acd799e8e34d212635d693e41a75a71164b",
-        "signature": "4e88b833be14c7f384e0dcd57bb30acd799e8e34d212635d693e41a75a71164b",
-        "affectsGlobalScope": false
-      },
-      "./node_modules/@types/qs/index.d.ts": {
-        "version": "98437d5a640b67c41534f0de2dcb64c75433dcdff54ff8f8432e613663619a2e",
-        "signature": "98437d5a640b67c41534f0de2dcb64c75433dcdff54ff8f8432e613663619a2e",
-        "affectsGlobalScope": false
-      },
-      "./node_modules/@types/express-serve-static-core/index.d.ts": {
-        "version": "e41a1ce538d71d5a3389b7fc2e39c15a4972f0d4cb14bf2fe8cda8c361150028",
-        "signature": "e41a1ce538d71d5a3389b7fc2e39c15a4972f0d4cb14bf2fe8cda8c361150028",
-        "affectsGlobalScope": true
-      },
-      "./node_modules/@types/mime/index.d.ts": {
-        "version": "84e3bbd6f80983d468260fdbfeeb431cc81f7ea98d284d836e4d168e36875e86",
-        "signature": "84e3bbd6f80983d468260fdbfeeb431cc81f7ea98d284d836e4d168e36875e86",
-        "affectsGlobalScope": false
-      },
-      "./node_modules/@types/serve-static/index.d.ts": {
-        "version": "3b02517f9be71f255eadab9892406055d069167891f1e1ea16c96c4ff1ddda01",
-        "signature": "3b02517f9be71f255eadab9892406055d069167891f1e1ea16c96c4ff1ddda01",
-        "affectsGlobalScope": false
-      },
-      "./node_modules/@types/connect/index.d.ts": {
-        "version": "81c14b89fa607b86dd726e2e3e91360cf8155ce97468404324d404a5bd65b2eb",
-        "signature": "81c14b89fa607b86dd726e2e3e91360cf8155ce97468404324d404a5bd65b2eb",
-        "affectsGlobalScope": false
-      },
-      "./node_modules/@types/body-parser/index.d.ts": {
-        "version": "ebddbd167c2fabd0151f50e5df94ca6d845149c47521280d8867afe3429dd078",
-        "signature": "ebddbd167c2fabd0151f50e5df94ca6d845149c47521280d8867afe3429dd078",
-        "affectsGlobalScope": false
-      },
-      "./node_modules/@types/express/index.d.ts": {
-        "version": "3b05c396564e51753e921e1cc4aae1cf7cd9be53c891cf2e81fa29f11c0bd373",
-        "signature": "3b05c396564e51753e921e1cc4aae1cf7cd9be53c891cf2e81fa29f11c0bd373",
-        "affectsGlobalScope": false
-      },
-      "./node_modules/@types/passport/index.d.ts": {
-        "version": "d504adcb8e0c47a5e8863da80db139e680b349842bd7c9d4518d2a1019c140a7",
-        "signature": "d504adcb8e0c47a5e8863da80db139e680b349842bd7c9d4518d2a1019c140a7",
-        "affectsGlobalScope": true
-      },
-      "./node_modules/@nestjs/passport/dist/passport/passport.serializer.d.ts": {
-        "version": "599ac4a84b7aa6a298731179ec1663a623ff8ac324cdc1dabb9c73c1259dc854",
-        "signature": "599ac4a84b7aa6a298731179ec1663a623ff8ac324cdc1dabb9c73c1259dc854",
-        "affectsGlobalScope": false
-      },
-      "./node_modules/@nestjs/passport/dist/passport/passport.strategy.d.ts": {
-        "version": "100509817f7a12b93f2ca4e07c1e3fe7f73ce2cbe2d69b609df2bf35fbbe7cf8",
-        "signature": "100509817f7a12b93f2ca4e07c1e3fe7f73ce2cbe2d69b609df2bf35fbbe7cf8",
-        "affectsGlobalScope": false
-      },
-      "./node_modules/@nestjs/passport/dist/index.d.ts": {
-        "version": "585bc61f439c027640754dd26e480afa202f33e51db41ee283311a59c12c62e7",
-        "signature": "585bc61f439c027640754dd26e480afa202f33e51db41ee283311a59c12c62e7",
-        "affectsGlobalScope": false
-      },
-      "./node_modules/@nestjs/passport/index.d.ts": {
-        "version": "8f1241f5d9f0d3d72117768b3c974e462840fbd85026fb66685078945404cf2f",
-        "signature": "8f1241f5d9f0d3d72117768b3c974e462840fbd85026fb66685078945404cf2f",
-        "affectsGlobalScope": false
-      },
-      "./src/auth/guard/jwt-auth.guard.ts": {
-        "version": "7bf1086cad4c48a340698638de596b44536330aabcd2889119053c6588f025ad",
-        "signature": "e9629b89f6cd33a040577695d89edf882e66287d30c87121f5fc07f404decd25",
         "affectsGlobalScope": false
       },
       "./src/users/dto/return-user.dto.ts": {
@@ -4612,7 +4652,7 @@
         "affectsGlobalScope": false
       },
       "./src/app.module.ts": {
-        "version": "33d403e7e13385f3e32c8b13f3e202223f9ffa120a0b9bed95d90b63db9f83a5",
+        "version": "31399d4697a29bc9c4d1a5119d7e53f777768492d2447e7445aefa2ac49b3ad4",
         "signature": "b82491e2990291580288c5602d4c017238977749d52b17391f0e45d9a29be644",
         "affectsGlobalScope": false
       },
@@ -4807,8 +4847,18 @@
         "affectsGlobalScope": false
       },
       "./src/migrations/1620060574971-SeedDays.ts": {
-        "version": "174511bd8f40281a0c5cdcdd3a864f94bbfa8b9f290ae571186883fb80e2f90d",
+        "version": "451e8fe9a40e05bd95ce17a73736df85a07e93f5fcdb44b7c42f49bbfb47ef6a",
         "signature": "3fe3fb6a98df2b1eff5521ba7af1bd90f279c3db92ab55ba014aba0958a9a2c0",
+        "affectsGlobalScope": false
+      },
+      "./src/migrations/1620081432833-SeedQuestions.ts": {
+        "version": "cdeb591af3410f81ffc34ce9caa494a4c0c66f319731c6f714cb24ea94273b79",
+        "signature": "83edfd3aed34b61d5340dbb46d689b2c3cbed13f7652fe82804edc99280d41c8",
+        "affectsGlobalScope": false
+      },
+      "./src/migrations/1620082820419-SeedAnswers.ts": {
+        "version": "828111dd60c88c1e4892ac2ce1a361a94bf12e0139d7aca732ce12604005a8ee",
+        "signature": "cf38d6befb29cb9df068a8b293df1655d12e2412dcf57fe8fcde27d8c1612f54",
         "affectsGlobalScope": false
       },
       "./src/notification/dto/send-notification.dto.ts": {
@@ -10100,6 +10150,7 @@
         "./src/configs/mailer.config.ts",
         "./src/configs/typeorm.config.ts",
         "./src/notification/notification.module.ts",
+        "./src/questionsAndAnswers/questionsandanswers.module.ts",
         "./src/specialist/specialist.module.ts",
         "./src/users/users.module.ts",
         "./src/work-schedule/work-schedule.module.ts"
@@ -10183,9 +10234,11 @@
         "./node_modules/@nestjs/typeorm/index.d.ts",
         "./node_modules/date-fns/typings.d.ts",
         "./src/notification/entities/notification.entity.ts",
+        "./src/questionsAndAnswers/entities/answers.entity.ts",
+        "./src/questionsAndAnswers/entities/questions.entity.ts",
         "./src/specialist/entities/specialist.entity.ts",
         "./src/users/entities/user.entity.ts",
-        "./src/work-schedule/entities/weekday.ts",
+        "./src/work-schedule/entities/weekday.entity.ts",
         "./src/work-schedule/entities/work-schedule.entity.ts"
       ],
       "./src/configs/upload.ts": [
@@ -10201,6 +10254,14 @@
         "./src/app.module.ts"
       ],
       "./src/migrations/1620060574971-SeedDays.ts": [
+        "./node_modules/date-fns/typings.d.ts",
+        "./node_modules/typeorm/index.d.ts"
+      ],
+      "./src/migrations/1620081432833-SeedQuestions.ts": [
+        "./node_modules/date-fns/typings.d.ts",
+        "./node_modules/typeorm/index.d.ts"
+      ],
+      "./src/migrations/1620082820419-SeedAnswers.ts": [
         "./node_modules/date-fns/typings.d.ts",
         "./node_modules/typeorm/index.d.ts"
       ],
@@ -10235,7 +10296,54 @@
         "./src/notification/notification.repository.ts",
         "./src/users/entities/user.entity.ts"
       ],
+      "./src/questionsAndAnswers/answers.repository.ts": [
+        "./node_modules/date-fns/typings.d.ts",
+        "./node_modules/typeorm/index.d.ts",
+        "./src/questionsAndAnswers/entities/answers.entity.ts",
+        "./src/roles/rolesQuestions.enum.ts"
+      ],
+      "./src/questionsAndAnswers/entities/answers.entity.ts": [
+        "./node_modules/date-fns/typings.d.ts",
+        "./node_modules/typeorm/index.d.ts",
+        "./src/questionsAndAnswers/entities/questions.entity.ts"
+      ],
+      "./src/questionsAndAnswers/entities/questions.entity.ts": [
+        "./node_modules/date-fns/typings.d.ts",
+        "./node_modules/typeorm/index.d.ts"
+      ],
+      "./src/questionsAndAnswers/question.repository.ts": [
+        "./node_modules/date-fns/typings.d.ts",
+        "./node_modules/typeorm/index.d.ts",
+        "./src/questionsAndAnswers/entities/questions.entity.ts",
+        "./src/roles/rolesQuestions.enum.ts"
+      ],
+      "./src/questionsAndAnswers/questionsandanswers.controller.ts": [
+        "./node_modules/@nestjs/common/index.d.ts",
+        "./node_modules/date-fns/typings.d.ts",
+        "./src/auth/guard/jwt-auth.guard.ts",
+        "./src/questionsAndAnswers/questionsandanswers.service.ts",
+        "./src/roles/rolesQuestions.enum.ts"
+      ],
+      "./src/questionsAndAnswers/questionsandanswers.module.ts": [
+        "./node_modules/@nestjs/common/index.d.ts",
+        "./node_modules/@nestjs/typeorm/index.d.ts",
+        "./node_modules/date-fns/typings.d.ts",
+        "./src/questionsAndAnswers/answers.repository.ts",
+        "./src/questionsAndAnswers/question.repository.ts",
+        "./src/questionsAndAnswers/questionsandanswers.controller.ts",
+        "./src/questionsAndAnswers/questionsandanswers.service.ts"
+      ],
+      "./src/questionsAndAnswers/questionsandanswers.service.ts": [
+        "./node_modules/@nestjs/common/index.d.ts",
+        "./node_modules/date-fns/typings.d.ts",
+        "./src/questionsAndAnswers/answers.repository.ts",
+        "./src/questionsAndAnswers/question.repository.ts",
+        "./src/roles/rolesQuestions.enum.ts"
+      ],
       "./src/roles/roles.enum.ts": [
+        "./node_modules/date-fns/typings.d.ts"
+      ],
+      "./src/roles/rolesQuestions.enum.ts": [
         "./node_modules/date-fns/typings.d.ts"
       ],
       "./src/specialist/dto/create-specialist.dto.ts": [
@@ -10287,7 +10395,6 @@
         "./node_modules/date-fns/typings.d.ts"
       ],
       "./src/users/entities/user.entity.ts": [
-        "./node_modules/class-transformer/types/index.d.ts",
         "./node_modules/date-fns/typings.d.ts",
         "./node_modules/typeorm/index.d.ts"
       ],
@@ -10353,7 +10460,7 @@
         "./node_modules/class-validator/types/index.d.ts",
         "./node_modules/date-fns/typings.d.ts"
       ],
-      "./src/work-schedule/entities/weekday.ts": [
+      "./src/work-schedule/entities/weekday.entity.ts": [
         "./node_modules/date-fns/typings.d.ts",
         "./node_modules/typeorm/index.d.ts"
       ],
@@ -10361,7 +10468,7 @@
         "./node_modules/date-fns/typings.d.ts",
         "./node_modules/typeorm/index.d.ts",
         "./src/specialist/entities/specialist.entity.ts",
-        "./src/work-schedule/entities/weekday.ts"
+        "./src/work-schedule/entities/weekday.entity.ts"
       ],
       "./src/work-schedule/work-schedule.controller.ts": [
         "./node_modules/@nestjs/common/index.d.ts",
@@ -15497,6 +15604,12 @@
       "./src/migrations/1620060574971-SeedDays.ts": [
         "./node_modules/typeorm/index.d.ts"
       ],
+      "./src/migrations/1620081432833-SeedQuestions.ts": [
+        "./node_modules/typeorm/index.d.ts"
+      ],
+      "./src/migrations/1620082820419-SeedAnswers.ts": [
+        "./node_modules/typeorm/index.d.ts"
+      ],
       "./src/notification/entities/notification.entity.ts": [
         "./node_modules/typeorm/index.d.ts",
         "./src/users/entities/user.entity.ts"
@@ -15510,6 +15623,31 @@
         "./node_modules/@nestjs-modules/mailer/index.d.ts",
         "./src/notification/notification.repository.ts",
         "./src/users/entities/user.entity.ts"
+      ],
+      "./src/questionsAndAnswers/answers.repository.ts": [
+        "./node_modules/typeorm/index.d.ts",
+        "./src/questionsAndAnswers/entities/answers.entity.ts",
+        "./src/roles/rolesQuestions.enum.ts"
+      ],
+      "./src/questionsAndAnswers/entities/answers.entity.ts": [
+        "./node_modules/typeorm/index.d.ts",
+        "./src/questionsAndAnswers/entities/questions.entity.ts"
+      ],
+      "./src/questionsAndAnswers/entities/questions.entity.ts": [
+        "./node_modules/typeorm/index.d.ts"
+      ],
+      "./src/questionsAndAnswers/question.repository.ts": [
+        "./node_modules/typeorm/index.d.ts",
+        "./src/questionsAndAnswers/entities/questions.entity.ts",
+        "./src/roles/rolesQuestions.enum.ts"
+      ],
+      "./src/questionsAndAnswers/questionsandanswers.controller.ts": [
+        "./src/questionsAndAnswers/questionsandanswers.service.ts"
+      ],
+      "./src/questionsAndAnswers/questionsandanswers.service.ts": [
+        "./src/questionsAndAnswers/answers.repository.ts",
+        "./src/questionsAndAnswers/question.repository.ts",
+        "./src/roles/rolesQuestions.enum.ts"
       ],
       "./src/specialist/dto/create-specialist.dto.ts": [
         "./src/users/entities/user.entity.ts"
@@ -15559,13 +15697,13 @@
         "./src/users/entities/user.entity.ts",
         "./src/users/users.repository.ts"
       ],
-      "./src/work-schedule/entities/weekday.ts": [
+      "./src/work-schedule/entities/weekday.entity.ts": [
         "./node_modules/typeorm/index.d.ts"
       ],
       "./src/work-schedule/entities/work-schedule.entity.ts": [
         "./node_modules/typeorm/index.d.ts",
         "./src/specialist/entities/specialist.entity.ts",
-        "./src/work-schedule/entities/weekday.ts"
+        "./src/work-schedule/entities/weekday.entity.ts"
       ],
       "./src/work-schedule/work-schedule.controller.ts": [
         "./src/work-schedule/dto/create-list-working.dto.ts",
@@ -16560,12 +16698,22 @@
       "./src/configs/upload.ts",
       "./src/main.ts",
       "./src/migrations/1620060574971-SeedDays.ts",
+      "./src/migrations/1620081432833-SeedQuestions.ts",
+      "./src/migrations/1620082820419-SeedAnswers.ts",
       "./src/notification/dto/send-notification.dto.ts",
       "./src/notification/entities/notification.entity.ts",
       "./src/notification/notification.module.ts",
       "./src/notification/notification.repository.ts",
       "./src/notification/notification.service.ts",
+      "./src/questionsAndAnswers/answers.repository.ts",
+      "./src/questionsAndAnswers/entities/answers.entity.ts",
+      "./src/questionsAndAnswers/entities/questions.entity.ts",
+      "./src/questionsAndAnswers/question.repository.ts",
+      "./src/questionsAndAnswers/questionsandanswers.controller.ts",
+      "./src/questionsAndAnswers/questionsandanswers.module.ts",
+      "./src/questionsAndAnswers/questionsandanswers.service.ts",
       "./src/roles/roles.enum.ts",
+      "./src/roles/rolesQuestions.enum.ts",
       "./src/specialist/dto/create-specialist.dto.ts",
       "./src/specialist/entities/specialist.entity.ts",
       "./src/specialist/specialist.controller.ts",
@@ -16582,7 +16730,7 @@
       "./src/users/users.service.ts",
       "./src/work-schedule/dto/create-list-working.dto.ts",
       "./src/work-schedule/dto/create-working.dto.ts",
-      "./src/work-schedule/entities/weekday.ts",
+      "./src/work-schedule/entities/weekday.entity.ts",
       "./src/work-schedule/entities/work-schedule.entity.ts",
       "./src/work-schedule/work-schedule.controller.ts",
       "./src/work-schedule/work-schedule.module.ts",
