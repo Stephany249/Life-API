@@ -5,8 +5,9 @@ import { Specialist } from '../specialist/entities/specialist.entity';
 import { Notification } from '../notification/entities/notification.entity';
 import { WorkSchedule } from '../work-schedule/entities/work-schedule.entity';
 import { Weekday } from '../work-schedule/entities/weekday.entity';
-import { Questions } from '../questionsAndAnswers/entities/questions.entity';
-import { Answers } from '../questionsAndAnswers/entities/answers.entity';
+import { Questions } from '../questions-answers/entities/questions.entity';
+import { Answers } from '../questions-answers/entities/answers.entity';
+import { MedicalRecord } from '../medical-record/entities/medical-record.entity';
 
 export const typeOrmConfig: TypeOrmModuleOptions = {
   type: 'postgres',
@@ -23,6 +24,7 @@ export const typeOrmConfig: TypeOrmModuleOptions = {
     WorkSchedule,
     Questions,
     Answers,
+    MedicalRecord,
   ],
   synchronize: true,
 };

@@ -1,4 +1,3 @@
-import { QuestionsAndAnswersModule } from './questionsAndAnswers/questionsandanswers.module';
 import { Module } from '@nestjs/common';
 
 import { TypeOrmModule } from '@nestjs/typeorm';
@@ -11,13 +10,14 @@ import { UsersModule } from './users/users.module';
 import { AuthModule } from './auth/auth.module';
 import { NotificationModule } from './notification/notification.module';
 import { WorkScheduleModule } from './work-schedule/work-schedule.module';
+import { QuestionsAndAnswersModule } from './questions-answers/questions-answers.module';
+import { MedicalRecordModule } from './medical-record/medical-record.module';
 
 //  Configs
 import { mailerConfig } from './configs/mailer.config';
 
 @Module({
   imports: [
-    QuestionsAndAnswersModule,
     TypeOrmModule.forRoot(typeOrmConfig),
     MailerModule.forRoot(mailerConfig),
     UsersModule,
@@ -25,6 +25,8 @@ import { mailerConfig } from './configs/mailer.config';
     AuthModule,
     NotificationModule,
     WorkScheduleModule,
+    QuestionsAndAnswersModule,
+    MedicalRecordModule,
   ],
 })
 export class AppModule {}

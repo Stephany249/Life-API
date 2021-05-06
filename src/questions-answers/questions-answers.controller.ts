@@ -1,7 +1,7 @@
 import { Controller, Get, UseGuards } from '@nestjs/common';
 import { JwtAuthGuard } from 'auth/guard/jwt-auth.guard';
 import { QuestionsRole } from 'roles/rolesQuestions.enum';
-import { QuestionsAndAnswersService } from './questionsandanswers.service';
+import { QuestionsAndAnswersService } from './questions-answers.service';
 
 @Controller('questions')
 export class QuestionsAndAnswersController {
