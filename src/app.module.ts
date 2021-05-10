@@ -12,12 +12,14 @@ import { NotificationModule } from './notification/notification.module';
 import { WorkScheduleModule } from './work-schedule/work-schedule.module';
 import { QuestionsAndAnswersModule } from './questions-answers/questions-answers.module';
 import { MedicalRecordModule } from './medical-record/medical-record.module';
+import { SchedulingModule } from './scheduling/scheduling.module';
 
 //  Configs
 import { mailerConfig } from './configs/mailer.config';
 
 @Module({
   imports: [
+    SchedulingModule,
     TypeOrmModule.forRoot(typeOrmConfig),
     MailerModule.forRoot(mailerConfig),
     UsersModule,

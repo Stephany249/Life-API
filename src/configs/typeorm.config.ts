@@ -8,6 +8,7 @@ import { Weekday } from '../work-schedule/entities/weekday.entity';
 import { Questions } from '../questions-answers/entities/questions.entity';
 import { Answers } from '../questions-answers/entities/answers.entity';
 import { MedicalRecord } from '../medical-record/entities/medical-record.entity';
+import { Scheduling } from '../scheduling/entities/scheduling.entity';
 
 export const typeOrmConfig: TypeOrmModuleOptions = {
   type: 'postgres',
@@ -25,6 +26,7 @@ export const typeOrmConfig: TypeOrmModuleOptions = {
     Questions,
     Answers,
     MedicalRecord,
+    Scheduling,
   ],
   synchronize: true,
 };

@@ -9,5 +9,6 @@ import { WorkScheduleRepository } from './work-schedule.repository';
   imports: [TypeOrmModule.forFeature([WorkScheduleRepository])],
   controllers: [WorkScheduleController],
   providers: [WorkScheduleService],
+  exports: [WorkScheduleService],
 })
 export class WorkScheduleModule {}

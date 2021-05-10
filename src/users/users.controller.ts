@@ -134,4 +134,14 @@ export class UsersController {
 
     return res.status(204).json();
   }
+
+  @UseGuards(JwtAuthGuard)
+  @Get('specialits')
+  async getSpecialists(): Promise<any> {
+    const specialists = await this.usersService.getSpecialists(
+      UserRole.SPECIALIST,
+    );
+
+    return specialists;
+  }
 }

@@ -203,4 +203,10 @@ export class UsersService {
 
     return user;
   }
+
+  async getSpecialists(role: UserRole): Promise<any> {
+    const specialists = await this.userRepository.getSpecialists(role);
+
+    return specialists;
+  }
 }

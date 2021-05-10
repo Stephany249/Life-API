@@ -60,6 +60,28 @@ export class WorkScheduleService {
     return await this.workingRepository.remove(workSchedule);
   }
 
+  async getHoursPerDay(crm: string, weekdayId: number) {
+    const workSchedule = await this.workingRepository.getWorkScheduleBySpecialistAndDate(
+      crm,
+      weekdayId,
+    );
+
+    if (workSchedule) {
+      const total = parseInt(workSchedule.to) - parseInt(workSchedule.from);
+
+      return total;
+    }
+  }
+
+  async getHoursDay(crm: string, weekdayId: number) {
+    const workSchedule = await this.workingRepository.getWorkScheduleBySpecialistAndDate(
+      crm,
+      weekdayId,
+    );
+
+    return workSchedule;
+  }
+
   async updateListWorkSchedule(
     crm: string,
     createListWorkingDto: CreateListWorkingDto,

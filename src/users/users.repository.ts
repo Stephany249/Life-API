@@ -58,4 +58,12 @@ export class UserRepository extends Repository<User> {
 
     return user;
   }
+
+  async getSpecialists(role: UserRole): Promise<any> {
+    const specialists = await this.query(
+      `select u.id , u."name" , u.avatar, u."role", s.crm from "user" u join specialist s on u.id = s."userId" and u."role" = '${role}' `,
+    );
+
+    return specialists;
+  }
 }

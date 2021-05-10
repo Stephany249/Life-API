@@ -2911,8 +2911,13 @@
         "signature": "989dbdca424091863880c0535b6af35a98d550bf0af07911cf1751aa572a037d",
         "affectsGlobalScope": false
       },
+      "./src/scheduling/entities/scheduling.entity.ts": {
+        "version": "8ea723bc6a5e4547f61530b0a14ce091a9cc03041c77bee03cd5be63e4c8bcb2",
+        "signature": "e4856a911708c298d9d45cf9b6444ef62ae6e2d809cf72ebdc3fb8b852912a85",
+        "affectsGlobalScope": false
+      },
       "./src/configs/typeorm.config.ts": {
-        "version": "22d5cceee4e22107f0a28689d982429a568d98a8b8e17e0849892f023efc46d0",
+        "version": "a7cd0be7ade3b1e4a20a166a04026d9e2e403415b37ecb04532b224886fa8e0f",
         "signature": "e48d1e836452920a823efe3c1f15dbaa531cbb2c536b3d47ad06ed5201a8b847",
         "affectsGlobalScope": false
       },
@@ -3286,8 +3291,13 @@
         "signature": "2e2f44763350723e4ed6b2742a8f3631dfd31c325e70ad8c7fdddbc304021423",
         "affectsGlobalScope": false
       },
+      "./src/specialist/specialist.controller.ts": {
+        "version": "5637142f52340ceb551437d884af4f4092d1735bb627a99b5df0a7fb123604c2",
+        "signature": "a3850ffc21bddee9400ccbb0672dd6afd6dd9f21dd219a5a8a4bb7c6651e7aaa",
+        "affectsGlobalScope": false
+      },
       "./src/specialist/specialist.module.ts": {
-        "version": "681f02881cb176472f91be0a42b93ff95e5051376766a636b8a492c3082def5e",
+        "version": "fa8dbf23392759e82b829198402b55b9373a922c727a88c3709bd7783c19530a",
         "signature": "f4185104f30d2fd9e4d588e1b4490823eb9868cf84cb892ce8a673e10a0ffcc6",
         "affectsGlobalScope": false
       },
@@ -4117,8 +4127,8 @@
         "affectsGlobalScope": false
       },
       "./src/users/users.repository.ts": {
-        "version": "bb3a6dd95f985ad33c2552ffe5020c1607a1815a237fb60352b6562351bb06e6",
-        "signature": "c742d51aa02c8f6208360b2c62be7788f841fc699066423fe991281cd0386175",
+        "version": "c481d27e42848f705ead866aa367211ed0d3c2be244d47c42042f1bb3de17857",
+        "signature": "50dbba4321c2ee543fab13e5d94a23ec2c07ddba38bef5341c96493c646db6f9",
         "affectsGlobalScope": false
       },
       "./node_modules/@nestjs/platform-express/multer/interfaces/multer-options.interface.d.ts": {
@@ -4342,8 +4352,8 @@
         "affectsGlobalScope": false
       },
       "./src/users/users.service.ts": {
-        "version": "f6685521df8226eb7a6793060b55bc91dbd76f0d57869a8d6772aae783633f62",
-        "signature": "95661c11f55c5485d60f26d45e9affee962b9f828cc249ecadd9f0af40a182eb",
+        "version": "ee7ca4d4c33da486d85fdac6431a48db527e2d0e5c4acb15975f5f6c14ea8e5c",
+        "signature": "a32bf3d586eb407d205cc849d10ea03f978b68b5129f4a9b07c442df65c2b964",
         "affectsGlobalScope": false
       },
       "./node_modules/@nestjs/passport/dist/abstract.strategy.d.ts": {
@@ -4462,8 +4472,8 @@
         "affectsGlobalScope": false
       },
       "./src/users/users.controller.ts": {
-        "version": "28b1a0bb52c9d5e8540e3783237e7d4e619419938781bee6bb3e1364ee556f6c",
-        "signature": "7f1e182fcf757dc7c3ea8e00655a6d3aec7890fa9774e49f254fc9fa19d38730",
+        "version": "6aac1c90b3fd13f3bce4b1017ccf405bcdf2442855255d70004f7f407d9f4432",
+        "signature": "08961cc22ebe959d962a4f3981b8ed5f3d4e8d08773f6fc8b99362462d375628",
         "affectsGlobalScope": false
       },
       "./src/notification/notification.module.ts": {
@@ -4592,8 +4602,8 @@
         "affectsGlobalScope": false
       },
       "./src/work-schedule/work-schedule.service.ts": {
-        "version": "4d5846e613096849c275af5d16680d0e4cafb2378ccdbd3702b875a3f0c09ca5",
-        "signature": "26fa696b290002cc88ad02ce72d03505bf7c9d250623210f53a46392291a7b8d",
+        "version": "8bd179cf7679a0301b659ed5f0016e80cba4be7773d6ac7bd104fca2507ca406",
+        "signature": "8085df0def9b5330cd020a41c0412a9a9258b41a54f6de72a791e5a57d9ce92f",
         "affectsGlobalScope": false
       },
       "./src/work-schedule/work-schedule.controller.ts": {
@@ -4602,7 +4612,7 @@
         "affectsGlobalScope": false
       },
       "./src/work-schedule/work-schedule.module.ts": {
-        "version": "6525a8da5afcecc934d9ff9581561c31ef8d875426dc6f6ae3dd1fd838ba9750",
+        "version": "9b990a38464f566999d70e47350685f8b4f56c90d2d4dc97f03bb42dbcbe6a11",
         "signature": "90e9c2984d28e8b81964eb43c2107b92f0fd05350afeb28c70ba34c6bf359403",
         "affectsGlobalScope": false
       },
@@ -4647,8 +4657,8 @@
         "affectsGlobalScope": false
       },
       "./src/medical-record/medical-record.service.ts": {
-        "version": "070b748831eeacb532e46f70710d3e7993168bd1b4f9837743bbc8a2ec60ac97",
-        "signature": "bd9e313950ece0d7f2405b2fa124a2b2f28abf8a5a30a9a8074966109fe6e26c",
+        "version": "000bde11943f63746a1e29bb25fbc9916d6373bc63b48c97bc3a14b0a5656349",
+        "signature": "34b468e017ae6450f2ffa782fa0b69433cbb8a098c4fc36a6337f4480722f5f6",
         "affectsGlobalScope": false
       },
       "./src/medical-record/medical-record.controller.ts": {
@@ -4659,6 +4669,36 @@
       "./src/medical-record/medical-record.module.ts": {
         "version": "a69505cd1edc18e5d1c9fce676908315fdb0b856a2e2d7fa6089e6da1a086417",
         "signature": "7a273750d11a16503fa2c2c1e03c961b0fc9667ed89e6d7dee3b1bea963d59f7",
+        "affectsGlobalScope": false
+      },
+      "./src/scheduling/dto/find-all-day.dto .ts": {
+        "version": "b09473ce814b7a6c288f85f94004cf4745a9cf33205da3e44d8d5c9a03119f52",
+        "signature": "dbfeb2f505e5cf245b1262812fc079c2c9126c1c80b66494da867b88233a37cd",
+        "affectsGlobalScope": false
+      },
+      "./src/scheduling/dto/find-all-month.dto.ts": {
+        "version": "6669d943dd996edcd8020694ca0e0a07b7154ab49be6d58883063acd659e370c",
+        "signature": "75084577bc6dda784fbbda57f0b72aabdea7c4e629335bdef4254699ffa7ebda",
+        "affectsGlobalScope": false
+      },
+      "./src/scheduling/scheduling.repository.ts": {
+        "version": "2b054fc82d9f9613df956e81dc58409d0f57f5a64307062443fd2b4f509d160c",
+        "signature": "a8089051f9db781792c8578dd9e302a171ea6f76d2e2aaf1a43706e5a3cf2733",
+        "affectsGlobalScope": false
+      },
+      "./src/scheduling/scheduling.service.ts": {
+        "version": "8fd0617d8ec4958ce8d438a4cffc76357f05a0f3a5bc2eec0dac23ee4520222d",
+        "signature": "2772ee48c944720ae71279a2e6d6b7dc0f8a2dc4ef3be717d9383c6690a57dbd",
+        "affectsGlobalScope": false
+      },
+      "./src/scheduling/scheduling.controller.ts": {
+        "version": "253d8dc2347200c024d2d07262dacd0453d14ab306c13a562a0b53ca4c1796b8",
+        "signature": "f0e93f0457aef4449824d519bd1f1a9ee8abcfe362940f92af8563c2bcaceb37",
+        "affectsGlobalScope": false
+      },
+      "./src/scheduling/scheduling.module.ts": {
+        "version": "7a54acc32ea14ae5465febafb66b132c14ffdc35c50719f84c68854279257406",
+        "signature": "4c05844d19fb6d72f61b48d286f809f0c5b1d018a700e4c9abaf09559e5dcc47",
         "affectsGlobalScope": false
       },
       "./node_modules/handlebars/types/index.d.ts": {
@@ -4682,7 +4722,7 @@
         "affectsGlobalScope": false
       },
       "./src/app.module.ts": {
-        "version": "6a3fc7ae8a84e870ded321090d8b75f25c6c7d19a2f6de9f86cc7d74de10e435",
+        "version": "b65177d67b7cfcf627942e19ad10f4473201ad0154d579982d612ba3782d8b70",
         "signature": "b82491e2990291580288c5602d4c017238977749d52b17391f0e45d9a29be644",
         "affectsGlobalScope": false
       },
@@ -4894,11 +4934,6 @@
       "./src/notification/dto/send-notification.dto.ts": {
         "version": "2fbd8dc77cb5da55a2da2f3d3931f63353aa90a88ec74b5545845305610f8c83",
         "signature": "df0e9a98e49f9580e8444369c827039568a314629ba8efeac00d213224ec4696",
-        "affectsGlobalScope": false
-      },
-      "./src/specialist/specialist.controller.ts": {
-        "version": "5637142f52340ceb551437d884af4f4092d1735bb627a99b5df0a7fb123604c2",
-        "signature": "a3850ffc21bddee9400ccbb0672dd6afd6dd9f21dd219a5a8a4bb7c6651e7aaa",
         "affectsGlobalScope": false
       },
       "./node_modules/@babel/types/lib/index.d.ts": {
@@ -10182,6 +10217,7 @@
         "./src/medical-record/medical-record.module.ts",
         "./src/notification/notification.module.ts",
         "./src/questions-answers/questions-answers.module.ts",
+        "./src/scheduling/scheduling.module.ts",
         "./src/specialist/specialist.module.ts",
         "./src/users/users.module.ts",
         "./src/work-schedule/work-schedule.module.ts"
@@ -10268,6 +10304,7 @@
         "./src/notification/entities/notification.entity.ts",
         "./src/questions-answers/entities/answers.entity.ts",
         "./src/questions-answers/entities/questions.entity.ts",
+        "./src/scheduling/entities/scheduling.entity.ts",
         "./src/specialist/entities/specialist.entity.ts",
         "./src/users/entities/user.entity.ts",
         "./src/work-schedule/entities/weekday.entity.ts",
@@ -10422,6 +10459,53 @@
       "./src/roles/rolesQuestions.enum.ts": [
         "./node_modules/date-fns/typings.d.ts"
       ],
+      "./src/scheduling/dto/find-all-day.dto .ts": [
+        "./node_modules/@nestjs/swagger/index.d.ts",
+        "./node_modules/class-validator/types/index.d.ts",
+        "./node_modules/date-fns/typings.d.ts"
+      ],
+      "./src/scheduling/dto/find-all-month.dto.ts": [
+        "./node_modules/@nestjs/swagger/index.d.ts",
+        "./node_modules/class-validator/types/index.d.ts",
+        "./node_modules/date-fns/typings.d.ts"
+      ],
+      "./src/scheduling/entities/scheduling.entity.ts": [
+        "./node_modules/date-fns/typings.d.ts",
+        "./node_modules/typeorm/index.d.ts",
+        "./src/medical-record/entities/medical-record.entity.ts",
+        "./src/specialist/entities/specialist.entity.ts",
+        "./src/users/entities/user.entity.ts"
+      ],
+      "./src/scheduling/scheduling.controller.ts": [
+        "./node_modules/@nestjs/common/index.d.ts",
+        "./node_modules/date-fns/typings.d.ts",
+        "./src/auth/guard/jwt-auth.guard.ts",
+        "./src/roles/rolesQuestions.enum.ts",
+        "./src/scheduling/scheduling.service.ts"
+      ],
+      "./src/scheduling/scheduling.module.ts": [
+        "./node_modules/@nestjs/common/index.d.ts",
+        "./node_modules/@nestjs/typeorm/index.d.ts",
+        "./node_modules/date-fns/typings.d.ts",
+        "./src/scheduling/scheduling.controller.ts",
+        "./src/scheduling/scheduling.repository.ts",
+        "./src/scheduling/scheduling.service.ts",
+        "./src/work-schedule/work-schedule.module.ts"
+      ],
+      "./src/scheduling/scheduling.repository.ts": [
+        "./node_modules/date-fns/typings.d.ts",
+        "./node_modules/typeorm/index.d.ts",
+        "./src/scheduling/dto/find-all-day.dto .ts",
+        "./src/scheduling/dto/find-all-month.dto.ts",
+        "./src/scheduling/entities/scheduling.entity.ts"
+      ],
+      "./src/scheduling/scheduling.service.ts": [
+        "./node_modules/@nestjs/common/index.d.ts",
+        "./node_modules/date-fns/typings.d.ts",
+        "./src/roles/rolesQuestions.enum.ts",
+        "./src/scheduling/scheduling.repository.ts",
+        "./src/work-schedule/work-schedule.service.ts"
+      ],
       "./src/specialist/dto/create-specialist.dto.ts": [
         "./node_modules/date-fns/typings.d.ts",
         "./src/users/entities/user.entity.ts"
@@ -10440,6 +10524,7 @@
         "./node_modules/@nestjs/common/index.d.ts",
         "./node_modules/@nestjs/typeorm/index.d.ts",
         "./node_modules/date-fns/typings.d.ts",
+        "./src/specialist/specialist.controller.ts",
         "./src/specialist/specialist.repository.ts",
         "./src/specialist/specialist.service.ts"
       ],
@@ -15746,6 +15831,26 @@
         "./src/questions-answers/question.repository.ts",
         "./src/roles/rolesQuestions.enum.ts"
       ],
+      "./src/scheduling/entities/scheduling.entity.ts": [
+        "./node_modules/typeorm/index.d.ts",
+        "./src/medical-record/entities/medical-record.entity.ts",
+        "./src/specialist/entities/specialist.entity.ts",
+        "./src/users/entities/user.entity.ts"
+      ],
+      "./src/scheduling/scheduling.controller.ts": [
+        "./src/scheduling/scheduling.service.ts"
+      ],
+      "./src/scheduling/scheduling.repository.ts": [
+        "./node_modules/typeorm/index.d.ts",
+        "./src/scheduling/dto/find-all-day.dto .ts",
+        "./src/scheduling/dto/find-all-month.dto.ts",
+        "./src/scheduling/entities/scheduling.entity.ts"
+      ],
+      "./src/scheduling/scheduling.service.ts": [
+        "./src/roles/rolesQuestions.enum.ts",
+        "./src/scheduling/scheduling.repository.ts",
+        "./src/work-schedule/work-schedule.service.ts"
+      ],
       "./src/specialist/dto/create-specialist.dto.ts": [
         "./src/users/entities/user.entity.ts"
       ],
@@ -16817,6 +16922,13 @@
       "./src/questions-answers/questions-answers.service.ts",
       "./src/roles/roles.enum.ts",
       "./src/roles/rolesQuestions.enum.ts",
+      "./src/scheduling/dto/find-all-day.dto .ts",
+      "./src/scheduling/dto/find-all-month.dto.ts",
+      "./src/scheduling/entities/scheduling.entity.ts",
+      "./src/scheduling/scheduling.controller.ts",
+      "./src/scheduling/scheduling.module.ts",
+      "./src/scheduling/scheduling.repository.ts",
+      "./src/scheduling/scheduling.service.ts",
       "./src/specialist/dto/create-specialist.dto.ts",
       "./src/specialist/entities/specialist.entity.ts",
       "./src/specialist/specialist.controller.ts",

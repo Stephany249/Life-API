@@ -176,7 +176,8 @@ export class MedicalRecordService {
       scale,
     );
 
-    const medicalRecord = medical.id;
+    const medicalRecordId = medical.id;
+    const medicalRecordRole = medical.role;
 
     if (scale === 'Laranja' || scale === 'Vermelho') {
       status.push('Atendimento imediato', 'CVV');
@@ -189,7 +190,7 @@ export class MedicalRecordService {
       status.push('Agendar um atendimento', 'Atendimento imediato');
     }
 
-    return { medicalRecord, status };
+    return { medicalRecordId, medicalRecordRole, status };
   }
 
   async getMedicalRecord(idMedcalRecord: number, role: QuestionsRole) {
