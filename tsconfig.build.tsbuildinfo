@@ -4681,19 +4681,24 @@
         "signature": "75084577bc6dda784fbbda57f0b72aabdea7c4e629335bdef4254699ffa7ebda",
         "affectsGlobalScope": false
       },
+      "./src/scheduling/dto/find-scheduling-day-client.dto.ts": {
+        "version": "e3a5ccc12325c2fdcc6f0e7c799d8e503934734deb55e5757c89557c74f1e551",
+        "signature": "e598a49ccfb5acaa536c54dd27e45ccb33a7ade46a25954579e53565ba6c9b15",
+        "affectsGlobalScope": false
+      },
       "./src/scheduling/scheduling.repository.ts": {
-        "version": "2b054fc82d9f9613df956e81dc58409d0f57f5a64307062443fd2b4f509d160c",
-        "signature": "a8089051f9db781792c8578dd9e302a171ea6f76d2e2aaf1a43706e5a3cf2733",
+        "version": "f2079965fc78fcc3085c5a8d5f5714675280a2fb4091a93886196dc831f1d0b8",
+        "signature": "513732e6b156fd5fa40a72dfcb86e81c5833fb42a5819118dc6590e9ab376901",
         "affectsGlobalScope": false
       },
       "./src/scheduling/scheduling.service.ts": {
-        "version": "8fd0617d8ec4958ce8d438a4cffc76357f05a0f3a5bc2eec0dac23ee4520222d",
-        "signature": "2772ee48c944720ae71279a2e6d6b7dc0f8a2dc4ef3be717d9383c6690a57dbd",
+        "version": "706895e2bac6b2f327d52b3d9936094ac63e883018168ecf7f821b77add75593",
+        "signature": "d24f6a51efbdda3f8b2709a2c78a33e01852abce74dd3263d1e4a31848398292",
         "affectsGlobalScope": false
       },
       "./src/scheduling/scheduling.controller.ts": {
-        "version": "253d8dc2347200c024d2d07262dacd0453d14ab306c13a562a0b53ca4c1796b8",
-        "signature": "f0e93f0457aef4449824d519bd1f1a9ee8abcfe362940f92af8563c2bcaceb37",
+        "version": "a827e3eddeeb2cf3769843234251fe0b6845b1af153c4224cd46b9f210a1425d",
+        "signature": "611e628b5f73f9b038efecd579e1db920d610e2c653b794562eb65a269696a82",
         "affectsGlobalScope": false
       },
       "./src/scheduling/scheduling.module.ts": {
@@ -10469,6 +10474,11 @@
         "./node_modules/class-validator/types/index.d.ts",
         "./node_modules/date-fns/typings.d.ts"
       ],
+      "./src/scheduling/dto/find-scheduling-day-client.dto.ts": [
+        "./node_modules/@nestjs/swagger/index.d.ts",
+        "./node_modules/class-validator/types/index.d.ts",
+        "./node_modules/date-fns/typings.d.ts"
+      ],
       "./src/scheduling/entities/scheduling.entity.ts": [
         "./node_modules/date-fns/typings.d.ts",
         "./node_modules/typeorm/index.d.ts",
@@ -10497,6 +10507,7 @@
         "./node_modules/typeorm/index.d.ts",
         "./src/scheduling/dto/find-all-day.dto .ts",
         "./src/scheduling/dto/find-all-month.dto.ts",
+        "./src/scheduling/dto/find-scheduling-day-client.dto.ts",
         "./src/scheduling/entities/scheduling.entity.ts"
       ],
       "./src/scheduling/scheduling.service.ts": [
@@ -15844,6 +15855,7 @@
         "./node_modules/typeorm/index.d.ts",
         "./src/scheduling/dto/find-all-day.dto .ts",
         "./src/scheduling/dto/find-all-month.dto.ts",
+        "./src/scheduling/dto/find-scheduling-day-client.dto.ts",
         "./src/scheduling/entities/scheduling.entity.ts"
       ],
       "./src/scheduling/scheduling.service.ts": [
@@ -16924,6 +16936,7 @@
       "./src/roles/rolesQuestions.enum.ts",
       "./src/scheduling/dto/find-all-day.dto .ts",
       "./src/scheduling/dto/find-all-month.dto.ts",
+      "./src/scheduling/dto/find-scheduling-day-client.dto.ts",
       "./src/scheduling/entities/scheduling.entity.ts",
       "./src/scheduling/scheduling.controller.ts",
       "./src/scheduling/scheduling.module.ts",

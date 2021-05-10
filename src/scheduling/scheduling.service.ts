@@ -8,6 +8,7 @@ import {
   getHours,
   isBefore,
   parseISO,
+  subHours,
 } from 'date-fns';
 import { QuestionsRole } from '../roles/rolesQuestions.enum';
 import { WorkScheduleService } from '../work-schedule/work-schedule.service';
@@ -37,6 +38,22 @@ type IResponseHour = Array<{
   hour: number;
   available: boolean;
 }>;
+
+interface RequestUserId {
+  userId: string;
+}
+
+interface RequestUpdateSchedulingClient {
+  schedulingId: number;
+  userId: string;
+  date: Date;
+}
+
+interface RequestUpdateSchedulingSpecialist {
+  schedulingId: number;
+  specialistCrm: string;
+  date: Date;
+}
 
 @Injectable()
 export class SchedulingService {
@@ -193,5 +210,172 @@ export class SchedulingService {
     }
 
     return availability;
+  }
+
+  async getSchedulingSpecialist({
+    crm,
+    day,
+    month,
+    year,
+  }: IRequest): Promise<any> {
+    const scheduling = await this.schedulingRepository.findAllInDayFromSpecialist(
+      {
+        crm,
+        day,
+        month,
+        year,
+      },
+    );
+
+    const compareDate = new Date(Date.now());
+    const arrayScheduling = [];
+
+    for (let i = 0; i < scheduling.length; i++) {
+      if (isAfter(scheduling[i].date, compareDate)) {
+        arrayScheduling.push(scheduling[i]);
+      }
+    }
+
+    return arrayScheduling;
+  }
+
+  async getSchedulingClient({ userId }: RequestUserId): Promise<any> {
+    const date = new Date(Date.now());
+    const scheduling = await this.schedulingRepository.findSchedulingFromClient(
+      {
+        userId,
+      },
+    );
+
+    const arrayScheduling = [];
+
+    for (let i = 0; i < scheduling.length; i++) {
+      if (
+        getDate(date) === getDate(scheduling[i].date) &&
+        getHours(scheduling[i].date) > getHours(date)
+      ) {
+        arrayScheduling.push(scheduling[i]);
+      }
+    }
+
+    return arrayScheduling;
+  }
+
+  async updateSchedulingFromClient({
+    schedulingId,
+    userId,
+    date,
+  }: RequestUpdateSchedulingClient): Promise<any> {
+    const scheduling = await this.schedulingRepository.getSchedulingThroughSchedulingIdAndUserId(
+      schedulingId,
+      userId,
+    );
+
+    const data = date.toString();
+    const dataParsed = parseISO(data);
+
+    const dateWithSub = subHours(scheduling.date, 2);
+
+    const newDate = new Date(Date.now());
+
+    if (isBefore(dateWithSub, newDate)) {
+      throw new BadRequestException(
+        'Você só pode editar o agendamento com 2 horas de antecedência.',
+      );
+    }
+
+    if (isBefore(dataParsed, Date.now())) {
+      throw new BadRequestException(
+        'Você não pode criar um agendamento em uma data passada.',
+      );
+    }
+
+    const hours = await this.workScheduleService.getHoursDay(
+      scheduling.crmSpecialist,
+      getDay(dataParsed) + 1,
+    );
+
+    if (
+      getHours(dataParsed) < parseInt(hours.from) ||
+      getHours(dataParsed) > parseInt(hours.to)
+    ) {
+      throw new BadRequestException(
+        `Você só pode criar agendamentos entre ${hours.from} e ${hours.to}`,
+      );
+    }
+
+    const findAppointmentInSameDate = await this.schedulingRepository.findByDate(
+      dataParsed,
+      scheduling.crmSpecialist,
+    );
+
+    if (findAppointmentInSameDate) {
+      throw new BadRequestException('Este horário já está ocupado');
+    }
+
+    scheduling.date = dataParsed;
+
+    const editScheduling = await this.schedulingRepository.save(scheduling);
+
+    return editScheduling;
+  }
+
+  async updateSchedulingFromSpecialist({
+    schedulingId,
+    specialistCrm,
+    date,
+  }: RequestUpdateSchedulingSpecialist): Promise<any> {
+    const scheduling = await this.schedulingRepository.getSchedulingThroughSchedulingIdAnSpecialistCrm(
+      schedulingId,
+      specialistCrm,
+    );
+
+    const data = date.toString();
+    const dataParsed = parseISO(data);
+
+    const dateWithSub = subHours(scheduling.date, 2);
+
+    const newDate = new Date(Date.now());
+
+    if (isBefore(dateWithSub, newDate)) {
+      throw new BadRequestException(
+        'Você só pode editar o agendamento com 2 horas de antecedência.',
+      );
+    }
+
+    if (isBefore(dataParsed, Date.now())) {
+      throw new BadRequestException(
+        'Você não pode criar um agendamento em uma data passada.',
+      );
+    }
+
+    const hours = await this.workScheduleService.getHoursDay(
+      specialistCrm,
+      getDay(dataParsed) + 1,
+    );
+
+    if (
+      getHours(dataParsed) < parseInt(hours.from) ||
+      getHours(dataParsed) > parseInt(hours.to)
+    ) {
+      throw new BadRequestException(
+        `Você só pode criar agendamentos entre ${hours.from} e ${hours.to}`,
+      );
+    }
+
+    const findAppointmentInSameDate = await this.schedulingRepository.findByDate(
+      dataParsed,
+      specialistCrm,
+    );
+
+    if (findAppointmentInSameDate) {
+      throw new BadRequestException('Este horário já está ocupado');
+    }
+
+    scheduling.date = dataParsed;
+
+    const editScheduling = await this.schedulingRepository.save(scheduling);
+
+    return editScheduling;
   }
 }
