@@ -61,4 +61,23 @@ export class WorkScheduleRepository extends Repository<WorkSchedule> {
   async getWorkScheduleBySpecialistAndDate(crm: string, weekdayId: number) {
     return await this.findOne({ where: { crm, weekdayId } });
   }
+
+  async checkSpecialistAvailability(
+    crm: string,
+    weekDay: number,
+  ): Promise<any> {
+    const findScheduling = await this.query(
+      `select * from work_schedule ws where crm <> '${crm}' and "weekdayId" = ${weekDay} `,
+    );
+
+    return findScheduling;
+  }
+
+  async checkAllAvailability(weekDay: number): Promise<any> {
+    const findScheduling = await this.query(
+      `select * from work_schedule ws where "weekdayId" = ${weekDay} `,
+    );
+
+    return findScheduling;
+  }
 }

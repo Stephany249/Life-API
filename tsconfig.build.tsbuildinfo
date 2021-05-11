@@ -2912,8 +2912,8 @@
         "affectsGlobalScope": false
       },
       "./src/scheduling/entities/scheduling.entity.ts": {
-        "version": "8ea723bc6a5e4547f61530b0a14ce091a9cc03041c77bee03cd5be63e4c8bcb2",
-        "signature": "e4856a911708c298d9d45cf9b6444ef62ae6e2d809cf72ebdc3fb8b852912a85",
+        "version": "ef422886d5db76921d9c21a7586e05dfea97dd19f37847d6c883b1579f28114a",
+        "signature": "519ec4fa70588d292d8ee22a6bb312dd10ddc0e00d5c236ea6824808a2e28ed2",
         "affectsGlobalScope": false
       },
       "./src/configs/typeorm.config.ts": {
@@ -4597,13 +4597,13 @@
         "affectsGlobalScope": false
       },
       "./src/work-schedule/work-schedule.repository.ts": {
-        "version": "a7350eb6aa30e882c48e0d364d16de515c580126af0b9f5845018c409643faf2",
-        "signature": "4934aea269a7bd6e3ea06a34fb4812b047fd28ae3228487d90c2f0fd5aff07f9",
+        "version": "733e4e650cdee08c93fda321f7c3971eb95194286bd89c7e7d70908a3cbd7f1f",
+        "signature": "b94c58a8a35693db053864ae00cb527623937c10a6705eeb607144836f0c7b0f",
         "affectsGlobalScope": false
       },
       "./src/work-schedule/work-schedule.service.ts": {
-        "version": "8bd179cf7679a0301b659ed5f0016e80cba4be7773d6ac7bd104fca2507ca406",
-        "signature": "8085df0def9b5330cd020a41c0412a9a9258b41a54f6de72a791e5a57d9ce92f",
+        "version": "fa6a13170965f202c1de126bbb719e525258691f09071dbf41339b94c9f12e3d",
+        "signature": "c0f04496be33f859a6b75306218282927714e3d6b0f6aa45bd05708233bb6085",
         "affectsGlobalScope": false
       },
       "./src/work-schedule/work-schedule.controller.ts": {
@@ -4687,18 +4687,18 @@
         "affectsGlobalScope": false
       },
       "./src/scheduling/scheduling.repository.ts": {
-        "version": "f2079965fc78fcc3085c5a8d5f5714675280a2fb4091a93886196dc831f1d0b8",
-        "signature": "513732e6b156fd5fa40a72dfcb86e81c5833fb42a5819118dc6590e9ab376901",
+        "version": "d4978d68ae3b6a126905747628986217d7afb71697867bf2785efe40b27a228c",
+        "signature": "47b3062cd4ceb39fa79d6171743ff4480161e080d589a86d9bf394e9f08bcbae",
         "affectsGlobalScope": false
       },
       "./src/scheduling/scheduling.service.ts": {
-        "version": "706895e2bac6b2f327d52b3d9936094ac63e883018168ecf7f821b77add75593",
-        "signature": "d24f6a51efbdda3f8b2709a2c78a33e01852abce74dd3263d1e4a31848398292",
+        "version": "8a77aaeaa561b141f11a6f625ab1e5953c6214d6cab655cdd76c05490dcdafa9",
+        "signature": "c835406f0efcbd4320af8b699cdd8f14cb514230e4399cccfa443becb6c3d108",
         "affectsGlobalScope": false
       },
       "./src/scheduling/scheduling.controller.ts": {
-        "version": "a827e3eddeeb2cf3769843234251fe0b6845b1af153c4224cd46b9f210a1425d",
-        "signature": "611e628b5f73f9b038efecd579e1db920d610e2c653b794562eb65a269696a82",
+        "version": "44eb3eef602afe6511f5adf80a9764483e11eafec6b3bef36b36ac5b9e9136a1",
+        "signature": "47dbc2143b9770f9c07697ca561c4c3ce649c26b8acc81e43cf5f21333e29f77",
         "affectsGlobalScope": false
       },
       "./src/scheduling/scheduling.module.ts": {
@@ -10490,6 +10490,7 @@
         "./node_modules/@nestjs/common/index.d.ts",
         "./node_modules/date-fns/typings.d.ts",
         "./src/auth/guard/jwt-auth.guard.ts",
+        "./src/roles/roles.enum.ts",
         "./src/roles/rolesQuestions.enum.ts",
         "./src/scheduling/scheduling.service.ts"
       ],
@@ -10513,6 +10514,7 @@
       "./src/scheduling/scheduling.service.ts": [
         "./node_modules/@nestjs/common/index.d.ts",
         "./node_modules/date-fns/typings.d.ts",
+        "./src/roles/roles.enum.ts",
         "./src/roles/rolesQuestions.enum.ts",
         "./src/scheduling/scheduling.repository.ts",
         "./src/work-schedule/work-schedule.service.ts"
@@ -15859,6 +15861,7 @@
         "./src/scheduling/entities/scheduling.entity.ts"
       ],
       "./src/scheduling/scheduling.service.ts": [
+        "./src/roles/roles.enum.ts",
         "./src/roles/rolesQuestions.enum.ts",
         "./src/scheduling/scheduling.repository.ts",
         "./src/work-schedule/work-schedule.service.ts"

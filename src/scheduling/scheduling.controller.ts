@@ -1,6 +1,7 @@
 import {
   Body,
   Controller,
+  Delete,
   Get,
   Param,
   Post,
@@ -8,9 +9,10 @@ import {
   Query,
   UseGuards,
 } from '@nestjs/common';
-import { JwtAuthGuard } from 'auth/guard/jwt-auth.guard';
+import { JwtAuthGuard } from '../auth/guard/jwt-auth.guard';
 import { SchedulingService } from './scheduling.service';
 import { QuestionsRole } from '../roles/rolesQuestions.enum';
+import { UserRole } from '../roles/roles.enum';
 
 interface returnCrm {
   crm: string;
@@ -34,6 +36,11 @@ interface returnQueryMonthYear {
 interface returnBody {
   userId: string;
   date: Date;
+  medicalRecordsId: number;
+}
+
+interface returnBodyUserAndMedicalRecording {
+  userId: string;
   medicalRecordsId: number;
 }
 
@@ -171,16 +178,16 @@ export class SchedulingController {
     @Body() body: returnBodyDate,
   ): Promise<any> {
     const schedulingId = params.idScheduling;
-    const userId = params.id;
+    const id = params.id;
     const date = body.date;
+    const role = UserRole.CLIENT;
 
-    const editScheduling = await this.schedulingService.updateSchedulingFromClient(
-      {
-        schedulingId,
-        userId,
-        date,
-      },
-    );
+    const editScheduling = await this.schedulingService.updateScheduling({
+      schedulingId,
+      id,
+      date,
+      role,
+    });
 
     return editScheduling;
   }
@@ -192,17 +199,68 @@ export class SchedulingController {
     @Body() body: returnBodyDate,
   ): Promise<any> {
     const schedulingId = params.idScheduling;
-    const specialistCrm = params.id;
+    const id = params.id;
     const date = body.date;
+    const role = UserRole.SPECIALIST;
 
-    const editScheduling = await this.schedulingService.updateSchedulingFromSpecialist(
-      {
-        schedulingId,
-        specialistCrm,
-        date,
-      },
-    );
+    const editScheduling = await this.schedulingService.updateScheduling({
+      schedulingId,
+      id,
+      date,
+      role,
+    });
 
     return editScheduling;
+  }
+
+  @UseGuards(JwtAuthGuard)
+  @Delete(':idScheduling/client/:id/')
+  async deleteSchedulingFromClient(
+    @Param() params: returnParams,
+  ): Promise<any> {
+    const schedulingId = params.idScheduling;
+    const id = params.id;
+    const role = UserRole.CLIENT;
+    const cancelScheduling = await this.schedulingService.cancelScheduling({
+      schedulingId,
+      role,
+      id,
+    });
+    return cancelScheduling;
+  }
+
+  @UseGuards(JwtAuthGuard)
+  @Delete(':idScheduling/specialist/:id/')
+  async deleteSchedulingFromSpecialist(
+    @Param() params: returnParams,
+  ): Promise<any> {
+    const schedulingId = params.idScheduling;
+    const id = params.id;
+    const role = UserRole.SPECIALIST;
+    const cancelScheduling = await this.schedulingService.cancelScheduling({
+      schedulingId,
+      role,
+      id,
+    });
+
+    return cancelScheduling;
+  }
+
+  @UseGuards(JwtAuthGuard)
+  @Post('/immediate')
+  async immediateSchedulingFromSpecialist(
+    @Body() body: returnBodyUserAndMedicalRecording,
+  ): Promise<any> {
+    const userId = body.userId;
+    const medicalRecordsId = body.medicalRecordsId;
+    const data = new Date(Date.now());
+
+    const immediateScheduling = await this.schedulingService.createImmediateScheduling(
+      userId,
+      medicalRecordsId,
+      data,
+    );
+
+    return immediateScheduling;
   }
 }

@@ -28,6 +28,7 @@ export class SchedulingRepository extends Repository<Scheduling> {
           (dateFieldName) =>
             `to_char(${dateFieldName}, 'MM-YYYY') = '${parseMonth}-${year}'`,
         ),
+        canceledAt: null,
       },
     });
 
@@ -50,6 +51,30 @@ export class SchedulingRepository extends Repository<Scheduling> {
           (dateFieldName) =>
             `to_char(${dateFieldName}, 'DD-MM-YYYY') = '${parseDay}-${parseMonth}-${year}'`,
         ),
+        canceledAt: null,
+      },
+    });
+
+    return schedule;
+  }
+
+  async findSchedulingFromSpecialist({
+    crm,
+    day,
+    month,
+    year,
+  }: FindAllInDayFromSpecialistDto): Promise<any> {
+    const parseMonth = String(month).padStart(2, '0');
+    const parseDay = String(day).padStart(2, '0');
+
+    const schedule = await this.find({
+      where: {
+        crmSpecialist: crm,
+        date: Raw(
+          (dateFieldName) =>
+            `to_char(${dateFieldName}, 'DD-MM-YYYY') = '${parseDay}-${parseMonth}-${year}'`,
+        ),
+        canceledAt: null,
       },
       relations: ['user'],
     });
@@ -63,6 +88,7 @@ export class SchedulingRepository extends Repository<Scheduling> {
     const schedule = await this.find({
       where: {
         userId,
+        canceledAt: null,
       },
       relations: ['specialist'],
     });

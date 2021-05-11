@@ -1,4 +1,5 @@
 import {
+  BadRequestException,
   ConflictException,
   Injectable,
   InternalServerErrorException,
@@ -79,7 +80,11 @@ export class WorkScheduleService {
       weekdayId,
     );
 
-    return workSchedule;
+    if (workSchedule !== undefined) {
+      return workSchedule;
+    } else {
+      throw new BadRequestException('Dados não encontrados');
+    }
   }
 
   async updateListWorkSchedule(
@@ -101,5 +106,25 @@ export class WorkScheduleService {
         'Erro ao salvar o horário de trabalho no banco de dados',
       );
     }
+  }
+
+  async checkSpecialistAvailability(
+    crm: string,
+    weekDay: number,
+  ): Promise<any> {
+    const specialists = await this.workingRepository.checkSpecialistAvailability(
+      crm,
+      weekDay,
+    );
+
+    return specialists;
+  }
+
+  async checkAllAvailability(weekDay: number): Promise<any> {
+    const specialists = await this.workingRepository.checkAllAvailability(
+      weekDay,
+    );
+
+    return specialists;
   }
 }

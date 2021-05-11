@@ -18,7 +18,7 @@ export class Scheduling extends BaseEntity {
   @PrimaryGeneratedColumn('increment')
   id: string;
 
-  @Column({ nullable: false })
+  @Column({ nullable: true })
   crmSpecialist: string;
 
   @ManyToOne(() => Specialist)
@@ -50,4 +50,7 @@ export class Scheduling extends BaseEntity {
 
   @UpdateDateColumn()
   updatedAt: Date;
+
+  @Column({ nullable: true, type: 'date' })
+  canceledAt: Date;
 }
