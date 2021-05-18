@@ -85,13 +85,9 @@ export class SchedulingRepository extends Repository<Scheduling> {
   async findSchedulingFromClient({
     userId,
   }: FindAllDAyFromClientDto): Promise<any> {
-    const schedule = await this.find({
-      where: {
-        userId,
-        canceledAt: null,
-      },
-      relations: ['specialist'],
-    });
+    const schedule = await this.query(
+      `select u."name" as "Profissional", s.* from scheduling s join specialist s2 ON s."crmSpecialist" = s2.crm join "user" u ON s2."userId" = u.id  where s."userId" = '${userId}' and s."canceledAt" is null;`,
+    );
 
     return schedule;
   }

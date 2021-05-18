@@ -1,4 +1,4 @@
-import { Injectable, UnprocessableEntityException } from '@nestjs/common';
+import { Injectable, BadRequestException } from '@nestjs/common';
 import { User } from '../users/entities/user.entity';
 import { UsersService } from '../users/users.service';
 import { classToClass } from 'class-transformer';
@@ -22,9 +22,7 @@ export class AuthService {
     const user = await this.userService.findByEmail(email);
 
     if (!user) {
-      throw new UnprocessableEntityException(
-        'Incorrect email/password combination.',
-      );
+      throw new BadRequestException('Combinação incorreta de e-mail / senha.');
     }
 
     const passwordMatched = await this.userService.compareHash(
@@ -33,9 +31,7 @@ export class AuthService {
     );
 
     if (!passwordMatched) {
-      throw new UnprocessableEntityException(
-        'Incorrect email/password combination.',
-      );
+      throw new BadRequestException('Combinação incorreta de e-mail / senha.');
     }
 
     delete user.password;
