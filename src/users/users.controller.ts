@@ -13,7 +13,7 @@ import {
   Res,
   BadRequestException,
 } from '@nestjs/common';
-import { classToClass } from 'class-transformer';
+import { classToClass } from 'class-transformer'; 
 import { JwtAuthGuard } from '../auth/guard/jwt-auth.guard';
 
 import { CreateUserDto } from './dto/create-user.dto';
@@ -109,7 +109,6 @@ export class UsersController {
     return user;
   }
 
-  @UseGuards(JwtAuthGuard)
   @Get('avatar/image/:imgpath')
   seeUploadedFile(@Param('imgpath') image, @Res() res) {
     return res.sendFile(image, { root: './tmp/uploads' });

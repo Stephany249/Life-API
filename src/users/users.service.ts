@@ -167,12 +167,15 @@ export class UsersService {
       );
     }
 
+    const arrayAvatar = user.avatar.split('/');
+    const avatar = arrayAvatar[arrayAvatar.length - 1];
+
     if (user.avatar) {
-      const filePath = path.resolve('./tmp/uploads/' + user.avatar);
+      const filePath = path.resolve('./tmp/uploads/' + avatar);
       await fs.promises.unlink(filePath);
     }
 
-    user.avatar = avatarFileName;
+    user.avatar = `http://${process.env.API_BASE}/users/avatar/image/${avatarFileName}`;
 
     await this.userRepository.save(user);
 

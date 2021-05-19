@@ -4352,7 +4352,7 @@
         "affectsGlobalScope": false
       },
       "./src/users/users.service.ts": {
-        "version": "ee7ca4d4c33da486d85fdac6431a48db527e2d0e5c4acb15975f5f6c14ea8e5c",
+        "version": "6f3cd57225ab1f7257b7f3b3ff16f5afd08fccb8ed46154079567d45ae64c0e7",
         "signature": "a32bf3d586eb407d205cc849d10ea03f978b68b5129f4a9b07c442df65c2b964",
         "affectsGlobalScope": false
       },
@@ -4472,7 +4472,7 @@
         "affectsGlobalScope": false
       },
       "./src/users/users.controller.ts": {
-        "version": "6aac1c90b3fd13f3bce4b1017ccf405bcdf2442855255d70004f7f407d9f4432",
+        "version": "ca4f740842403cc8ea270df173e51c5c42d4842da9d0b0f341418628f679f524",
         "signature": "08961cc22ebe959d962a4f3981b8ed5f3d4e8d08773f6fc8b99362462d375628",
         "affectsGlobalScope": false
       },
@@ -4522,7 +4522,7 @@
         "affectsGlobalScope": false
       },
       "./src/auth/auth.service.ts": {
-        "version": "6abfe3ec96b9eb277d1f1e1e7cb3ba332aa1e1455a66804db8c836aef55f49f3",
+        "version": "17de066e6d175e6ccc5d0a55e5935b5e246a2ba67512e2ee0c502bb0f3599a41",
         "signature": "bd98ebc84ee0f7638633e33f03db4f74199f2c79ab448fe6325530924e640e65",
         "affectsGlobalScope": false
       },
@@ -4692,7 +4692,7 @@
         "affectsGlobalScope": false
       },
       "./src/scheduling/scheduling.service.ts": {
-        "version": "8a77aaeaa561b141f11a6f625ab1e5953c6214d6cab655cdd76c05490dcdafa9",
+        "version": "c69d2203723a00346354cfabd5cb133eb13c21537bcff1ef8bd4f99099f75029",
         "signature": "c835406f0efcbd4320af8b699cdd8f14cb514230e4399cccfa443becb6c3d108",
         "affectsGlobalScope": false
       },

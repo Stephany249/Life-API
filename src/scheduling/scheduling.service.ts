@@ -265,9 +265,7 @@ export class SchedulingService {
 
     for (let i = 0; i < scheduling.length; i++) {
       if (
-        getDate(date) === getDate(scheduling[i].date) &&
-        getHours(scheduling[i].date) > getHours(date)
-      ) {
+        getDate(date) === getDate(scheduling[i].date)) {
         arrayScheduling.push(scheduling[i]);
       }
     }
