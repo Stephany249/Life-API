@@ -3277,8 +3277,8 @@
         "affectsGlobalScope": false
       },
       "./src/specialist/specialist.repository.ts": {
-        "version": "65a3a2c57de80718217ac090c9adee7f6a378659650c9c0b3ccbe59c3a52ca0f",
-        "signature": "015e66c696cc63befda999360f7453c77b5d1cd6515ef3da1266cdda41916b49",
+        "version": "f0b159112677e81df7289bb22cdcf13d5bdfd62b04c0df9a162be6030a28f19c",
+        "signature": "9fd0ea4856568e70e99ec978d623bb2df11be8e811b3ede5831ccff230eeafdc",
         "affectsGlobalScope": false
       },
       "./src/specialist/dto/create-specialist.dto.ts": {
@@ -3287,8 +3287,8 @@
         "affectsGlobalScope": false
       },
       "./src/specialist/specialist.service.ts": {
-        "version": "75d77ec4f2e5847f105612280cc577c064c2e2c47094f3415a23cb61ca1774a3",
-        "signature": "2e2f44763350723e4ed6b2742a8f3631dfd31c325e70ad8c7fdddbc304021423",
+        "version": "f95b330fa46b0e1d819104e63f7e6778408371a0fc5fd483b13d48b54500f4dc",
+        "signature": "ffcbce639af836ca049937287c6cdf97f4d2a1edc1c7d1c35eb11f263f3cf808",
         "affectsGlobalScope": false
       },
       "./src/specialist/specialist.controller.ts": {
@@ -4352,8 +4352,8 @@
         "affectsGlobalScope": false
       },
       "./src/users/users.service.ts": {
-        "version": "6f3cd57225ab1f7257b7f3b3ff16f5afd08fccb8ed46154079567d45ae64c0e7",
-        "signature": "a32bf3d586eb407d205cc849d10ea03f978b68b5129f4a9b07c442df65c2b964",
+        "version": "4ef40192de8440fb1a87ad012f27ba373afc044378fae53e5c98038729cc936e",
+        "signature": "043a0feb2d6b5bbd2abbca988c9fc51fc933e3787299986e743198586b288f00",
         "affectsGlobalScope": false
       },
       "./node_modules/@nestjs/passport/dist/abstract.strategy.d.ts": {
@@ -4522,7 +4522,7 @@
         "affectsGlobalScope": false
       },
       "./src/auth/auth.service.ts": {
-        "version": "17de066e6d175e6ccc5d0a55e5935b5e246a2ba67512e2ee0c502bb0f3599a41",
+        "version": "7630d06c3536e9bba7c25be28e675595ffffb756b7de8cff0d081fdfbb0b6f1a",
         "signature": "bd98ebc84ee0f7638633e33f03db4f74199f2c79ab448fe6325530924e640e65",
         "affectsGlobalScope": false
       },
@@ -4687,13 +4687,13 @@
         "affectsGlobalScope": false
       },
       "./src/scheduling/scheduling.repository.ts": {
-        "version": "4cec874e16866a72259f6144b7ba4d2424f15a4b8d8c64e002ab8ff7ca90ee04",
+        "version": "16724d00a3bba081fbe8938f00b98001d99907e9cc9a0cb82dea59ba5511d39b",
         "signature": "47b3062cd4ceb39fa79d6171743ff4480161e080d589a86d9bf394e9f08bcbae",
         "affectsGlobalScope": false
       },
       "./src/scheduling/scheduling.service.ts": {
-        "version": "c69d2203723a00346354cfabd5cb133eb13c21537bcff1ef8bd4f99099f75029",
-        "signature": "c835406f0efcbd4320af8b699cdd8f14cb514230e4399cccfa443becb6c3d108",
+        "version": "996ea183101b44794bcd8f5adcde63bab524ab6d383e31b21aa091e0864e83e7",
+        "signature": "dc2ab5897f32fcc40ec20a1896a1fd14ebc1ef1ac119b168b52f0b07658b42ab",
         "affectsGlobalScope": false
       },
       "./src/scheduling/scheduling.controller.ts": {
@@ -4702,7 +4702,7 @@
         "affectsGlobalScope": false
       },
       "./src/scheduling/scheduling.module.ts": {
-        "version": "7a54acc32ea14ae5465febafb66b132c14ffdc35c50719f84c68854279257406",
+        "version": "4dd534b898610668acd44b8dd5fafb0c082e608832fb2e9b6ef9ddd04bf8b46b",
         "signature": "4c05844d19fb6d72f61b48d286f809f0c5b1d018a700e4c9abaf09559e5dcc47",
         "affectsGlobalScope": false
       },
@@ -10501,6 +10501,7 @@
         "./src/scheduling/scheduling.controller.ts",
         "./src/scheduling/scheduling.repository.ts",
         "./src/scheduling/scheduling.service.ts",
+        "./src/users/users.module.ts",
         "./src/work-schedule/work-schedule.module.ts"
       ],
       "./src/scheduling/scheduling.repository.ts": [
@@ -10517,6 +10518,7 @@
         "./src/roles/roles.enum.ts",
         "./src/roles/rolesQuestions.enum.ts",
         "./src/scheduling/scheduling.repository.ts",
+        "./src/users/users.service.ts",
         "./src/work-schedule/work-schedule.service.ts"
       ],
       "./src/specialist/dto/create-specialist.dto.ts": [
@@ -15864,6 +15866,7 @@
         "./src/roles/roles.enum.ts",
         "./src/roles/rolesQuestions.enum.ts",
         "./src/scheduling/scheduling.repository.ts",
+        "./src/users/users.service.ts",
         "./src/work-schedule/work-schedule.service.ts"
       ],
       "./src/specialist/dto/create-specialist.dto.ts": [

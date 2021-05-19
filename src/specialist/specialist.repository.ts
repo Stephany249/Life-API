@@ -14,4 +14,12 @@ export class SpecialistRepository extends Repository<Specialist> {
 
     return specialist;
   }
+
+  async findSpecialistAndUser(userId: string): Promise<Specialist | undefined> {
+    const specialist = await this.query(`
+      select u.*, s.crm from "user" u join specialist s on u.id = s."userId" and u.id ='${userId}'
+    `);
+
+    return specialist;
+  }
 }

@@ -16,6 +16,7 @@ import {
   getMonth,
   getYear,
 } from 'date-fns';
+import { UsersService } from '../users/users.service';
 import { UserRole } from '../roles/roles.enum';
 import { QuestionsRole } from '../roles/rolesQuestions.enum';
 import { WorkScheduleService } from '../work-schedule/work-schedule.service';
@@ -67,6 +68,7 @@ interface RequestDeleteSchedulingClient {
 export class SchedulingService {
   constructor(
     private schedulingRepository: SchedulingRepository,
+    private usersService: UsersService,
     private workScheduleService: WorkScheduleService,
   ) {}
 
@@ -232,6 +234,7 @@ export class SchedulingService {
     month,
     year,
   }: IRequest): Promise<any> {
+    const arrayScheduling = []
     const scheduling = await this.schedulingRepository.findSchedulingFromSpecialist(
       {
         crm,
@@ -240,14 +243,21 @@ export class SchedulingService {
         year,
       },
     );
+    let j = 0;
 
-    const compareDate = new Date(Date.now());
-    const arrayScheduling = [];
+    if(scheduling.length >= 1) {
+      for(let i = 0; i < scheduling.length; i++) {
+        if(getHours(scheduling[i].date) >= getHours(new Date(Date.now()))) {
+          const { name } = await this.usersService.findById(scheduling[i].userId);
+            arrayScheduling[j] = {
+              scheduling: scheduling[i],
+              name
+            }
+          j++;
+        }
 
-    for (let i = 0; i < scheduling.length; i++) {
-      if (isAfter(scheduling[i].date, compareDate)) {
-        arrayScheduling.push(scheduling[i]);
       }
+
     }
 
     return arrayScheduling;
@@ -265,7 +275,7 @@ export class SchedulingService {
 
     for (let i = 0; i < scheduling.length; i++) {
       if (
-        getDate(date) === getDate(scheduling[i].date)) {
+        getDate(date) === getDate(scheduling[i].date) && getHours(scheduling[i].date) >= getHours(date)) {
         arrayScheduling.push(scheduling[i]);
       }
     }

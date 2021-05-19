@@ -81,7 +81,7 @@ export class UsersService {
     return await this.userRepository.compareHash(password, hash);
   }
 
-  async findByEmail(email: string): Promise<User | undefined> {
+  async findByEmail(email: string): Promise<any> {
     return await this.userRepository.findByEmail(email);
   }
 

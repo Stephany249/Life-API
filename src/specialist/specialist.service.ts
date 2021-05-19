@@ -22,6 +22,12 @@ export class SpecialistService {
     return await this.specialistRepository.save(createSpecialistDto);
   }
 
+  async findSpecialistAndUser(user_id: string): Promise<Specialist> {
+    const user = await this.specialistRepository.findSpecialistAndUser(user_id);
+
+    return user;
+  }
+
   async findById(user_id: string): Promise<Specialist> {
     const user = await this.specialistRepository.findById(user_id);
 

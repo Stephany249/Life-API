@@ -19,7 +19,7 @@ export class AuthService {
   ) {}
 
   async createSession(email: string, password: string): Promise<any> {
-    const user = await this.userService.findByEmail(email);
+    let user = await this.userService.findByEmail(email);
 
     if (!user) {
       throw new BadRequestException('Combinação incorreta de e-mail / senha.');
@@ -37,8 +37,9 @@ export class AuthService {
     delete user.password;
 
     if (user.role === UserRole.SPECIALIST) {
-      const specialist = await this.specialistService.findById(user.id);
-      return { user, specialist };
+      const specialist = await this.specialistService.findSpecialistAndUser(user.id);
+      user = specialist[0];
+      return { user: classToClass(user) };
     }
 
     return {
