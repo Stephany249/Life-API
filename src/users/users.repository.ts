@@ -53,7 +53,7 @@ export class UserRepository extends Repository<User> {
     return user;
   }
 
-  async findById(id: string): Promise<User | undefined> {
+  async findById(id: string): Promise<any> {
     const user = await this.findOne({ where: { id: id } });
 
     return user;

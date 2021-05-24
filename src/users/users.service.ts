@@ -104,7 +104,7 @@ export class UsersService {
   }
 
   async updateProfile(id: string, updateUserDto: UpdateUserDto): Promise<any> {
-    const user = await this.userRepository.findById(id);
+    let user = await this.userRepository.findById(id);
 
     if (!user) {
       throw new BadRequestException('Usuário não encontrado');
@@ -146,20 +146,22 @@ export class UsersService {
     const userUpdated = await this.userRepository.save(user);
 
     if (userUpdated.role === UserRole.SPECIALIST) {
-      const specialist = await this.specialistService.findById(userUpdated.id);
+      const specialist = await this.specialistService.findSpecialistAndUser(userUpdated.id);
+      user = specialist[0];
 
-      delete userUpdated.password;
-
-      return { userUpdated, specialist };
+      delete user.password;
+      return { user: classToClass(user) };
     }
 
     delete userUpdated.password;
 
-    return userUpdated;
+    return {user: userUpdated};
   }
 
-  async updateAvatar(id: string, avatarFileName: string): Promise<User> {
+  async updateAvatar(id: string, avatarFileName: string): Promise<any> {
     const user = await this.userRepository.findById(id);
+
+    console.log('User', user);
 
     if (!user) {
       throw new BadRequestException(
@@ -167,21 +169,29 @@ export class UsersService {
       );
     }
 
-    const arrayAvatar = user.avatar.split('/');
-    const avatar = arrayAvatar[arrayAvatar.length - 1];
-
     if (user.avatar) {
-      const filePath = path.resolve('./tmp/uploads/' + avatar);
-      await fs.promises.unlink(filePath);
+      if(user.avatar.includes('/')) {
+        const arrayAvatar = user.avatar.split('/');
+        const avatar = arrayAvatar[arrayAvatar.length - 1];
+
+        if (user.avatar) {
+          const filePath = path.resolve('./tmp/uploads/' + avatar);
+          await fs.promises.unlink(filePath);
+        }
+
+      }else {
+        const filePath = path.resolve('./tmp/uploads/' + user.avatar);
+        await fs.promises.unlink(filePath);
+      }
     }
 
-    user.avatar = `http://${process.env.API_BASE}/users/avatar/image/${avatarFileName}`;
-
-    await this.userRepository.save(user);
-
-    delete user.password;
-
-    return user;
+      user.avatar = `http://${process.env.API_BASE}/users/avatar/image/${avatarFileName}`;
+    
+      await this.userRepository.save(user);
+  
+      delete user.password;
+  
+      return {user};
   }
 
   async resetPassword(reset: IResponse): Promise<any> {

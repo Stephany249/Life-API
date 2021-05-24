@@ -55,7 +55,7 @@ export class WorkScheduleRepository extends Repository<WorkSchedule> {
   }
 
   async getWorkScheduleBySpecialist(crm: string) {
-    return await this.find({ where: { crm } });
+    return await this.find({ where: { crm }, order: {['weekdayId']: 'ASC'}, relations: ['Weekday'] });
   }
 
   async getWorkScheduleBySpecialistAndDate(crm: string, weekdayId: number) {

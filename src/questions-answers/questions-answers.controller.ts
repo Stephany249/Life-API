@@ -12,7 +12,7 @@ export class QuestionsAndAnswersController {
   @UseGuards(JwtAuthGuard)
   @Get('/answers/client')
   async getQuestionsAnswerClient() {
-    const questionAnswer = this.questionsAndAnswersService.getQuestionAndAnswer(
+    const questionAnswer = await this.questionsAndAnswersService.getQuestionAndAnswer(
       QuestionsRole.CLIENT,
     );
 
@@ -22,7 +22,7 @@ export class QuestionsAndAnswersController {
   @UseGuards(JwtAuthGuard)
   @Get('/answers/friend')
   async getQuestionsAnswerFriend() {
-    const questionAnswer = this.questionsAndAnswersService.getQuestionAndAnswer(
+    const questionAnswer = await this.questionsAndAnswersService.getQuestionAndAnswer(
       QuestionsRole.FRIEND,
     );
 

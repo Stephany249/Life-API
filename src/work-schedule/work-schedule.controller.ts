@@ -25,7 +25,7 @@ export class WorkScheduleController {
   @UseGuards(JwtAuthGuard)
   @Post('create/:crm')
   async createWorkSchedule(
-    @Param() crm,
+    @Param() crm : string,
     @Body() createWorkingDto: CreateWorkingDto,
   ): Promise<any> {
     const hours = await this.workingService.createWorkSchedule(
@@ -37,7 +37,7 @@ export class WorkScheduleController {
 
   @UseGuards(JwtAuthGuard)
   @Get('/:crm')
-  async showWorkingHours(@Param() crm): Promise<any> {
+  async showWorkingHours(@Param() crm: string): Promise<any> {
     const hours = await this.workingService.getWorkScheduleBySpecialist(crm);
 
     return hours;

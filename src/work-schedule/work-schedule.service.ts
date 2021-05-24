@@ -18,7 +18,7 @@ export class WorkScheduleService {
 
   async createWorkSchedule(
     createWorkingDto: CreateWorkingDto,
-    userCRM: userCRM,
+    userCRM: string,
   ): Promise<any> {
     if (await this.getWorkingSchedule(userCRM, createWorkingDto.day)) {
       throw new ConflictException(
@@ -28,20 +28,20 @@ export class WorkScheduleService {
 
     return await this.workingRepository.createWorkSchedule(
       createWorkingDto,
-      userCRM.crm,
+      userCRM,
     );
   }
 
-  async getWorkingSchedule(userCRM: userCRM, weekdayId: number): Promise<any> {
+  async getWorkingSchedule(userCRM: string, weekdayId: number): Promise<any> {
     return await this.workingRepository.getWorkScheduleBySpecialistAndDate(
-      userCRM.crm,
+      userCRM,
       weekdayId,
     );
   }
 
-  async getWorkScheduleBySpecialist(userCRM: userCRM) {
+  async getWorkScheduleBySpecialist(userCRM: string) {
     return await this.workingRepository.getWorkScheduleBySpecialist(
-      userCRM.crm,
+      userCRM,
     );
   }
 
@@ -53,6 +53,7 @@ export class WorkScheduleService {
   }
 
   async deleteWorkSchedule(crm: string, weekdayId: number) {
+    console
     const workSchedule = await this.workingRepository.getWorkScheduleBySpecialistAndDate(
       crm,
       weekdayId,
@@ -93,6 +94,23 @@ export class WorkScheduleService {
   ) {
     try {
       const respList = [];
+      let entered = 0;
+      const currentTimes = await this.getWorkScheduleBySpecialist(crm);
+
+      if(currentTimes.length > 0) {
+        for (const currentTime of currentTimes) {
+          for(const workSchedule of createListWorkingDto.working) {
+            if(currentTime.weekdayId !== workSchedule.day) {
+              entered++;
+              if(createListWorkingDto.working.length === entered) {
+                await this.deleteWorkSchedule(crm, currentTime.weekdayId);
+              }
+            }
+          }
+          entered = 0;
+        }
+      }
+      
       for (const workSchedule of createListWorkingDto.working) {
         const work = await this.workingRepository.updateWorkSchedule(
           crm,

@@ -39,6 +39,8 @@ export class AuthService {
     if (user.role === UserRole.SPECIALIST) {
       const specialist = await this.specialistService.findSpecialistAndUser(user.id);
       user = specialist[0];
+
+      delete user.password;
       return { user: classToClass(user) };
     }
 
