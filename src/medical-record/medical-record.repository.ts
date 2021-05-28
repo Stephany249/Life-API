@@ -19,7 +19,7 @@ export class MedicalRecordRepository extends Repository<MedicalRecord> {
     medicalRecord.question1 = createMedicalRecordDto.question1;
     medicalRecord.question2 = createMedicalRecordDto.question2;
     medicalRecord.question3 = createMedicalRecordDto.question3;
-    medicalRecord.question4 = createMedicalRecordDto.question4;
+    medicalRecord.question4 = createMedicalRecordDto.question4; 
     medicalRecord.question5 = createMedicalRecordDto.question5;
     medicalRecord.question6 = createMedicalRecordDto.question6;
     medicalRecord.question7 = createMedicalRecordDto.question7;
@@ -34,6 +34,7 @@ export class MedicalRecordRepository extends Repository<MedicalRecord> {
 
       return medicalRecord;
     } catch (err) {
+      console.log(err);
       throw new InternalServerErrorException(
         'Erro ao salvar o prontuário no banco de dados',
       );

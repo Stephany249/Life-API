@@ -54,19 +54,21 @@ export class MedicalRecordService {
         ),
       );
 
-      for (let i = 0; i < createMedicalRecordDto.question6.length; i++) {
-        if (createMedicalRecordDto.question6[i] !== 26) {
+      const question6 = createMedicalRecordDto.question6.split(',');
+      for (let i = 0; i < question6.length - 1; i++) {
+        console.log(question6);
+        if (question6[i] !== '26') {
           returnScoreForAnswers.push(
             await this.questionsAndAnswersService.getScoreAnswer(
               role,
-              createMedicalRecordDto.question6[i],
+              parseInt(question6[i]),
             ),
           );
-        } else if (createMedicalRecordDto.question6[i] === 26) {
+        } else if (question6[i] === '26') {
           returnScoreForAnswers.push(
             await this.questionsAndAnswersService.getScoreAnswer(
               role,
-              createMedicalRecordDto.question6[i],
+              parseInt(question6[i]),
             ),
           );
         }
@@ -96,27 +98,29 @@ export class MedicalRecordService {
           ),
         );
       }
-      for (let i = 0; i < createMedicalRecordDto.question9.length; i++) {
-        if (createMedicalRecordDto.question9[i] !== 40) {
+
+      const question9 = createMedicalRecordDto.question9.split(',');
+      for (let i = 0; i < question9.length - 1; i++) {
+        if (question9[i] !== '40') {
           returnScoreForAnswers.push(
             await this.questionsAndAnswersService.getScoreAnswer(
               role,
-              createMedicalRecordDto.question9[i],
+              parseInt(question9[i]),
             ),
           );
-        } else if (createMedicalRecordDto.question9[i] === 40) {
+        } else if (question9[i] === '40') {
           returnScoreForAnswers.push(
             await this.questionsAndAnswersService.getScoreAnswer(
               role,
-              createMedicalRecordDto.question9[i],
+              parseInt(question9[i]),
             ),
           );
         }
         break;
       }
 
-      for (let i = 0; i < createMedicalRecordDto.question9.length; i++) {
-        if (createMedicalRecordDto.question9[i] === 40) {
+      for (let i = 0; i < question9.length - 1; i++) {
+        if (question9[i] === '40') {
           break;
         } else {
           if (createMedicalRecordDto.question10 === null) {
@@ -156,8 +160,9 @@ export class MedicalRecordService {
         throw new BadRequestException('Deve ser informado a questão 8');
       }
 
-      for (let i = 0; i < createMedicalRecordDto.question9.length; i++) {
-        if (createMedicalRecordDto.question9[i] === 85) {
+      const question9 = createMedicalRecordDto.question9.split(',');
+      for (let i = 0; i < question9.length - 1; i++) {
+        if (question9[i] === '85') {
           break;
         } else {
           if (createMedicalRecordDto.question10 === null) {

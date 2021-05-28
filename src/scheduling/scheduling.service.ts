@@ -112,7 +112,7 @@ export class SchedulingService {
       throw new BadRequestException('Este horário já está ocupado');
     }
 
-    const scheduling = this.schedulingRepository.create({
+    const scheduling = await this.schedulingRepository.create({
       crmSpecialist: crm,
       userId,
       date: schedulingDate,
@@ -234,7 +234,7 @@ export class SchedulingService {
     month,
     year,
   }: IRequest): Promise<any> {
-    const arrayScheduling = []
+    const arrayScheduling = [];
     const scheduling = await this.schedulingRepository.findSchedulingFromSpecialist(
       {
         crm,
@@ -245,19 +245,19 @@ export class SchedulingService {
     );
     let j = 0;
 
-    if(scheduling.length >= 1) {
-      for(let i = 0; i < scheduling.length; i++) {
-        if(getHours(scheduling[i].date) >= getHours(new Date(Date.now()))) {
-          const { name } = await this.usersService.findById(scheduling[i].userId);
-            arrayScheduling[j] = {
-              scheduling: scheduling[i],
-              name
-            }
+    if (scheduling.length >= 1) {
+      for (let i = 0; i < scheduling.length; i++) {
+        if (getHours(scheduling[i].date) >= getHours(new Date(Date.now()))) {
+          const { name } = await this.usersService.findById(
+            scheduling[i].userId,
+          );
+          arrayScheduling[j] = {
+            scheduling: scheduling[i],
+            name,
+          };
           j++;
         }
-
       }
-
     }
 
     return arrayScheduling;
@@ -275,7 +275,9 @@ export class SchedulingService {
 
     for (let i = 0; i < scheduling.length; i++) {
       if (
-        getDate(date) === getDate(scheduling[i].date) && getHours(scheduling[i].date) >= getHours(date)) {
+        getDate(date) === getDate(scheduling[i].date) &&
+        getHours(scheduling[i].date) >= getHours(date)
+      ) {
         arrayScheduling.push(scheduling[i]);
       }
     }

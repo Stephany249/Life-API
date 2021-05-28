@@ -77,8 +77,8 @@ export class SchedulingRepository extends Repository<Scheduling> {
         canceledAt: null,
       },
       order: {
-        ['date']: 'ASC'
-      }
+        ['date']: 'ASC',
+      },
     });
 
     return schedule;

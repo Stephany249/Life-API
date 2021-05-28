@@ -6,7 +6,7 @@ import { Questions } from './entities/questions.entity';
 export class QuestionsRepository extends Repository<Questions> {
   async getQuestions(role: QuestionsRole): Promise<any> {
     const questions = await this.query(
-      `select q.id, q.question, q."role" from questions q where q."role" = '${role}'`,
+      `select q.id, q.question, q."role" from questions q where q."role" = '${role}' order by q.id`,
     );
 
     return questions;

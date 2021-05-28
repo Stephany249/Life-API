@@ -61,8 +61,8 @@ export class MedicalRecord extends BaseEntity {
   @JoinColumn({ name: 'question5' })
   answers5: Answers;
 
-  @Column({ nullable: false, type: 'int4', array: true })
-  question6: number[];
+  @Column({ nullable: false, type: 'varchar'})
+  question6: string;
 
   @Column({ nullable: false, type: 'int2' })
   question7: number;
@@ -78,8 +78,8 @@ export class MedicalRecord extends BaseEntity {
   @JoinColumn({ name: 'question8' })
   answers8: Answers;
 
-  @Column({ nullable: false, type: 'int4', array: true })
-  question9: number[];
+  @Column({ nullable: false, type: 'varchar'})
+  question9: string;
 
   @Column({ nullable: true, type: 'int2' })
   question10: number;

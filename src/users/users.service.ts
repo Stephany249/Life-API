@@ -146,7 +146,9 @@ export class UsersService {
     const userUpdated = await this.userRepository.save(user);
 
     if (userUpdated.role === UserRole.SPECIALIST) {
-      const specialist = await this.specialistService.findSpecialistAndUser(userUpdated.id);
+      const specialist = await this.specialistService.findSpecialistAndUser(
+        userUpdated.id,
+      );
       user = specialist[0];
 
       delete user.password;
@@ -155,13 +157,11 @@ export class UsersService {
 
     delete userUpdated.password;
 
-    return {user: userUpdated};
+    return { user: userUpdated };
   }
 
   async updateAvatar(id: string, avatarFileName: string): Promise<any> {
     const user = await this.userRepository.findById(id);
-
-    console.log('User', user);
 
     if (!user) {
       throw new BadRequestException(
@@ -170,7 +170,7 @@ export class UsersService {
     }
 
     if (user.avatar) {
-      if(user.avatar.includes('/')) {
+      if (user.avatar.includes('/')) {
         const arrayAvatar = user.avatar.split('/');
         const avatar = arrayAvatar[arrayAvatar.length - 1];
 
@@ -178,20 +178,19 @@ export class UsersService {
           const filePath = path.resolve('./tmp/uploads/' + avatar);
           await fs.promises.unlink(filePath);
         }
-
-      }else {
+      } else {
         const filePath = path.resolve('./tmp/uploads/' + user.avatar);
         await fs.promises.unlink(filePath);
       }
     }
 
-      user.avatar = `http://${process.env.API_BASE}/users/avatar/image/${avatarFileName}`;
-    
-      await this.userRepository.save(user);
-  
-      delete user.password;
-  
-      return {user};
+    user.avatar = `http://${process.env.API_BASE}/users/avatar/image/${avatarFileName}`;
+
+    await this.userRepository.save(user);
+
+    delete user.password;
+
+    return { user };
   }
 
   async resetPassword(reset: IResponse): Promise<any> {

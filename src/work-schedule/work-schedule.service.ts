@@ -8,10 +8,6 @@ import { CreateWorkingDto } from './dto/create-working.dto';
 import { CreateListWorkingDto } from './dto/create-list-working.dto';
 import { WorkScheduleRepository } from './work-schedule.repository';
 
-interface userCRM {
-  crm: string;
-}
-
 @Injectable()
 export class WorkScheduleService {
   constructor(private workingRepository: WorkScheduleRepository) {}
@@ -40,9 +36,7 @@ export class WorkScheduleService {
   }
 
   async getWorkScheduleBySpecialist(userCRM: string) {
-    return await this.workingRepository.getWorkScheduleBySpecialist(
-      userCRM,
-    );
+    return await this.workingRepository.getWorkScheduleBySpecialist(userCRM);
   }
 
   async updateWorkSchedule(crm: string, createWorkingDto: CreateWorkingDto) {
@@ -53,7 +47,6 @@ export class WorkScheduleService {
   }
 
   async deleteWorkSchedule(crm: string, weekdayId: number) {
-    console
     const workSchedule = await this.workingRepository.getWorkScheduleBySpecialistAndDate(
       crm,
       weekdayId,
@@ -97,12 +90,12 @@ export class WorkScheduleService {
       let entered = 0;
       const currentTimes = await this.getWorkScheduleBySpecialist(crm);
 
-      if(currentTimes.length > 0) {
+      if (currentTimes.length > 0) {
         for (const currentTime of currentTimes) {
-          for(const workSchedule of createListWorkingDto.working) {
-            if(currentTime.weekdayId !== workSchedule.day) {
+          for (const workSchedule of createListWorkingDto.working) {
+            if (currentTime.weekdayId !== workSchedule.day) {
               entered++;
-              if(createListWorkingDto.working.length === entered) {
+              if (createListWorkingDto.working.length === entered) {
                 await this.deleteWorkSchedule(crm, currentTime.weekdayId);
               }
             }
@@ -110,7 +103,7 @@ export class WorkScheduleService {
           entered = 0;
         }
       }
-      
+
       for (const workSchedule of createListWorkingDto.working) {
         const work = await this.workingRepository.updateWorkSchedule(
           crm,

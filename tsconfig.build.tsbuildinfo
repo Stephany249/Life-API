@@ -2907,8 +2907,8 @@
         "affectsGlobalScope": false
       },
       "./src/medical-record/entities/medical-record.entity.ts": {
-        "version": "321137bff3ac83559301b8e6524d5b1b994da057338464109149ab0f56394fd5",
-        "signature": "989dbdca424091863880c0535b6af35a98d550bf0af07911cf1751aa572a037d",
+        "version": "b4d41ebe631be56865872ad386fa0e192a36cc3f61a95d04df1e51fe881b7644",
+        "signature": "1cb2ee150f2dee4051ff369add9b94432985c2c4c6a6eed1aacc125ba3f77d66",
         "affectsGlobalScope": false
       },
       "./src/scheduling/entities/scheduling.entity.ts": {
@@ -4352,7 +4352,7 @@
         "affectsGlobalScope": false
       },
       "./src/users/users.service.ts": {
-        "version": "aac39c52c9ed50c65b76d652826ffc9787590075782ccacc6f312826fa360035",
+        "version": "6d4d938330a97fef425776fe89d7a6655877bf32fe60922d0c080fe3b8baf731",
         "signature": "9e17e2fe62701aef82d82b3abc3f9d2b26453d1f4b1f7b92e4d57edbac7ef3aa",
         "affectsGlobalScope": false
       },
@@ -4597,12 +4597,12 @@
         "affectsGlobalScope": false
       },
       "./src/work-schedule/work-schedule.repository.ts": {
-        "version": "3ec81cbeeae8f3ff2782e5fa1dca7a28432135fdf7b2614d4df6db4ba11377cb",
+        "version": "0df4a789e31f9fe244f5531068db95c4415d54393b150bef98169c1497bdfd82",
         "signature": "b94c58a8a35693db053864ae00cb527623937c10a6705eeb607144836f0c7b0f",
         "affectsGlobalScope": false
       },
       "./src/work-schedule/work-schedule.service.ts": {
-        "version": "50342668e2496b37a9f9a946a476657993fcce1ba8dbff993a861c0abc2a946f",
+        "version": "9003025442b7a7c6219a5a4b6e9f57f64044badf61db9c50add94dc47c8ae6c1",
         "signature": "1dc7b1ef7ad55a078030f4a581e559e552898e5115bcce65b8eed7476450ce00",
         "affectsGlobalScope": false
       },
@@ -4627,7 +4627,7 @@
         "affectsGlobalScope": false
       },
       "./src/questions-answers/question.repository.ts": {
-        "version": "7ac2c19e0e33bdfdb0c2260b1296a76761d6e5dc82f2267c925bf0004db6b17e",
+        "version": "aa9de99c1989d9bdec35751ccc20b135e8838247765eb2bf7c45d137e627dba3",
         "signature": "e8e5b57c0ab242cbc3d2b44b3f7d3bfce4eafdd5cb36efd3deb568a534ba4aee",
         "affectsGlobalScope": false
       },
@@ -4647,17 +4647,17 @@
         "affectsGlobalScope": false
       },
       "./src/medical-record/dto/create-medical-record.dto.ts": {
-        "version": "1461b215c7fe4acf5c33d61a11ad5d4df50e3ab75df50ac2cbb01df8c7f0c0d1",
-        "signature": "a19e5f00afa5bae916bba0c6a28e47fdc30f2de56adb6e750ae53065637eaed0",
+        "version": "7bd9d91b3d227b5b969ef535ae43e5ab260d9ede8d5f88ee978f4a39a37ca1ea",
+        "signature": "e823b9aa6fffd7c6877ad0cd3ddd8c31bc5dda46bc9dfc36e49b88009c4048c8",
         "affectsGlobalScope": false
       },
       "./src/medical-record/medical-record.repository.ts": {
-        "version": "63338632a2de34cb2f2de4cbfbeb99aa4c96e3bcc00d950cabd649616769b7ea",
+        "version": "6c70f05a19c28a41872037141c4c0b9f35869227540ebf402ce85e053eeaaf05",
         "signature": "2dc019c6e69ca5c8a3d9720c0c5a5193412dda0c3727ddf81ffdad1960eba80e",
         "affectsGlobalScope": false
       },
       "./src/medical-record/medical-record.service.ts": {
-        "version": "000bde11943f63746a1e29bb25fbc9916d6373bc63b48c97bc3a14b0a5656349",
+        "version": "27e163c4dfcc930f08a0de6d5811f39cac22471b86b593ba2732b917ef9a33da",
         "signature": "34b468e017ae6450f2ffa782fa0b69433cbb8a098c4fc36a6337f4480722f5f6",
         "affectsGlobalScope": false
       },
@@ -4687,12 +4687,12 @@
         "affectsGlobalScope": false
       },
       "./src/scheduling/scheduling.repository.ts": {
-        "version": "16724d00a3bba081fbe8938f00b98001d99907e9cc9a0cb82dea59ba5511d39b",
+        "version": "68da95c0972efcbffd2d905ad20a5273ed972672306c3303e4c78b26b480f5f8",
         "signature": "47b3062cd4ceb39fa79d6171743ff4480161e080d589a86d9bf394e9f08bcbae",
         "affectsGlobalScope": false
       },
       "./src/scheduling/scheduling.service.ts": {
-        "version": "996ea183101b44794bcd8f5adcde63bab524ab6d383e31b21aa091e0864e83e7",
+        "version": "a60d0f297cc777b162ede0becbad3abc0aa94c23c7a8877dc30a65b3abd6b08c",
         "signature": "dc2ab5897f32fcc40ec20a1896a1fd14ebc1ef1ac119b168b52f0b07658b42ab",
         "affectsGlobalScope": false
       },
@@ -4912,7 +4912,7 @@
         "affectsGlobalScope": false
       },
       "./src/main.ts": {
-        "version": "d8887dcc6409abc49c44d0814417b02d48e8fd8b306792099bf183f72cb40b11",
+        "version": "a7f55e9193aa285b945e7b6617a3731491b0354849219e0b6efd4b31b422ab7e",
         "signature": "25cdc44c779f190955e8bd78b774bdff769f0fcedcd6b3c565d07b911e098295",
         "affectsGlobalScope": false
       },
@@ -4927,7 +4927,7 @@
         "affectsGlobalScope": false
       },
       "./src/migrations/1620081432833-SeedQuestions.ts": {
-        "version": "cdeb591af3410f81ffc34ce9caa494a4c0c66f319731c6f714cb24ea94273b79",
+        "version": "4390f60daae0b0c5a22d4fee71db93074d682703868c29774c3ccaa91b466060",
         "signature": "83edfd3aed34b61d5340dbb46d689b2c3cbed13f7652fe82804edc99280d41c8",
         "affectsGlobalScope": false
       },

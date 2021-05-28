@@ -31,7 +31,7 @@ export class CreateMedicalRecordDto {
   @IsNotEmpty({
     message: 'Informe a resposta da questão',
   })
-  readonly question6: number[];
+  readonly question6: string;
   @ApiProperty()
   @IsNotEmpty({
     message: 'Informe a resposta da questão',
@@ -43,7 +43,7 @@ export class CreateMedicalRecordDto {
   @IsNotEmpty({
     message: 'Informe a resposta da questão',
   })
-  readonly question9: [number];
+  readonly question9: string;
   @ApiProperty()
   readonly question10: number;
 }
