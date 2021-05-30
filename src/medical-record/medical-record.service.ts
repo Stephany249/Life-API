@@ -21,6 +21,24 @@ export class MedicalRecordService {
     const returnScoreForAnswers = [];
     const status = [];
 
+    if(createMedicalRecordDto.question1 === null || createMedicalRecordDto.question1 === -1) {
+      throw new BadRequestException('Deve ser informado a resposta da questão 1');
+    }else if(createMedicalRecordDto.question2 === null || createMedicalRecordDto.question2 === -1) {
+      throw new BadRequestException('Deve ser informado a resposta da questão 2');
+    }else if(createMedicalRecordDto.question3 === null || createMedicalRecordDto.question3 === -1) {
+      throw new BadRequestException('Deve ser informado a resposta da questão 3');
+    }else if(createMedicalRecordDto.question4 === null || createMedicalRecordDto.question4 === -1) {
+      throw new BadRequestException('Deve ser informado a resposta da questão 4');
+    }else if(createMedicalRecordDto.question5 === null || createMedicalRecordDto.question5 === -1) {
+      throw new BadRequestException('Deve ser informado a resposta da questão 5');
+    }else if(createMedicalRecordDto.question6[0] === null || createMedicalRecordDto.question6[0] === ',') {
+      throw new BadRequestException('Deve ser informado a resposta da questão 6');
+    }else if(createMedicalRecordDto.question7 === null || createMedicalRecordDto.question7 === -1) {
+      throw new BadRequestException('Deve ser informado a resposta da questão 7');
+    }else if(createMedicalRecordDto.question9[0] === null || createMedicalRecordDto.question9[0] === ',') {
+      throw new BadRequestException('Deve ser informado a resposta da questão 9');
+    }
+
     if (role === 'CLIENT') {
       returnScoreForAnswers.push(
         await this.questionsAndAnswersService.getScoreAnswer(
@@ -56,7 +74,6 @@ export class MedicalRecordService {
 
       const question6 = createMedicalRecordDto.question6.split(',');
       for (let i = 0; i < question6.length - 1; i++) {
-        console.log(question6);
         if (question6[i] !== '26') {
           returnScoreForAnswers.push(
             await this.questionsAndAnswersService.getScoreAnswer(

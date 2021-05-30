@@ -4657,7 +4657,7 @@
         "affectsGlobalScope": false
       },
       "./src/medical-record/medical-record.service.ts": {
-        "version": "27e163c4dfcc930f08a0de6d5811f39cac22471b86b593ba2732b917ef9a33da",
+        "version": "566d1655da3e3fa5eca8869d0b416d6e6eaf28ccb661a7c5bd9825310ab081ab",
         "signature": "34b468e017ae6450f2ffa782fa0b69433cbb8a098c4fc36a6337f4480722f5f6",
         "affectsGlobalScope": false
       },
@@ -4692,7 +4692,7 @@
         "affectsGlobalScope": false
       },
       "./src/scheduling/scheduling.service.ts": {
-        "version": "a60d0f297cc777b162ede0becbad3abc0aa94c23c7a8877dc30a65b3abd6b08c",
+        "version": "9480196d9c2c299c7431d70caf303968883b246512fd67f0ea6078cd47b79382",
         "signature": "dc2ab5897f32fcc40ec20a1896a1fd14ebc1ef1ac119b168b52f0b07658b42ab",
         "affectsGlobalScope": false
       },

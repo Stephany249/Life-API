@@ -121,8 +121,9 @@ export class SchedulingService {
     });
 
     try {
-      scheduling.save();
-      return scheduling;
+      const scheduleSave = scheduling.save();
+
+      return scheduleSave;
     } catch (err) {
       throw new InternalServerErrorException(
         'Erro ao salvar o agendamento no banco de dados',
@@ -243,11 +244,21 @@ export class SchedulingService {
         year,
       },
     );
+
     let j = 0;
 
     if (scheduling.length >= 1) {
       for (let i = 0; i < scheduling.length; i++) {
-        if (getHours(scheduling[i].date) >= getHours(new Date(Date.now()))) {
+        if (getDate(new Date(Date.now())) < getDate(scheduling[i].date)) {
+          const { name } = await this.usersService.findById(
+            scheduling[i].userId,
+          );
+          arrayScheduling[j] = {
+            scheduling: scheduling[i],
+            name,
+          };
+          j++;
+        } else if(getDate(new Date(Date.now())) === getDate(scheduling[i].date) && getHours(scheduling[i].date) >= getHours(new Date(Date.now()))) {
           const { name } = await this.usersService.findById(
             scheduling[i].userId,
           );
