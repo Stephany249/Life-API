@@ -53,6 +53,12 @@ interface returnParams {
   id: string;
 }
 
+interface returnParamsEdit {
+  idScheduling: number;
+  id: string;
+  crm: string
+}
+
 @Controller('scheduling')
 export class SchedulingController {
   constructor(private schedulingService: SchedulingService) {}
@@ -172,21 +178,30 @@ export class SchedulingController {
   }
 
   @UseGuards(JwtAuthGuard)
-  @Put('/:idScheduling/client/:id/')
+  @Get('/specialist-availability')
+  async checkSpecialistAvailability(): Promise<any> {
+    const date = new Date(Date.now());
+    const availability = await this.schedulingService.checkSpecialistAvailability(date);
+
+    return availability;
+  }
+
+  @UseGuards(JwtAuthGuard)
+  @Put('/:idScheduling/client/:id/specialist/:crm')
   async updateSchedulingFromClient(
-    @Param() params: returnParams,
+    @Param() params: returnParamsEdit,
     @Body() body: returnBodyDate,
   ): Promise<any> {
     const schedulingId = params.idScheduling;
     const id = params.id;
+    const crm = params.crm;
     const date = body.date;
-    const role = UserRole.CLIENT;
 
-    const editScheduling = await this.schedulingService.updateScheduling({
+    const editScheduling = await this.schedulingService.updateSchedulingClient({
       schedulingId,
       id,
       date,
-      role,
+      crm,
     });
 
     return editScheduling;
@@ -201,13 +216,11 @@ export class SchedulingController {
     const schedulingId = params.idScheduling;
     const id = params.id;
     const date = body.date;
-    const role = UserRole.SPECIALIST;
 
-    const editScheduling = await this.schedulingService.updateScheduling({
+    const editScheduling = await this.schedulingService.updateSchedulingSpecialist({
       schedulingId,
       id,
       date,
-      role,
     });
 
     return editScheduling;
@@ -254,6 +267,8 @@ export class SchedulingController {
     const userId = body.userId;
     const medicalRecordsId = body.medicalRecordsId;
     const data = new Date(Date.now());
+
+    console.log('aqq')
 
     const immediateScheduling = await this.schedulingService.createImmediateScheduling(
       userId,

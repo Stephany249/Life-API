@@ -53,7 +53,13 @@ interface RequestUserId {
 
 interface RequestUpdateSchedulingClient {
   schedulingId: number;
-  role: UserRole;
+  id: string;
+  date: Date;
+  crm: string;
+}
+
+interface RequestUpdateSchedulingSpecialist {
+  schedulingId: number;
   id: string;
   date: Date;
 }
@@ -249,7 +255,7 @@ export class SchedulingService {
 
     if (scheduling.length >= 1) {
       for (let i = 0; i < scheduling.length; i++) {
-        if (getDate(new Date(Date.now())) < getDate(scheduling[i].date)) {
+        if (getDate(scheduling[i].date) > getDate(new Date(Date.now()))) {
           const { name } = await this.usersService.findById(
             scheduling[i].userId,
           );
@@ -259,6 +265,15 @@ export class SchedulingService {
           };
           j++;
         } else if(getDate(new Date(Date.now())) === getDate(scheduling[i].date) && getHours(scheduling[i].date) >= getHours(new Date(Date.now()))) {
+          const { name } = await this.usersService.findById(
+            scheduling[i].userId,
+          );
+          arrayScheduling[j] = {
+            scheduling: scheduling[i],
+            name,
+          };
+          j++;
+        } else if(getYear(scheduling[i].date) >= getYear(new Date(Date.now())) && getMonth(scheduling[i].date) > getMonth(new Date(Date.now())) && getDate(scheduling[i].date) < getDate(new Date(Date.now()))) {
           const { name } = await this.usersService.findById(
             scheduling[i].userId,
           );
@@ -296,25 +311,79 @@ export class SchedulingService {
     return arrayScheduling;
   }
 
-  async updateScheduling({
+
+  async updateSchedulingClient({
     schedulingId,
-    role,
     id,
     date,
+    crm,
   }: RequestUpdateSchedulingClient): Promise<any> {
-    let scheduling: any;
+    
+    const scheduling = await this.schedulingRepository.getSchedulingThroughSchedulingIdAndUserId(
+      schedulingId,
+      id,
+    );
 
-    if (role === UserRole.SPECIALIST) {
-      scheduling = await this.schedulingRepository.getSchedulingThroughSchedulingIdAnSpecialistCrm(
-        schedulingId,
-        id,
-      );
-    } else {
-      scheduling = await this.schedulingRepository.getSchedulingThroughSchedulingIdAndUserId(
-        schedulingId,
-        id,
+    const data = date.toString();
+    const dataParsed = parseISO(data);
+
+    const dateWithSub = subHours(scheduling.date, 2);
+
+    const newDate = new Date(Date.now());
+
+    if (isBefore(dateWithSub, newDate)) {
+      throw new BadRequestException(
+        'Você só pode editar o agendamento com 2 horas de antecedência.',
       );
     }
+
+    if (isBefore(dataParsed, Date.now())) {
+      throw new BadRequestException(
+        'Você não pode criar um agendamento em uma data passada.',
+      );
+    }
+
+    const hours = await this.workScheduleService.getHoursDay(
+      crm,
+      getDay(dataParsed) + 1,
+    );
+
+    if (
+      getHours(dataParsed) < parseInt(hours.from) ||
+      getHours(dataParsed) > parseInt(hours.to)
+    ) {
+      throw new BadRequestException(
+        `Você só pode criar agendamentos entre ${hours.from} e ${hours.to}`,
+      );
+    }
+
+    const findAppointmentInSameDate = await this.schedulingRepository.findByDate(
+      dataParsed,
+      crm,
+    );
+
+    if (findAppointmentInSameDate) {
+      throw new BadRequestException('Este horário já está ocupado');
+    }
+
+    scheduling.date = dataParsed;
+    scheduling.crmSpecialist = crm;
+
+    const editScheduling = await this.schedulingRepository.save(scheduling);
+
+    return editScheduling;
+  }
+
+  async updateSchedulingSpecialist({
+    schedulingId,
+    id,
+    date,
+  }: RequestUpdateSchedulingSpecialist): Promise<any> {
+  
+    const scheduling = await this.schedulingRepository.getSchedulingThroughSchedulingIdAnSpecialistCrm(
+      schedulingId,
+      id,
+    );
 
     const data = date.toString();
     const dataParsed = parseISO(data);
@@ -479,6 +548,72 @@ export class SchedulingService {
     return returnCrm;
   }
 
+
+  async checkSpecialistAvailability(
+    date: Date,
+  ): Promise<any> {
+    
+    const day = getDate(date);
+    const month = getMonth(date) + 1;
+    const year = getYear(date);
+
+    const hour = getHours(date);
+    const weekDay = getDay(date) + 1;
+
+    const specialists = await this.workScheduleService.checkAllAvailability(
+      weekDay,
+    );
+
+    let daysOfMonth: any;
+
+    let hoursOfDay: any;
+
+    let returnCrm: any = null;
+
+    if (specialists.length > 0) {
+      for (const specialist of specialists) {
+        const crmSpecialist: string = specialist.crm;
+        daysOfMonth = await this.getListSpecialistMonthAvailaility({
+          crm: crmSpecialist,
+          month,
+          year,
+        });
+        const dayMonth = day - 1;
+
+        if (daysOfMonth[dayMonth].available == true) {
+          hoursOfDay = await this.getListSpecialistDayAvailaility({
+            crm: crmSpecialist,
+            day,
+            month,
+            year,
+          });
+
+          const scheduling = await this.getSchedulingSpecialist({
+            crm: crmSpecialist,
+            day,
+            month,
+            year,
+          });
+
+          for (const hourOfDay of hoursOfDay) {
+            for(const schedule of scheduling) {
+              if (hourOfDay.hour === hour && getHours(schedule.scheduling.date) !== getHours(hour)) {
+                returnCrm = crmSpecialist;
+              }
+            }          
+          }
+        }
+      }
+    }
+    
+    if(returnCrm === null) {
+      return { message: 'Sem profissionais disponíveis' };
+    } else {
+      return  { message: 'Profissionais disponíveis' };
+    }
+   
+  }
+
   async createImmediateScheduling(
     userId: string,
     medicalRecordsId: number,
@@ -511,6 +646,7 @@ export class SchedulingService {
           month,
           year,
         });
+
         const dayMonth = day - 1;
 
         if (daysOfMonth[dayMonth].available == true) {
@@ -521,29 +657,42 @@ export class SchedulingService {
             year,
           });
 
-          for (const hourOfDay of hoursOfDay) {
-            if (hourOfDay.hour == hour) {
-              scheduling = this.schedulingRepository.create({
-                crmSpecialist,
-                userId,
-                date,
-                medicalRecordsId,
-                role,
-              });
+          
 
-              try {
-                scheduling.save();
-                return {
-                  scheduling,
-                  message: 'Atendimento imediato cadastrado com sucesso',
-                };
-              } catch (err) {
-                throw new InternalServerErrorException(
-                  'Erro ao salvar o agendamento no banco de dados',
-                );
-              }
-            }
+          const schedulings = await this.getSchedulingSpecialist({
+            crm: crmSpecialist,
+            day,
+            month,
+            year,
+          });  
+          
+          for (const hourOfDay of hoursOfDay) {
+            for(const schedule of schedulings){
+              if (hourOfDay.hour == hour && getHours(schedule.scheduling.date) !== getHours(hour)) {
+                scheduling = this.schedulingRepository.create({
+                  crmSpecialist,
+                  userId,
+                  date,
+                  medicalRecordsId,
+                  role,
+                });
+  
+                try {
+                  scheduling.save();
+                  return {
+                    scheduling,
+                    message: 'Atendimento imediato cadastrado com sucesso',
+                  };
+                } catch (err) {
+                  throw new InternalServerErrorException(
+                    'Erro ao salvar o agendamento no banco de dados',
+                  );
+                }
+              } 
+            }    
           }
+        } else {
+          return { message: 'Sem profissionais disponíveis' };
         }
       }
     } else {
