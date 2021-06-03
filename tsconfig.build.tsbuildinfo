@@ -4632,7 +4632,7 @@
         "affectsGlobalScope": false
       },
       "./src/questions-answers/questions-answers.service.ts": {
-        "version": "36cf715bece8ac0dff4b86f3cb0dda0fdcc6cf344d091c4b5c2b8fd61365c307",
+        "version": "ae4afb8ba0404fbf6b6e3c9aa0c48bdd30661a2104e04335868441e376fdb0e8",
         "signature": "466f47e901390d2cc0806f98d565ff05240fb544c67027261d27a1001ec2d31f",
         "affectsGlobalScope": false
       },
@@ -4657,7 +4657,7 @@
         "affectsGlobalScope": false
       },
       "./src/medical-record/medical-record.service.ts": {
-        "version": "566d1655da3e3fa5eca8869d0b416d6e6eaf28ccb661a7c5bd9825310ab081ab",
+        "version": "97430f86e3cc516d0f63c0e18669cd1561d3973bceed04b4b88b7eb762a93b24",
         "signature": "34b468e017ae6450f2ffa782fa0b69433cbb8a098c4fc36a6337f4480722f5f6",
         "affectsGlobalScope": false
       },
@@ -4692,7 +4692,7 @@
         "affectsGlobalScope": false
       },
       "./src/scheduling/scheduling.service.ts": {
-        "version": "4d9342ca5fb7d0876ddbac7c793811da5d13fbd384efa7b6ceb9153be6ca6c18",
+        "version": "ddb279be1f2f32a1b3b38ff6434fa182f0306652b45c6242d131365aafadc975",
         "signature": "1fb9d1d79ca53d7e1e634492c3b35f65afc8744f3b6c9eab35887dcf50831148",
         "affectsGlobalScope": false
       },

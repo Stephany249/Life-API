@@ -53,7 +53,7 @@ export class QuestionsAndAnswersService {
     const answer = [];
     if (idAnswerString.includes(',')) {
       const answerArray = idAnswerString.split(',');
-      for (let i = 0; i < answerArray.length; i++) {
+      for (let i = 0; i < answerArray.length - 1; i++) {
         const answers = await this.answersRepository.getQUestionAndAnswerWithMedicalRecord(
           parseInt(answerArray[i]),
         );

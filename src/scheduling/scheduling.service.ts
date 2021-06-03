@@ -264,7 +264,10 @@ export class SchedulingService {
             name,
           };
           j++;
-        } else if(getDate(new Date(Date.now())) === getDate(scheduling[i].date) && getHours(scheduling[i].date) >= getHours(new Date(Date.now()))) {
+        } else if (
+          getDate(new Date(Date.now())) === getDate(scheduling[i].date) &&
+          getHours(scheduling[i].date) >= getHours(new Date(Date.now()))
+        ) {
           const { name } = await this.usersService.findById(
             scheduling[i].userId,
           );
@@ -273,7 +276,11 @@ export class SchedulingService {
             name,
           };
           j++;
-        } else if(getYear(scheduling[i].date) >= getYear(new Date(Date.now())) && getMonth(scheduling[i].date) > getMonth(new Date(Date.now())) && getDate(scheduling[i].date) < getDate(new Date(Date.now()))) {
+        } else if (
+          getYear(scheduling[i].date) >= getYear(new Date(Date.now())) &&
+          getMonth(scheduling[i].date) > getMonth(new Date(Date.now())) &&
+          getDate(scheduling[i].date) < getDate(new Date(Date.now()))
+        ) {
           const { name } = await this.usersService.findById(
             scheduling[i].userId,
           );
@@ -299,14 +306,19 @@ export class SchedulingService {
 
     const arrayScheduling = [];
 
-    console.log(scheduling);
-
     for (let i = 0; i < scheduling.length; i++) {
       if (getDate(scheduling[i].date) > getDate(new Date(Date.now()))) {
         arrayScheduling.push(scheduling[i]);
-      } else if(getDate(new Date(Date.now())) === getDate(scheduling[i].date) && getHours(scheduling[i].date) >= getHours(new Date(Date.now()))) {
+      } else if (
+        getDate(new Date(Date.now())) === getDate(scheduling[i].date) &&
+        getHours(scheduling[i].date) >= getHours(new Date(Date.now()))
+      ) {
         arrayScheduling.push(scheduling[i]);
-      } else if(getYear(scheduling[i].date) >= getYear(new Date(Date.now())) && getMonth(scheduling[i].date) > getMonth(new Date(Date.now())) && getDate(scheduling[i].date) < getDate(new Date(Date.now()))) {
+      } else if (
+        getYear(scheduling[i].date) >= getYear(new Date(Date.now())) &&
+        getMonth(scheduling[i].date) > getMonth(new Date(Date.now())) &&
+        getDate(scheduling[i].date) < getDate(new Date(Date.now()))
+      ) {
         arrayScheduling.push(scheduling[i]);
       }
     }
@@ -314,14 +326,12 @@ export class SchedulingService {
     return arrayScheduling;
   }
 
-
   async updateSchedulingClient({
     schedulingId,
     id,
     date,
     crm,
   }: RequestUpdateSchedulingClient): Promise<any> {
-    
     const scheduling = await this.schedulingRepository.getSchedulingThroughSchedulingIdAndUserId(
       schedulingId,
       id,
@@ -382,7 +392,6 @@ export class SchedulingService {
     id,
     date,
   }: RequestUpdateSchedulingSpecialist): Promise<any> {
-  
     const scheduling = await this.schedulingRepository.getSchedulingThroughSchedulingIdAnSpecialistCrm(
       schedulingId,
       id,
@@ -551,11 +560,7 @@ export class SchedulingService {
     return returnCrm;
   }
 
-
-  async checkSpecialistAvailability(
-    date: Date,
-  ): Promise<any> {
-    
+  async checkSpecialistAvailability(date: Date): Promise<any> {
     const day = getDate(date);
     const month = getMonth(date) + 1;
     const year = getYear(date);
@@ -599,24 +604,26 @@ export class SchedulingService {
           });
 
           for (const hourOfDay of hoursOfDay) {
-            for(const schedule of scheduling) {
-              if (hourOfDay.hour === hour && getHours(schedule.scheduling.date) !== getHours(hour)) {
+            for (const schedule of scheduling) {
+              if (
+                hourOfDay.hour === hour &&
+                getHours(schedule.scheduling.date) !== getHours(hour)
+              ) {
                 returnCrm = crmSpecialist;
               }
-            }          
+            }
           }
         } else {
           return { message: 'Sem profissionais disponíveis' };
         }
       }
     }
-    
-    if(returnCrm === null) {
+
+    if (returnCrm === null) {
       return { message: 'Sem profissionais disponíveis' };
     } else {
-      return  { message: 'Profissionais disponíveis' };
+      return { message: 'Profissionais disponíveis' };
     }
-   
   }
 
   async createImmediateScheduling(
@@ -662,18 +669,19 @@ export class SchedulingService {
             year,
           });
 
-          
-
           const schedulings = await this.getSchedulingSpecialist({
             crm: crmSpecialist,
             day,
             month,
             year,
-          });  
-          
+          });
+
           for (const hourOfDay of hoursOfDay) {
-            for(const schedule of schedulings){
-              if (hourOfDay.hour == hour && getHours(schedule.scheduling.date) !== getHours(hour)) {
+            for (const schedule of schedulings) {
+              if (
+                hourOfDay.hour == hour &&
+                getHours(schedule.scheduling.date) !== getHours(hour)
+              ) {
                 scheduling = this.schedulingRepository.create({
                   crmSpecialist,
                   userId,
@@ -681,7 +689,7 @@ export class SchedulingService {
                   medicalRecordsId,
                   role,
                 });
-  
+
                 try {
                   scheduling.save();
                   return {
@@ -693,8 +701,8 @@ export class SchedulingService {
                     'Erro ao salvar o agendamento no banco de dados',
                   );
                 }
-              } 
-            }    
+              }
+            }
           }
         } else {
           return { message: 'Sem profissionais disponíveis' };

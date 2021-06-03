@@ -21,22 +21,62 @@ export class MedicalRecordService {
     const returnScoreForAnswers = [];
     const status = [];
 
-    if(createMedicalRecordDto.question1 === null || createMedicalRecordDto.question1 === -1) {
-      throw new BadRequestException('Deve ser informado a resposta da questão 1');
-    }else if(createMedicalRecordDto.question2 === null || createMedicalRecordDto.question2 === -1) {
-      throw new BadRequestException('Deve ser informado a resposta da questão 2');
-    }else if(createMedicalRecordDto.question3 === null || createMedicalRecordDto.question3 === -1) {
-      throw new BadRequestException('Deve ser informado a resposta da questão 3');
-    }else if(createMedicalRecordDto.question4 === null || createMedicalRecordDto.question4 === -1) {
-      throw new BadRequestException('Deve ser informado a resposta da questão 4');
-    }else if(createMedicalRecordDto.question5 === null || createMedicalRecordDto.question5 === -1) {
-      throw new BadRequestException('Deve ser informado a resposta da questão 5');
-    }else if(createMedicalRecordDto.question6[0] === null || createMedicalRecordDto.question6[0] === ',') {
-      throw new BadRequestException('Deve ser informado a resposta da questão 6');
-    }else if(createMedicalRecordDto.question7 === null || createMedicalRecordDto.question7 === -1) {
-      throw new BadRequestException('Deve ser informado a resposta da questão 7');
-    }else if(createMedicalRecordDto.question9[0] === null || createMedicalRecordDto.question9[0] === ',') {
-      throw new BadRequestException('Deve ser informado a resposta da questão 9');
+    if (
+      createMedicalRecordDto.question1 === null ||
+      createMedicalRecordDto.question1 === -1
+    ) {
+      throw new BadRequestException(
+        'Deve ser informado a resposta da questão 1',
+      );
+    } else if (
+      createMedicalRecordDto.question2 === null ||
+      createMedicalRecordDto.question2 === -1
+    ) {
+      throw new BadRequestException(
+        'Deve ser informado a resposta da questão 2',
+      );
+    } else if (
+      createMedicalRecordDto.question3 === null ||
+      createMedicalRecordDto.question3 === -1
+    ) {
+      throw new BadRequestException(
+        'Deve ser informado a resposta da questão 3',
+      );
+    } else if (
+      createMedicalRecordDto.question4 === null ||
+      createMedicalRecordDto.question4 === -1
+    ) {
+      throw new BadRequestException(
+        'Deve ser informado a resposta da questão 4',
+      );
+    } else if (
+      createMedicalRecordDto.question5 === null ||
+      createMedicalRecordDto.question5 === -1
+    ) {
+      throw new BadRequestException(
+        'Deve ser informado a resposta da questão 5',
+      );
+    } else if (
+      createMedicalRecordDto.question6[0] === null ||
+      createMedicalRecordDto.question6[0] === ','
+    ) {
+      throw new BadRequestException(
+        'Deve ser informado a resposta da questão 6',
+      );
+    } else if (
+      createMedicalRecordDto.question7 === null ||
+      createMedicalRecordDto.question7 === -1
+    ) {
+      throw new BadRequestException(
+        'Deve ser informado a resposta da questão 7',
+      );
+    } else if (
+      createMedicalRecordDto.question9[0] === null ||
+      createMedicalRecordDto.question9[0] === ','
+    ) {
+      throw new BadRequestException(
+        'Deve ser informado a resposta da questão 9',
+      );
     }
 
     if (role === 'CLIENT') {
@@ -270,7 +310,7 @@ export class MedicalRecordService {
       ),
     );
 
-    if (medicalRecord[0].question8) {
+    if (medicalRecord[0].question8 !== null) {
       questionsAndAnswers.push(
         await this.questionsAndAnswersService.getQUestionAndAnswerWithMedicalRecord(
           medicalRecord[0].question8,
@@ -278,21 +318,31 @@ export class MedicalRecordService {
         ),
       );
     } else {
-      questionsAndAnswers.push(
-        await this.questionsAndAnswersService.getQuestion(role, 8),
-      );
+      let questions: any;
+      if (role === 'CLIENT') {
+        questions = await this.questionsAndAnswersService.getQuestion(role, 8);
+      } else {
+        questions = await this.questionsAndAnswersService.getQuestion(role, 18);
+      }
+
+      const questionAndAnswer = [];
+      questionAndAnswer[0] = {
+        id: questions[0].id,
+        question: questions[0].question,
+        answers: [],
+      };
+
+      questionsAndAnswers.push(questionAndAnswer);
     }
 
-    for (let i = 0; i < medicalRecord[0].question9.length; i++) {
-      questionsAndAnswers.push(
-        await this.questionsAndAnswersService.getQUestionAndAnswerWithMedicalRecord(
-          medicalRecord[0].question9[i],
-          role,
-        ),
-      );
-    }
+    questionsAndAnswers.push(
+      await this.questionsAndAnswersService.getQUestionAndAnswerWithMedicalRecord(
+        medicalRecord[0].question9,
+        role,
+      ),
+    );
 
-    if (medicalRecord[0].question10) {
+    if (medicalRecord[0].question10 !== null) {
       questionsAndAnswers.push(
         await this.questionsAndAnswersService.getQUestionAndAnswerWithMedicalRecord(
           medicalRecord[0].question10,
@@ -300,9 +350,21 @@ export class MedicalRecordService {
         ),
       );
     } else {
-      questionsAndAnswers.push(
-        await this.questionsAndAnswersService.getQuestion(role, 10),
-      );
+      let questions: any;
+      if (role === 'CLIENT') {
+        questions = await this.questionsAndAnswersService.getQuestion(role, 10);
+      } else {
+        questions = await this.questionsAndAnswersService.getQuestion(role, 20);
+      }
+
+      const questionAndAnswer = [];
+      questionAndAnswer[0] = {
+        id: questions[0].id,
+        question: questions[0].question,
+        answers: [],
+      };
+
+      questionsAndAnswers.push(questionAndAnswer);
     }
 
     return questionsAndAnswers;
