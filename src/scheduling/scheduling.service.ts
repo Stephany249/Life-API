@@ -299,11 +299,14 @@ export class SchedulingService {
 
     const arrayScheduling = [];
 
+    console.log(scheduling);
+
     for (let i = 0; i < scheduling.length; i++) {
-      if (
-        getDate(date) === getDate(scheduling[i].date) &&
-        getHours(scheduling[i].date) >= getHours(date)
-      ) {
+      if (getDate(scheduling[i].date) > getDate(new Date(Date.now()))) {
+        arrayScheduling.push(scheduling[i]);
+      } else if(getDate(new Date(Date.now())) === getDate(scheduling[i].date) && getHours(scheduling[i].date) >= getHours(new Date(Date.now()))) {
+        arrayScheduling.push(scheduling[i]);
+      } else if(getYear(scheduling[i].date) >= getYear(new Date(Date.now())) && getMonth(scheduling[i].date) > getMonth(new Date(Date.now())) && getDate(scheduling[i].date) < getDate(new Date(Date.now()))) {
         arrayScheduling.push(scheduling[i]);
       }
     }
@@ -602,6 +605,8 @@ export class SchedulingService {
               }
             }          
           }
+        } else {
+          return { message: 'Sem profissionais disponíveis' };
         }
       }
     }

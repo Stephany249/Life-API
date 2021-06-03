@@ -268,8 +268,6 @@ export class SchedulingController {
     const medicalRecordsId = body.medicalRecordsId;
     const data = new Date(Date.now());
 
-    console.log('aqq')
-
     const immediateScheduling = await this.schedulingService.createImmediateScheduling(
       userId,
       medicalRecordsId,
