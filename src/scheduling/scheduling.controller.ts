@@ -4,6 +4,7 @@ import {
   Delete,
   Get,
   Param,
+  Patch,
   Post,
   Put,
   Query,
@@ -42,6 +43,10 @@ interface returnBody {
 interface returnBodyUserAndMedicalRecording {
   userId: string;
   medicalRecordsId: number;
+}
+
+interface returnBodyUrl {
+  url: string;
 }
 
 interface returnBodyDate {
@@ -275,5 +280,24 @@ export class SchedulingController {
     );
 
     return immediateScheduling;
+  }
+
+  @UseGuards(JwtAuthGuard)
+  @Patch('/specialist/:id/schedule/:idScheduling/url/')
+  async insertScheduleUrl(
+    @Param() params: returnParams,
+    @Body() body: returnBodyUrl,
+  ): Promise<any> {
+    const urlSchedule = body.url;
+    const idSchedule = params.idScheduling;
+    const crm = params.id;
+    
+    const scheduleWithUrl = await this.schedulingService.insertScheduleUrl(
+      idSchedule,
+      urlSchedule,
+      crm
+    );
+
+    return scheduleWithUrl;
   }
 }

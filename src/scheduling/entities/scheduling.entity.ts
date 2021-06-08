@@ -53,4 +53,7 @@ export class Scheduling extends BaseEntity {
 
   @Column({ nullable: true, type: 'date' })
   canceledAt: Date;
+
+  @Column({ nullable: true})
+  urlSchedule: string;
 }

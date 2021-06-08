@@ -71,4 +71,5 @@ export class MedicalRecordController {
 
     return medicalRecord;
   }
+
 }

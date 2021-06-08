@@ -2912,8 +2912,8 @@
         "affectsGlobalScope": false
       },
       "./src/scheduling/entities/scheduling.entity.ts": {
-        "version": "ef422886d5db76921d9c21a7586e05dfea97dd19f37847d6c883b1579f28114a",
-        "signature": "519ec4fa70588d292d8ee22a6bb312dd10ddc0e00d5c236ea6824808a2e28ed2",
+        "version": "b842f29423b02c01a52f492ac2109d32181a3eeb8648ba2485159bcd5daebe2b",
+        "signature": "82f23d822aa02de252d2a30ee0ae65600d62cacc0f3ee00bcc776e6e005d24c6",
         "affectsGlobalScope": false
       },
       "./src/configs/typeorm.config.ts": {
@@ -4662,7 +4662,7 @@
         "affectsGlobalScope": false
       },
       "./src/medical-record/medical-record.controller.ts": {
-        "version": "943a706466e9ec8c0781cadd83da589c5245336a53758f0fed04ca3955934777",
+        "version": "44c2ca5d4b12338b10e3d7543817d1010bc3987f5697ed62a30893ab5a7aeef3",
         "signature": "621c7ed9a711c61ad1fe12d2684d5e23f9f8b50b53ae55034835c0d06a6b5cc5",
         "affectsGlobalScope": false
       },
@@ -4687,18 +4687,18 @@
         "affectsGlobalScope": false
       },
       "./src/scheduling/scheduling.repository.ts": {
-        "version": "06e3f8a90daf688f806167d144650e94b1259c42d17a204c26f40f924358650b",
+        "version": "68da95c0972efcbffd2d905ad20a5273ed972672306c3303e4c78b26b480f5f8",
         "signature": "47b3062cd4ceb39fa79d6171743ff4480161e080d589a86d9bf394e9f08bcbae",
         "affectsGlobalScope": false
       },
       "./src/scheduling/scheduling.service.ts": {
-        "version": "ddb279be1f2f32a1b3b38ff6434fa182f0306652b45c6242d131365aafadc975",
-        "signature": "1fb9d1d79ca53d7e1e634492c3b35f65afc8744f3b6c9eab35887dcf50831148",
+        "version": "52eb633045e574ea341e8cf050075b0ae68ed833c3a0fd972352c7d149d1c110",
+        "signature": "c31ae6a4c15dfd2e6487e59470aa256bea52af7c9398b0ca70418d47f80d0926",
         "affectsGlobalScope": false
       },
       "./src/scheduling/scheduling.controller.ts": {
-        "version": "401d095a7536d1dfdd3619a4f4bd7915137045d4126aca00feb2f03d74870d97",
-        "signature": "5a942e50eccf52fa295093dd9989a39892462b7b8480da7613c9df0f89175863",
+        "version": "b41c61eecf909282f7c642cc5262b122dde8043f5cfa6883d138e9a8474c18af",
+        "signature": "f67ce492b53360421bcc711b514c64493257e58912952a8a23ad5ad35f98e649",
         "affectsGlobalScope": false
       },
       "./src/scheduling/scheduling.module.ts": {

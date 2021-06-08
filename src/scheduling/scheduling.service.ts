@@ -251,11 +251,13 @@ export class SchedulingService {
       },
     );
 
+    console.log(scheduling);
+
     let j = 0;
 
     if (scheduling.length >= 1) {
       for (let i = 0; i < scheduling.length; i++) {
-        if (getDate(scheduling[i].date) > getDate(new Date(Date.now()))) {
+        if (getDate(scheduling[i].date) > getDate(new Date(Date.now())) && getMonth(scheduling[i].date) === getMonth(new Date(Date.now()))) {
           const { name } = await this.usersService.findById(
             scheduling[i].userId,
           );
@@ -297,7 +299,6 @@ export class SchedulingService {
   }
 
   async getSchedulingClient({ userId }: RequestUserId): Promise<any> {
-    const date = new Date(Date.now());
     const scheduling = await this.schedulingRepository.findSchedulingFromClient(
       {
         userId,
@@ -307,7 +308,7 @@ export class SchedulingService {
     const arrayScheduling = [];
 
     for (let i = 0; i < scheduling.length; i++) {
-      if (getDate(scheduling[i].date) > getDate(new Date(Date.now()))) {
+      if (getDate(scheduling[i].date) > getDate(new Date(Date.now())) && getMonth(scheduling[i].date) === getMonth(new Date(Date.now()))) {
         arrayScheduling.push(scheduling[i]);
       } else if (
         getDate(new Date(Date.now())) === getDate(scheduling[i].date) &&
@@ -710,6 +711,28 @@ export class SchedulingService {
       }
     } else {
       return { message: 'Sem profissionais disponíveis' };
+    }
+  }
+
+  async insertScheduleUrl(idSchedule: number, urlSchedule: string, crm: string) : Promise<any> {
+    const scheduling = await this.schedulingRepository.getSchedulingThroughSchedulingIdAnSpecialistCrm(
+      idSchedule,
+      crm,
+    );
+
+    console.log(scheduling);
+
+    console.log('sas', urlSchedule);
+
+    try {
+      scheduling.urlSchedule = urlSchedule;
+      const scheduleSave = scheduling.save();
+
+      return scheduleSave;
+    } catch (err) {
+      throw new InternalServerErrorException(
+        'Erro ao salvar o agendamento no banco de dados',
+      );
     }
   }
 }
