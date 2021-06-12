@@ -12,7 +12,7 @@ import { Scheduling } from '../scheduling/entities/scheduling.entity';
 
 export const typeOrmConfig: TypeOrmModuleOptions = {
   type: 'postgres',
-  host: 'localhost',
+  host: 'pgsql',
   port: 5432,
   username: 'pguser',
   password: 'pgpassword',
