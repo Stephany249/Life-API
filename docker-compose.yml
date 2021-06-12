@@ -33,7 +33,7 @@ services:
     image: adminer
     restart: always
     ports:
-      - 80.80:8080
+      - 8080:8080
 
 volumes:
   api-logs:
