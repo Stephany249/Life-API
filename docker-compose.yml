@@ -1,5 +1,3 @@
-version: '3'
-
 services:
   api:
     build:
@@ -35,6 +33,6 @@ services:
     ports:
       - 8080:8080
 
-  volumes:
-    api-logs:
-    pg-data:
+volumes:
+  api-logs:
+  pg-data:
